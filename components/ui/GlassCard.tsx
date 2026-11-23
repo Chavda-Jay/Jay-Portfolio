@@ -6,7 +6,7 @@ interface GlassCardProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
   elevated?: boolean;
   interactive?: boolean;
-  as?: "div" | "article" | "section";
+  as?: React.ElementType;
 }
 
 export function GlassCard({
@@ -20,17 +20,17 @@ export function GlassCard({
   return (
     <Component
       className={cn(
-        "rounded-2xl border transition-all duration-300 relative overflow-hidden",
+        "rounded-2xl transition-all duration-300 relative overflow-hidden",
         elevated
-          ? "bg-[#101935]/80 border-[#2F6BFF]/25 backdrop-blur-xl shadow-xl shadow-[#05070F]/50"
-          : "bg-[#0A1020]/75 border-[#1E2A4A]/80 backdrop-blur-lg shadow-lg shadow-[#05070F]/30",
+          ? "bg-[#161822] border border-white/[0.12] shadow-[0_16px_36px_rgba(0,0,0,0.5)]"
+          : "bg-[#111319] border border-white/[0.08] shadow-[0_10px_28px_rgba(0,0,0,0.35)]",
         interactive &&
-          "hover:border-[#5B8CFF]/50 hover:bg-[#0A1020]/90 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#2F6BFF]/10",
+          "hover:border-[#FF9900]/50 hover:shadow-[0_20px_40px_-12px_rgba(255,153,0,0.2)] hover:-translate-y-1 cursor-pointer",
         className
       )}
       {...props}
     >
-      {children}
+      <div className="relative z-10">{children}</div>
     </Component>
   );
 }

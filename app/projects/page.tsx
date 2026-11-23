@@ -31,25 +31,25 @@ export default function ProjectsPage() {
       <main id="main-content" className="flex-1 py-12 md:py-20">
         <Container>
           {/* Breadcrumb Navigation */}
-          <div className="flex items-center gap-2 text-xs font-mono text-[#8C97B5] mb-8">
-            <Link href="/" className="hover:text-[#5B8CFF] transition-colors">
+          <div className="flex items-center gap-2 text-xs font-mono text-[#94A3B8] mb-8">
+            <Link href="/" className="hover:text-[#F8FAFC] transition-colors">
               Home
             </Link>
-            <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-[#E8ECF8]">Projects</span>
+            <ChevronRight className="w-3.5 h-3.5 text-[#64748B]" />
+            <span className="text-[#F8FAFC]">Projects</span>
           </div>
 
           {/* Page Header */}
           <div className="max-w-3xl mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-[#101935] border border-[#1E2A4A] text-xs font-mono text-[#5B8CFF] uppercase tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#5B8CFF]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-[#151C2C] border border-[rgba(148,163,184,0.12)] text-xs font-mono text-[#8B5CF6] uppercase tracking-wider">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6]" />
               Work Archive
             </div>
-            <h1 className="text-fluid-h1 font-heading font-extrabold text-[#E8ECF8] tracking-tight">
-              All Projects &{" "}
+            <h1 className="text-fluid-h1 font-heading font-extrabold text-[#F8FAFC] tracking-tight">
+              All Projects &amp;{" "}
               <span className="gradient-text">Case Studies</span>
             </h1>
-            <p className="mt-4 text-base md:text-lg text-[#8C97B5] leading-relaxed">
+            <p className="mt-4 text-base md:text-lg text-[#94A3B8] leading-relaxed font-sans">
               Explore hands-on LLM workflows, multilingual conversational
               systems, and full-stack software built with Python, FastAPI, React,
               and modern database technologies.
@@ -60,10 +60,10 @@ export default function ProjectsPage() {
           <ProjectGrid projects={projects} />
 
           {/* Back Home Link */}
-          <div className="mt-16 pt-8 border-t border-[#1E2A4A]/60">
+          <div className="mt-16 pt-8 border-t border-[rgba(148,163,184,0.12)]">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#5B8CFF] hover:underline"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#8B5CF6] hover:underline font-heading"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to home</span>

@@ -12,7 +12,7 @@ export function Certifications() {
       <Container>
         <SectionHeading
           eyebrow="Credentials"
-          title="Certifications &"
+          title="Certifications &amp;"
           highlight="Accreditations"
           description="Industry-recognized certifications in Generative AI, LLM platforms, full-stack engineering, and data science."
         />
@@ -30,25 +30,25 @@ export function Certifications() {
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <div className="p-2.5 rounded-xl bg-[#8B5CF6]/10 border border-[#8B5CF6]/20 text-[#A78BFA]">
+                    <div className="p-2.5 rounded-xl bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 text-[#8B5CF6]">
                       <Award className="w-5 h-5" />
                     </div>
-                    <div className="flex items-center gap-1.5 text-xs font-mono text-[#8C97B5]">
-                      <Calendar className="w-3.5 h-3.5 text-[#5B8CFF]" />
+                    <div className="flex items-center gap-1.5 text-xs font-mono text-[#94A3B8]">
+                      <Calendar className="w-3.5 h-3.5 text-[#22D3EE]" />
                       <span>{cert.issueDate}</span>
                     </div>
                   </div>
 
-                  <h3 className="font-heading font-bold text-base md:text-lg text-[#E8ECF8] mb-2">
+                  <h3 className="font-heading font-bold text-base md:text-lg text-[#F8FAFC] mb-2">
                     {cert.name}
                   </h3>
 
-                  <p className="text-sm font-medium text-[#5B8CFF] mb-4">
+                  <p className="text-sm font-medium text-[#8B5CF6] mb-4">
                     {cert.issuer}
                   </p>
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-[#1E2A4A] flex items-center justify-between">
+                <div className="mt-4 pt-4 border-t border-[rgba(148,163,184,0.12)] flex items-center justify-between">
                   <div className="flex items-center gap-1.5 text-xs font-mono text-[#34D399]">
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     <span>Completed</span>
@@ -59,13 +59,13 @@ export function Certifications() {
                       href={cert.credentialUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-mono text-[#5B8CFF] hover:underline inline-flex items-center gap-1"
+                      className="text-xs font-mono text-[#22D3EE] hover:underline inline-flex items-center gap-1"
                     >
                       <span>Verify</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   ) : (
-                    <span className="text-[11px] font-mono text-[#8C97B5]">
+                    <span className="text-[11px] font-mono text-[#94A3B8]">
                       Official Certificate
                     </span>
                   )}

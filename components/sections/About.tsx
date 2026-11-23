@@ -10,9 +10,9 @@ import {
   Sparkles,
   GraduationCap,
   Languages,
-  Compass,
   MapPin,
   Bot,
+  CheckCircle2,
 } from "lucide-react";
 
 export function About() {
@@ -20,15 +20,15 @@ export function About() {
     <section id="about" className="py-20 md:py-28 relative scroll-mt-20">
       <Container>
         <SectionHeading
-          eyebrow="About Me"
-          title="Background &"
-          highlight="Technical Journey"
-          description="A blend of AI/ML specialization, LLM system architecture, and practical full-stack software engineering."
+          eyebrow="Engineering Background"
+          title="Bridging AI Models &amp;"
+          highlight="Production Engineering"
+          description="Combining deep exploration of Large Language Models and prompt engineering with practical full-stack software development."
         />
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {/* Tile 1: Main Story / Profile Summary (Span 2 cols on md, 2 or 3 on lg) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          {/* Tile 1: Main Story / Profile Summary (Span 2 cols on lg) */}
           <Reveal
             direction="up"
             delay={0.1}
@@ -36,76 +36,104 @@ export function About() {
           >
             <GlassCard className="p-6 md:p-8 h-full flex flex-col justify-between" interactive>
               <div>
-                <div className="flex items-center gap-2.5 text-[#5B8CFF] mb-4">
-                  <div className="p-2 rounded-lg bg-[#2F6BFF]/10 border border-[#2F6BFF]/20">
-                    <Sparkles className="w-5 h-5 text-[#5B8CFF]" />
+                <div className="flex items-center gap-3 text-[#F8FAFC] mb-4">
+                  <div className="p-2.5 rounded-xl bg-[#FF9900]/15 border border-[#FF9900]/30 text-[#FF9900]">
+                    <Sparkles className="w-5 h-5" />
                   </div>
-                  <h3 className="font-heading font-semibold text-lg text-[#E8ECF8]">
-                    Practical AI/ML & Engineering
-                  </h3>
+                  <div>
+                    <h3 className="font-heading font-bold text-lg md:text-xl text-[#F8FAFC]">
+                      Applied AI/ML &amp; Systems Architecture
+                    </h3>
+                    <span className="text-xs font-mono text-[#94A3B8]">
+                      Practical Problem Solving with Generative AI
+                    </span>
+                  </div>
                 </div>
-                <p className="text-sm md:text-base text-[#8C97B5] leading-relaxed">
+
+                <p className="text-sm md:text-base text-[#94A3B8] leading-relaxed font-sans">
                   {profileData.summary}
                 </p>
+
+                <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-[rgba(148,163,184,0.12)]">
+                  <div className="flex items-start gap-2.5 text-xs text-[#94A3B8]">
+                    <CheckCircle2 className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />
+                    <span>Hands-on building LLM apps using Python, FastAPI &amp; prompt design.</span>
+                  </div>
+                  <div className="flex items-start gap-2.5 text-xs text-[#94A3B8]">
+                    <CheckCircle2 className="w-4 h-4 text-[#22D3EE] shrink-0 mt-0.5" />
+                    <span>Real-world full-stack development with React, Node.js, and modern DBs.</span>
+                  </div>
+                </div>
               </div>
 
-              <div className="mt-6 pt-6 border-t border-[#1E2A4A] flex flex-wrap items-center gap-3">
-                <div className="flex items-center gap-2 text-xs font-mono text-[#8C97B5]">
-                  <MapPin className="w-4 h-4 text-[#5B8CFF]" />
+              <div className="mt-6 pt-5 border-t border-[rgba(148,163,184,0.12)] flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+                <div className="flex items-center gap-2 text-[#94A3B8]">
+                  <MapPin className="w-4 h-4 text-[#FF9900]" />
                   <span>{profileData.location}</span>
                 </div>
-                <div className="h-3 w-[1px] bg-[#1E2A4A]" />
-                <div className="text-xs font-mono text-[#34D399] flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-[#34D399]" />
-                  <span>~10 Mos Combined Experience</span>
+                <div className="text-[#34D399] flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#34D399]/10 border border-[#34D399]/25">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#34D399]" />
+                  <span>~10 Mos Industry Experience</span>
                 </div>
               </div>
             </GlassCard>
           </Reveal>
 
-          {/* Tile 2: Currently Working On (Span 2 cols on lg) */}
+          {/* Tile 2: Currently Working On */}
           <Reveal
             direction="up"
             delay={0.2}
-            className="md:col-span-1 lg:col-span-2"
+            className="md:col-span-2 lg:col-span-1"
           >
             <GlassCard
               elevated
-              className="p-6 md:p-8 h-full flex flex-col justify-between border-[#2F6BFF]/30 bg-[#101935]/90"
+              className="p-6 md:p-8 h-full flex flex-col justify-between border-[#FF9900]/30 bg-[#111319]"
               interactive
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2">
-                    <div className="p-2 rounded-lg bg-[#2F6BFF]/15 border border-[#2F6BFF]/30">
-                      <Bot className="w-5 h-5 text-[#5B8CFF]" />
+                    <div className="p-2 rounded-lg bg-[#FF9900]/15 border border-[#FF9900]/30 text-[#FF9900]">
+                      <Bot className="w-4.5 h-4.5" />
                     </div>
-                    <span className="text-xs font-mono uppercase tracking-wider text-[#5B8CFF]">
-                      Current Focus
+                    <span className="text-xs font-mono uppercase tracking-wider text-[#FF9900]">
+                      Active Role
                     </span>
                   </div>
                   <Badge variant="success" dot size="sm">
-                    Active
+                    In Progress
                   </Badge>
                 </div>
-                <h3 className="font-heading font-bold text-lg text-[#E8ECF8] mb-2">
-                  Sales Automation & LLM Workflows
+
+                <h3 className="font-heading font-bold text-lg text-[#F8FAFC] mb-2">
+                  Sales Automation &amp; LLMs
                 </h3>
-                <p className="text-sm text-[#8C97B5] leading-relaxed">
+
+                <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed font-sans">
                   {profileData.currentlyWorkingOn}
                 </p>
+
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#08090C] text-[#FF9900] border border-[rgba(255,255,255,0.08)]">
+                    FastAPI
+                  </span>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#08090C] text-[#22D3EE] border border-[rgba(255,255,255,0.08)]">
+                    Supabase
+                  </span>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-[#08090C] text-[#34D399] border border-[rgba(255,255,255,0.08)]">
+                    Lead Scoring
+                  </span>
+                </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-[#1E2A4A] flex items-center gap-2">
-                <span className="text-xs font-mono text-[#8C97B5]">Role:</span>
-                <span className="text-xs font-medium text-[#E8ECF8]">
-                  AI/ML Intern at Saubhagyam Web Pvt. Ltd.
-                </span>
+              <div className="mt-6 pt-4 border-t border-[rgba(148,163,184,0.12)] flex items-center justify-between text-xs font-mono text-[#94A3B8]">
+                <span>Company</span>
+                <span className="font-medium text-[#F8FAFC]">Saubhagyam Web Pvt. Ltd.</span>
               </div>
             </GlassCard>
           </Reveal>
 
-          {/* Tile 3: Education Summary */}
+          {/* Tile 3: Academic Foundation (Span 2 cols on lg) */}
           <Reveal
             direction="up"
             delay={0.3}
@@ -113,34 +141,44 @@ export function About() {
           >
             <GlassCard className="p-6 md:p-8 h-full flex flex-col justify-between" interactive>
               <div>
-                <div className="flex items-center gap-2.5 text-[#8B5CF6] mb-4">
-                  <div className="p-2 rounded-lg bg-[#8B5CF6]/10 border border-[#8B5CF6]/20">
-                    <GraduationCap className="w-5 h-5 text-[#8B5CF6]" />
+                <div className="flex items-center gap-3 text-[#F8FAFC] mb-4">
+                  <div className="p-2.5 rounded-xl bg-[#FF9900]/15 border border-[#FF9900]/30 text-[#FF9900]">
+                    <GraduationCap className="w-5 h-5" />
                   </div>
-                  <h3 className="font-heading font-semibold text-lg text-[#E8ECF8]">
-                    Academic Foundation
-                  </h3>
+                  <div>
+                    <h3 className="font-heading font-bold text-lg text-[#F8FAFC]">
+                      Academic Foundation &amp; Computer Science
+                    </h3>
+                    <span className="text-xs font-mono text-[#94A3B8]">
+                      Rigorous coursework in Data Structures, Algorithms &amp; AI
+                    </span>
+                  </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {educationData.map((edu) => (
                     <div
                       key={edu.id}
-                      className="p-3.5 rounded-xl bg-[#05070F]/60 border border-[#1E2A4A]"
+                      className="p-4 rounded-xl bg-[#0B1120]/70 border border-[rgba(148,163,184,0.12)] flex flex-col justify-between"
                     >
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
-                        <h4 className="font-heading font-medium text-sm text-[#E8ECF8]">
-                          {edu.degree}
-                        </h4>
-                        <span className="text-xs font-mono text-[#5B8CFF]">
-                          {edu.period}
-                        </span>
+                      <div>
+                        <div className="flex items-center justify-between gap-1 mb-1.5">
+                          <h4 className="font-heading font-bold text-sm text-[#F8FAFC]">
+                            {edu.degree}
+                          </h4>
+                          <span className="text-[11px] font-mono text-[#FF9900] shrink-0">
+                            {edu.period}
+                          </span>
+                        </div>
+                        <p className="text-xs text-[#94A3B8] font-sans">{edu.institution}</p>
                       </div>
-                      <p className="text-xs text-[#8C97B5]">{edu.institution}</p>
+
                       {edu.scoreDetails && (
-                        <p className="text-[11px] font-mono text-[#34D399] mt-1.5">
-                          {edu.scoreDetails}
-                        </p>
+                        <div className="mt-3 pt-2.5 border-t border-[rgba(148,163,184,0.08)]">
+                          <p className="text-[11px] font-mono text-[#34D399]">
+                            {edu.scoreDetails}
+                          </p>
+                        </div>
                       )}
                     </div>
                   ))}
@@ -149,7 +187,7 @@ export function About() {
             </GlassCard>
           </Reveal>
 
-          {/* Tile 4: Core Interests */}
+          {/* Tile 4: Multilingual Intelligence (Span 1 col on lg) */}
           <Reveal
             direction="up"
             delay={0.4}
@@ -157,55 +195,34 @@ export function About() {
           >
             <GlassCard className="p-6 h-full flex flex-col justify-between" interactive>
               <div>
-                <div className="flex items-center gap-2 text-[#22D3EE] mb-4">
-                  <div className="p-2 rounded-lg bg-[#22D3EE]/10 border border-[#22D3EE]/20">
-                    <Compass className="w-5 h-5 text-[#22D3EE]" />
+                <div className="flex items-center gap-2.5 text-[#22D3EE] mb-4">
+                  <div className="p-2 rounded-lg bg-[#22D3EE]/10 border border-[#22D3EE]/25 text-[#22D3EE]">
+                    <Languages className="w-4.5 h-4.5" />
                   </div>
-                  <h3 className="font-heading font-semibold text-base text-[#E8ECF8]">
-                    Areas of Interest
+                  <h3 className="font-heading font-bold text-base text-[#F8FAFC]">
+                    Multilingual NLP
                   </h3>
                 </div>
-                <div className="flex flex-col gap-2">
-                  {profileData.interests.map((interest) => (
-                    <div
-                      key={interest}
-                      className="px-3 py-2 rounded-lg bg-[#101935]/60 border border-[#1E2A4A] text-xs font-mono text-[#E8ECF8] flex items-center gap-2"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#22D3EE]" />
-                      <span>{interest}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </GlassCard>
-          </Reveal>
 
-          {/* Tile 5: Multilingual Capabilities */}
-          <Reveal
-            direction="up"
-            delay={0.5}
-            className="md:col-span-1 lg:col-span-1"
-          >
-            <GlassCard className="p-6 h-full flex flex-col justify-between" interactive>
-              <div>
-                <div className="flex items-center gap-2 text-[#5B8CFF] mb-4">
-                  <div className="p-2 rounded-lg bg-[#2F6BFF]/10 border border-[#2F6BFF]/20">
-                    <Languages className="w-5 h-5 text-[#5B8CFF]" />
-                  </div>
-                  <h3 className="font-heading font-semibold text-base text-[#E8ECF8]">
-                    Languages
-                  </h3>
-                </div>
-                <p className="text-xs text-[#8C97B5] mb-3 leading-relaxed">
-                  Fluent in regional & global languages, vital for multilingual NLP & conversational agents:
+                <p className="text-xs text-[#94A3B8] mb-4 leading-relaxed font-sans">
+                  Fluency in regional and national languages enabled building the
+                  multilingual B2C AI sales assistant with catalog-aligned responses:
                 </p>
-                <div className="flex flex-wrap gap-1.5">
+
+                <div className="flex flex-wrap gap-2">
                   {profileData.languages.map((lang) => (
-                    <Badge key={lang} variant="primary" size="sm">
+                    <Badge key={lang} variant="cyan" size="sm">
                       {lang}
                     </Badge>
                   ))}
+                  <Badge variant="default" size="sm">
+                    Hinglish (Colloquial)
+                  </Badge>
                 </div>
+              </div>
+
+              <div className="mt-4 pt-3 border-t border-[rgba(148,163,184,0.12)] text-[11px] font-mono text-[#64748B]">
+                Regional AI Conversational Systems
               </div>
             </GlassCard>
           </Reveal>

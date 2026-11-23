@@ -1,13 +1,13 @@
 import React from "react";
-import { cn } from "@/lib/utils";
+import { Reveal } from "./Reveal";
 
 interface SectionHeadingProps {
   eyebrow?: string;
   title: string;
   highlight?: string;
   description?: string;
-  align?: "left" | "center";
   className?: string;
+  centered?: boolean;
 }
 
 export function SectionHeading({
@@ -15,33 +15,36 @@ export function SectionHeading({
   title,
   highlight,
   description,
-  align = "center",
-  className,
+  className = "",
+  centered = true,
 }: SectionHeadingProps) {
   return (
     <div
-      className={cn(
-        "mb-12 md:mb-16",
-        align === "center" ? "text-center mx-auto max-w-3xl" : "text-left max-w-3xl",
-        className
-      )}
+      className={`mb-12 md:mb-16 ${
+        centered ? "text-center max-w-3xl mx-auto" : "max-w-2xl"
+      } ${className}`}
     >
       {eyebrow && (
-        <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-[#101935] border border-[#1E2A4A] text-xs font-mono text-[#5B8CFF] uppercase tracking-wider">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#5B8CFF]" />
-          {eyebrow}
-        </div>
+        <Reveal direction="down">
+          <div className="text-xs font-mono uppercase tracking-[0.2em] text-[#FF9900] mb-3">
+            — {eyebrow} —
+          </div>
+        </Reveal>
       )}
-      <h2 className="text-fluid-h2 font-heading font-bold text-[#E8ECF8] tracking-tight">
-        {title}{" "}
-        {highlight && (
-          <span className="gradient-text inline-block">{highlight}</span>
-        )}
-      </h2>
+
+      <Reveal direction="up" delay={0.05}>
+        <h2 className="text-fluid-h2 font-heading font-extrabold text-[#FFFFFF] tracking-tight">
+          {title}{" "}
+          {highlight && <span className="text-[#FF9900]">{highlight}</span>}
+        </h2>
+      </Reveal>
+
       {description && (
-        <p className="mt-4 text-base md:text-lg text-[#8C97B5] leading-relaxed">
-          {description}
-        </p>
+        <Reveal direction="up" delay={0.1}>
+          <p className="mt-3.5 text-sm sm:text-base text-[#94A3B8] leading-relaxed font-sans font-normal">
+            {description}
+          </p>
+        </Reveal>
       )}
     </div>
   );

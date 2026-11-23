@@ -14,10 +14,10 @@ export function FeaturedProjects() {
     <section id="projects" className="py-20 md:py-28 relative scroll-mt-20">
       <Container>
         <SectionHeading
-          eyebrow="Portfolio Highlights"
+          eyebrow="Engineered Systems"
           title="Featured"
           highlight="Projects"
-          description="Production-tested LLM workflows, multilingual conversational agents, and full-stack platforms."
+          description="Production-tested LLM workflows, multilingual conversational agents, and full-stack software systems."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -39,7 +39,7 @@ export function FeaturedProjects() {
             href="/projects"
             rightIcon={<ArrowRight className="w-4 h-4" />}
           >
-            Explore All Projects & Prototypes
+            Explore All Projects & Architecture
           </Button>
         </div>
       </Container>

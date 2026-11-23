@@ -43,8 +43,8 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
       />
 
       {filteredProjects.length === 0 ? (
-        <div className="text-center py-16 px-4 rounded-2xl bg-[#0A1020] border border-[#1E2A4A]">
-          <p className="text-[#8C97B5] text-sm">
+        <div className="text-center py-16 px-4 rounded-2xl bg-[#111827] border border-[#1E2A4A]">
+          <p className="text-[#94A3B8] text-sm">
             No projects found in this category.
           </p>
         </div>

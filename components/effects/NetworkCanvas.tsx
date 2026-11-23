@@ -15,11 +15,9 @@ export function NetworkCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
-    // Skip on mobile or if reduced motion to save CPU and battery
-    if (window.innerWidth < 768) return;
-
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mediaQuery.matches) return;
+    // Respect reduced motion
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -28,121 +26,85 @@ export function NetworkCanvas() {
     if (!ctx) return;
 
     let animationFrameId: number;
-    let isVisible = true;
-    let width = 0;
-    let height = 0;
-
-    const colors = ["#2F6BFF", "#5B8CFF", "#8B5CF6", "#22D3EE"];
-    let nodes: Node[] = [];
-
-    const initNodes = () => {
-      nodes = [];
-      const count = 50;
-      for (let i = 0; i < count; i++) {
-        nodes.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          radius: Math.random() * 1.8 + 1,
-          color: colors[Math.floor(Math.random() * colors.length)],
-        });
-      }
-    };
+    let width = (canvas.width = canvas.parentElement?.clientWidth || window.innerWidth);
+    let height = (canvas.height = canvas.parentElement?.clientHeight || 650);
 
     const handleResize = () => {
-      if (!canvas) return;
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      width = canvas.parentElement?.clientWidth || window.innerWidth;
-      height = canvas.parentElement?.clientHeight || window.innerHeight;
-
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
-
-      ctx.scale(dpr, dpr);
-      initNodes();
+      if (!canvas || !canvas.parentElement) return;
+      width = canvas.width = canvas.parentElement.clientWidth;
+      height = canvas.height = canvas.parentElement.clientHeight;
     };
 
-    handleResize();
     window.addEventListener("resize", handleResize);
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          isVisible = entry.isIntersecting;
-        });
-      },
-      { threshold: 0.05 }
-    );
-    observer.observe(canvas);
+    const colors = ["#8B5CF6", "#A78BFA", "#22D3EE", "#94A3B8"];
+    const nodeCount = Math.min(Math.floor((width * height) / 16000), 45);
+    const nodes: Node[] = [];
 
-    const handleVisibilityChange = () => {
-      isVisible = !document.hidden;
-    };
-    document.addEventListener("visibilitychange", handleVisibilityChange);
+    for (let i = 0; i < nodeCount; i++) {
+      nodes.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35,
+        radius: Math.random() * 1.5 + 1,
+        color: colors[Math.floor(Math.random() * colors.length)],
+      });
+    }
+
+    const maxDistance = 110;
 
     const render = () => {
-      if (isVisible && ctx) {
-        ctx.clearRect(0, 0, width, height);
-        const connectionDistance = 110;
-        const count = nodes.length;
+      ctx.clearRect(0, 0, width, height);
 
-        for (let i = 0; i < count; i++) {
-          for (let j = i + 1; j < count; j++) {
-            const dx = nodes[i].x - nodes[j].x;
-            const dy = nodes[i].y - nodes[j].y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
+      // Draw subtle connections
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
 
-            if (dist < connectionDistance) {
-              const alpha = (1 - dist / connectionDistance) * 0.2;
-              ctx.strokeStyle = `rgba(91, 140, 255, ${alpha})`;
-              ctx.lineWidth = 0.7;
-              ctx.beginPath();
-              ctx.moveTo(nodes[i].x, nodes[i].y);
-              ctx.lineTo(nodes[j].x, nodes[j].y);
-              ctx.stroke();
-            }
+          if (dist < maxDistance) {
+            const alpha = (1 - dist / maxDistance) * 0.12;
+            ctx.strokeStyle = `rgba(139, 92, 246, ${alpha})`;
+            ctx.lineWidth = 0.75;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
           }
         }
+      }
 
-        for (let i = 0; i < count; i++) {
-          const node = nodes[i];
-          node.x += node.vx;
-          node.y += node.vy;
+      // Draw and gently float nodes
+      for (const node of nodes) {
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+        ctx.fillStyle = node.color;
+        ctx.fill();
 
-          if (node.x < 0 || node.x > width) node.vx *= -1;
-          if (node.y < 0 || node.y > height) node.vy *= -1;
+        node.x += node.vx;
+        node.y += node.vy;
 
-          ctx.fillStyle = node.color;
-          ctx.beginPath();
-          ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-          ctx.fill();
-        }
+        if (node.x < 0 || node.x > width) node.vx *= -1;
+        if (node.y < 0 || node.y > height) node.vy *= -1;
       }
 
       animationFrameId = requestAnimationFrame(render);
     };
 
-    // Defer start slightly so initial paint completes smoothly
-    const timeoutId = setTimeout(() => {
-      animationFrameId = requestAnimationFrame(render);
-    }, 100);
+    render();
 
     return () => {
-      clearTimeout(timeoutId);
-      cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", handleResize);
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-      observer.disconnect();
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none opacity-40 z-0 hidden md:block"
+      className="absolute inset-0 w-full h-full pointer-events-none opacity-40"
       aria-hidden="true"
     />
   );

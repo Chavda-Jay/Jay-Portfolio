@@ -22,20 +22,20 @@ export function Footer() {
   ];
 
   return (
-    <footer className="w-full border-t border-[#1E2A4A] bg-[#05070F] text-[#8C97B5] py-12 md:py-16 mt-20 relative">
+    <footer className="w-full border-t border-[rgba(148,163,184,0.12)] bg-[#0B1120] text-[#94A3B8] py-12 md:py-16 mt-20 relative">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-[#1E2A4A]/60">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-[rgba(148,163,184,0.08)]">
           {/* Brand Col */}
           <div className="md:col-span-2 space-y-4">
             <Link href="/" className="inline-flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#2F6BFF] to-[#8B5CF6] flex items-center justify-center font-heading font-bold text-white text-sm">
+              <div className="w-8 h-8 rounded-lg bg-[#151C2C] border border-[rgba(148,163,184,0.18)] flex items-center justify-center font-heading font-extrabold text-[#8B5CF6] text-sm shadow-sm">
                 JC
               </div>
-              <span className="font-heading font-bold text-lg text-[#E8ECF8]">
+              <span className="font-heading font-bold text-lg text-[#F8FAFC]">
                 {profileData.name}
               </span>
             </Link>
-            <p className="text-sm text-[#8C97B5] max-w-md leading-relaxed">
+            <p className="text-sm text-[#94A3B8] max-w-md leading-relaxed font-sans">
               {profileData.title} specializing in building production-ready LLM
               applications, prompt engineering, and intelligent full-stack
               systems.
@@ -46,40 +46,40 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"
-                className="p-2.5 rounded-xl bg-[#0A1020] border border-[#1E2A4A] text-[#8C97B5] hover:text-[#5B8CFF] hover:border-[#2F6BFF]/40 transition-colors"
+                className="p-2.5 rounded-xl bg-[#151C2C] border border-[rgba(148,163,184,0.15)] text-[#94A3B8] hover:text-[#F8FAFC] hover:border-[#8B5CF6]/50 transition-colors"
               >
-                <GithubIcon className="w-4 h-4" />
+                <GithubIcon className="w-4 h-4 text-[#F8FAFC]" />
               </a>
               <a
                 href={profileData.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
-                className="p-2.5 rounded-xl bg-[#0A1020] border border-[#1E2A4A] text-[#8C97B5] hover:text-[#5B8CFF] hover:border-[#2F6BFF]/40 transition-colors"
+                className="p-2.5 rounded-xl bg-[#151C2C] border border-[rgba(148,163,184,0.15)] text-[#94A3B8] hover:text-[#22D3EE] hover:border-[#22D3EE]/50 transition-colors"
               >
-                <LinkedinIcon className="w-4 h-4" />
+                <LinkedinIcon className="w-4 h-4 text-[#F8FAFC]" />
               </a>
               <a
-                href={profileData.socials.email}
+                href={`mailto:${profileData.email}`}
                 aria-label="Send Email"
-                className="p-2.5 rounded-xl bg-[#0A1020] border border-[#1E2A4A] text-[#8C97B5] hover:text-[#5B8CFF] hover:border-[#2F6BFF]/40 transition-colors"
+                className="p-2.5 rounded-xl bg-[#151C2C] border border-[rgba(148,163,184,0.15)] text-[#94A3B8] hover:text-[#34D399] hover:border-[#34D399]/50 transition-colors"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-4 h-4 text-[#F8FAFC]" />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-3">
-            <h4 className="font-heading font-semibold text-sm text-[#E8ECF8] uppercase tracking-wider">
+            <h4 className="font-heading font-semibold text-sm text-[#F8FAFC] uppercase tracking-wider">
               Navigation
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm font-sans">
               {navLinks.slice(0, 3).map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="hover:text-[#5B8CFF] transition-colors"
+                    className="hover:text-[#8B5CF6] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -89,15 +89,15 @@ export function Footer() {
           </div>
 
           <div className="space-y-3">
-            <h4 className="font-heading font-semibold text-sm text-[#E8ECF8] uppercase tracking-wider">
+            <h4 className="font-heading font-semibold text-sm text-[#F8FAFC] uppercase tracking-wider">
               Explore
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm font-sans">
               {navLinks.slice(3).map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="hover:text-[#5B8CFF] transition-colors"
+                    className="hover:text-[#8B5CF6] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -106,7 +106,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/projects"
-                  className="hover:text-[#5B8CFF] transition-colors"
+                  className="hover:text-[#22D3EE] transition-colors"
                 >
                   All Projects
                 </Link>
@@ -116,11 +116,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8C97B5]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#64748B] font-sans">
           <p>© 2026 Jay Chavda. All rights reserved.</p>
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0A1020] border border-[#1E2A4A] hover:border-[#5B8CFF]/40 text-[#8C97B5] hover:text-[#E8ECF8] transition-all"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#151C2C] border border-[rgba(148,163,184,0.12)] hover:border-[#8B5CF6]/40 text-[#94A3B8] hover:text-[#F8FAFC] transition-all font-mono"
             aria-label="Back to top"
           >
             <span>Back to top</span>

@@ -2,39 +2,39 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, FileText } from "lucide-react";
 import { Container } from "./Container";
 import { Button } from "@/ui/Button";
 import { MobileNav } from "./MobileNav";
-import { cn } from "@/lib/utils";
-
-const NAV_ITEMS = [
-  { label: "About", href: "/#about" },
-  { label: "Skills", href: "/#skills" },
-  { label: "Experience", href: "/#experience" },
-  { label: "Projects", href: "/#projects" },
-  { label: "Education", href: "/#education" },
-  { label: "Contact", href: "/#contact" },
-];
+import { Menu } from "lucide-react";
 
 interface NavbarProps {
   hasResume?: boolean;
 }
 
+const NAV_ITEMS = [
+  { label: "Home", href: "/#", sectionId: "hero" },
+  { label: "About", href: "/#about", sectionId: "about" },
+  { label: "Skills", href: "/#skills", sectionId: "skills" },
+  { label: "Experience", href: "/#experience", sectionId: "experience" },
+  { label: "Projects", href: "/#projects", sectionId: "projects" },
+  { label: "Education", href: "/#education", sectionId: "education" },
+  { label: "Contact", href: "/#contact", sectionId: "contact" },
+];
+
 export function Navbar({ hasResume = false }: NavbarProps) {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [activeSection, setActiveSection] = useState<string>("");
+  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
-    const sections = ["about", "skills", "experience", "projects", "education", "contact"];
+    // IntersectionObserver scroll-spy without layout thrashing
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -43,11 +43,15 @@ export function Navbar({ hasResume = false }: NavbarProps) {
           }
         });
       },
-      { threshold: 0.2, rootMargin: "-80px 0px -40% 0px" }
+      {
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0,
+      }
     );
 
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
+    NAV_ITEMS.forEach((item) => {
+      if (!item.sectionId) return;
+      const el = document.getElementById(item.sectionId);
       if (el) observer.observe(el);
     });
 
@@ -60,86 +64,72 @@ export function Navbar({ hasResume = false }: NavbarProps) {
   return (
     <>
       <header
-        className={cn(
-          "sticky top-0 z-40 w-full transition-all duration-300",
-          isScrolled
-            ? "bg-[#05070F]/85 backdrop-blur-md border-b border-[#1E2A4A]/80 py-3 shadow-lg shadow-[#05070F]/40"
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          scrolled
+            ? "bg-[#08090C]/90 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.6)] py-3.5"
             : "bg-transparent py-5"
-        )}
+        }`}
       >
         <Container className="flex items-center justify-between">
           {/* Logo / Brandmark */}
           <Link
             href="/"
-            className="flex items-center gap-3 group outline-none focus-visible:ring-2 focus-visible:ring-[#5B8CFF] rounded-lg p-1"
+            className="group flex items-center gap-2.5 outline-none focus-visible:ring-2 focus-visible:ring-[#FF9900] rounded-lg"
+            aria-label="Jay Chavda Home"
           >
-            <div className="relative w-9 h-9 rounded-xl bg-gradient-to-tr from-[#2F6BFF] to-[#8B5CF6] flex items-center justify-center font-heading font-bold text-white text-base shadow-md shadow-[#2F6BFF]/25 group-hover:scale-105 transition-transform duration-200">
+            {/* Amber brand glyph matching reference */}
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#FF9900] to-[#E68A00] flex items-center justify-center font-heading font-extrabold text-[#08090C] text-sm shadow-[0_0_15px_rgba(255,153,0,0.4)]">
               JC
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-[#22D3EE] border-2 border-[#05070F]" />
             </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-bold text-base text-[#E8ECF8] tracking-tight group-hover:text-white transition-colors">
-                Jay Chavda
-              </span>
-              <span className="text-[11px] font-mono text-[#8C97B5] -mt-0.5 tracking-tight">
-                AI/ML Engineer
-              </span>
-            </div>
+            <span className="font-heading font-bold text-base text-white tracking-tight uppercase group-hover:text-[#FF9900] transition-colors">
+              Jay Chavda
+            </span>
           </Link>
 
-          {/* Desktop Nav Items */}
-          <nav className="hidden md:flex items-center gap-1 bg-[#0A1020]/80 p-1.5 rounded-full border border-[#1E2A4A]/80 backdrop-blur-md">
+          {/* Desktop Navigation Links (matching DEVFUSION style) */}
+          <nav
+            aria-label="Main Navigation"
+            className="hidden lg:flex items-center gap-6"
+          >
             {NAV_ITEMS.map((item) => {
-              const sectionId = item.href.split("#")[1];
-              const isActive = activeSection === sectionId;
+              const isActive = activeSection === item.sectionId;
               return (
                 <Link
-                  key={item.href}
+                  key={item.label}
                   href={item.href}
-                  className={cn(
-                    "relative px-4 py-1.5 rounded-full text-xs font-medium transition-all duration-200",
+                  className={`text-xs font-mono uppercase tracking-wider transition-colors outline-none focus-visible:text-[#FF9900] relative py-1 ${
                     isActive
-                      ? "text-[#E8ECF8] bg-[#1E2A4A]/90 font-semibold shadow-sm"
-                      : "text-[#8C97B5] hover:text-[#E8ECF8] hover:bg-[#101935]/50"
-                  )}
+                      ? "text-[#FF9900] font-semibold"
+                      : "text-[#94A3B8] hover:text-white"
+                  }`}
                 >
                   {item.label}
                   {isActive && (
-                    <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#5B8CFF]" />
+                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#FF9900] rounded-full" />
                   )}
                 </Link>
               );
             })}
           </nav>
 
-          {/* Desktop Action Buttons */}
-          <div className="hidden md:flex items-center gap-3">
-            {hasResume && (
-              <Button
-                variant="outline"
-                size="sm"
-                href="/resume/Jay_Chavda_Resume.pdf"
-                external
-                leftIcon={<FileText className="w-3.5 h-3.5 text-[#5B8CFF]" />}
-              >
-                Resume
-              </Button>
-            )}
+          {/* Action CTA: Let's Talk button */}
+          <div className="hidden sm:flex items-center gap-3">
             <Button
-              variant="primary"
+              variant="outline"
               size="sm"
               href="/#contact"
+              className="border-white/[0.18] hover:border-[#FF9900] text-xs font-mono uppercase tracking-wider"
             >
-              Contact
+              Let&apos;s Talk
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open navigation menu"
-              className="p-2 rounded-xl text-[#8C97B5] hover:text-[#E8ECF8] hover:bg-[#101935] border border-[#1E2A4A] focus:outline-none focus:ring-2 focus:ring-[#5B8CFF]"
+              className="p-2 rounded-xl text-[#94A3B8] hover:text-white hover:bg-[#111319] border border-white/[0.08] focus:outline-none focus:ring-2 focus:ring-[#FF9900]"
             >
               <Menu className="w-5 h-5" />
             </button>
@@ -147,16 +137,14 @@ export function Navbar({ hasResume = false }: NavbarProps) {
         </Container>
       </header>
 
-      {/* Mobile Drawer (Only rendered when opened) */}
-      {mobileMenuOpen && (
-        <MobileNav
-          isOpen={mobileMenuOpen}
-          onClose={() => setMobileMenuOpen(false)}
-          items={NAV_ITEMS}
-          activeSection={activeSection}
-          hasResume={hasResume}
-        />
-      )}
+      {/* Mobile Navigation Drawer */}
+      <MobileNav
+        isOpen={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+        items={NAV_ITEMS}
+        activeSection={activeSection}
+        hasResume={hasResume}
+      />
     </>
   );
 }

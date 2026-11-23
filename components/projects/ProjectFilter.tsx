@@ -29,7 +29,7 @@ export function ProjectFilter({
     <div
       role="tablist"
       aria-label="Filter projects by category"
-      className="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-[#0A1020]/90 border border-[#1E2A4A] backdrop-blur-md max-w-fit mx-auto"
+      className="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-[#151C2C]/90 border border-[rgba(148,163,184,0.12)] backdrop-blur-md max-w-fit mx-auto"
     >
       {CATEGORIES.map((cat) => {
         const isActive = activeCategory === cat;
@@ -42,10 +42,10 @@ export function ProjectFilter({
             aria-selected={isActive}
             onClick={() => onSelectCategory(cat)}
             className={cn(
-              "px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-[#5B8CFF] flex items-center gap-2",
+              "px-4 py-2 rounded-xl text-xs sm:text-sm font-heading font-medium transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-[#8B5CF6] flex items-center gap-2",
               isActive
-                ? "bg-gradient-to-r from-[#2F6BFF] to-[#8B5CF6] text-white shadow-md shadow-[#2F6BFF]/20 font-semibold"
-                : "text-[#8C97B5] hover:text-[#E8ECF8] hover:bg-[#101935]"
+                ? "bg-[#8B5CF6] text-white shadow-md shadow-[#8B5CF6]/30 font-semibold"
+                : "text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#0B1120]"
             )}
           >
             <span>{cat}</span>
@@ -54,8 +54,8 @@ export function ProjectFilter({
                 className={cn(
                   "px-1.5 py-0.5 rounded-md text-[10px] font-mono",
                   isActive
-                    ? "bg-white/20 text-white"
-                    : "bg-[#1E2A4A] text-[#8C97B5]"
+                    ? "bg-white/20 text-white font-semibold"
+                    : "bg-[#0B1120] text-[#94A3B8] border border-[rgba(148,163,184,0.12)]"
                 )}
               >
                 {count}

@@ -6,25 +6,28 @@ import "./globals.css";
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jaychavda.dev";
 
 export const viewport: Viewport = {
-  themeColor: "#05070F",
+  themeColor: "#08090C",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -122,10 +125,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-[#05070F] text-[#E8ECF8] font-sans antialiased selection:bg-[#2F6BFF] selection:text-white">
+      <body className="min-h-screen bg-[#08090C] text-[#FFFFFF] font-sans antialiased selection:bg-[#FF9900]/30 selection:text-white">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#2F6BFF] text-white rounded-md font-medium outline-none ring-2 ring-[#5B8CFF]"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#FF9900] text-[#08090C] font-bold rounded-md outline-none ring-2 ring-[#FF9900]"
         >
           Skip to content
         </a>

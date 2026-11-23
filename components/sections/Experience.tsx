@@ -80,20 +80,20 @@ export function Experience() {
           eyebrow="Career Timeline"
           title="Professional"
           highlight="Experience"
-          description="Nearly 10 months of combined hands-on industry work spanning AI/ML engineering, LLM integration, and MERN full-stack development."
+          description="Nearly 10 months of combined hands-on industry work spanning AI/ML engineering, LLM integration, and full-stack software development."
         />
 
         <div ref={containerRef} className="relative max-w-4xl mx-auto mt-12">
           {/* Background vertical track */}
           <div
-            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-[#1E2A4A] -translate-x-1/2"
+            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-[rgba(148,163,184,0.12)] -translate-x-1/2"
             aria-hidden="true"
           />
 
           {/* GSAP Animated active progress line */}
           <div
             ref={lineRef}
-            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#2F6BFF] via-[#5B8CFF] to-[#8B5CF6] -translate-x-1/2 shadow-[0_0_12px_#2F6BFF]"
+            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#8B5CF6] via-[#A78BFA] to-[#22D3EE] -translate-x-1/2 shadow-[0_0_12px_rgba(139,92,246,0.5)]"
             aria-hidden="true"
           />
 
@@ -111,10 +111,10 @@ export function Experience() {
                 >
                   {/* Center Node Marker */}
                   <div
-                    className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#05070F] border-2 border-[#2F6BFF] flex items-center justify-center z-20 shadow-[0_0_15px_rgba(47,107,255,0.5)] mt-1"
+                    className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#0B1120] border-2 border-[#8B5CF6] flex items-center justify-center z-20 shadow-[0_0_15px_rgba(139,92,246,0.4)] mt-1"
                     aria-hidden="true"
                   >
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#5B8CFF]" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#22D3EE]" />
                   </div>
 
                   {/* Card Container */}
@@ -125,7 +125,11 @@ export function Experience() {
                     >
                       <GlassCard
                         elevated={index === 0}
-                        className="p-6 md:p-8"
+                        className={`p-6 md:p-8 ${
+                          index === 0
+                            ? "border-[rgba(139,92,246,0.3)] bg-[#151C2C]"
+                            : ""
+                        }`}
                         interactive
                       >
                         {/* Header */}
@@ -137,37 +141,37 @@ export function Experience() {
                           >
                             {exp.type}
                           </Badge>
-                          <div className="flex items-center gap-1.5 text-xs font-mono text-[#8C97B5]">
-                            <Calendar className="w-3.5 h-3.5 text-[#5B8CFF]" />
+                          <div className="flex items-center gap-1.5 text-xs font-mono text-[#94A3B8]">
+                            <Calendar className="w-3.5 h-3.5 text-[#22D3EE]" />
                             <span>{exp.period}</span>
                           </div>
                         </div>
 
-                        <h3 className="font-heading font-bold text-lg md:text-xl text-[#E8ECF8] mt-1">
+                        <h3 className="font-heading font-bold text-lg md:text-xl text-[#F8FAFC] mt-1">
                           {exp.role}
                         </h3>
 
-                        <div className="flex items-center gap-2 text-sm text-[#5B8CFF] font-medium mb-4">
+                        <div className="flex items-center gap-2 text-sm text-[#8B5CF6] font-medium mb-4">
                           <Briefcase className="w-4 h-4" />
                           <span>{exp.company}</span>
                         </div>
 
                         {/* Bullet Highlights */}
-                        <ul className="space-y-2.5 text-sm text-[#8C97B5]">
+                        <ul className="space-y-2.5 text-sm text-[#94A3B8]">
                           {exp.highlights.map((highlight, hIdx) => (
                             <li key={hIdx} className="flex items-start gap-2.5">
                               <CheckCircle2 className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />
-                              <span className="leading-relaxed">{highlight}</span>
+                              <span className="leading-relaxed font-sans">{highlight}</span>
                             </li>
                           ))}
                         </ul>
 
-                        {/* Technology Chips */}
-                        <div className="mt-6 pt-4 border-t border-[#1E2A4A] flex flex-wrap gap-1.5">
+                        {/* Technology Chips in JetBrains Mono */}
+                        <div className="mt-6 pt-4 border-t border-[rgba(148,163,184,0.12)] flex flex-wrap gap-1.5">
                           {exp.technologies.map((tech) => (
                             <span
                               key={tech}
-                              className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#101935] text-[#8C97B5] border border-[#1E2A4A]"
+                              className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#0B1120] text-[#94A3B8] border border-[rgba(148,163,184,0.12)]"
                             >
                               {tech}
                             </span>

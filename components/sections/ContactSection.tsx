@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 
 import React, { useState } from "react";
 import { Container } from "@/layout/Container";
@@ -132,10 +132,10 @@ export function ContactSection() {
             <Reveal direction="left">
               <GlassCard className="p-6 md:p-8 space-y-6" elevated>
                 <div>
-                  <h3 className="font-heading font-bold text-xl text-[#E8ECF8] mb-2">
+                  <h3 className="font-heading font-bold text-xl text-[#F8FAFC] mb-2">
                     Contact Information
                   </h3>
-                  <p className="text-sm text-[#8C97B5] leading-relaxed">
+                  <p className="text-sm text-[#94A3B8] leading-relaxed font-sans">
                     Available for AI/ML Engineer, Generative AI Developer, and
                     Full-Stack roles. Let&apos;s discuss how my experience in LLM
                     orchestration and FastAPI backends can contribute to your team.
@@ -146,31 +146,31 @@ export function ContactSection() {
                   {/* Email */}
                   <a
                     href={`mailto:${profileData.email}`}
-                    className="flex items-center gap-3.5 p-3 rounded-xl bg-[#05070F]/60 border border-[#1E2A4A] hover:border-[#5B8CFF]/50 transition-colors group"
+                    className="flex items-center gap-3.5 p-3 rounded-xl bg-[#0B1120] border border-[rgba(148,163,184,0.12)] hover:border-[#8B5CF6]/50 transition-colors group"
                   >
-                    <div className="p-2.5 rounded-lg bg-[#2F6BFF]/10 text-[#5B8CFF] group-hover:bg-[#2F6BFF]/20 transition-colors">
+                    <div className="p-2.5 rounded-lg bg-[#8B5CF6]/15 text-[#8B5CF6] group-hover:bg-[#8B5CF6]/25 transition-colors">
                       <Mail className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="text-[11px] font-mono uppercase tracking-wider text-[#8C97B5] block">
+                      <span className="text-[11px] font-mono uppercase tracking-wider text-[#64748B] block">
                         Direct Email
                       </span>
-                      <span className="text-sm font-medium text-[#E8ECF8] group-hover:text-[#5B8CFF] transition-colors">
+                      <span className="text-sm font-medium text-[#F8FAFC] group-hover:text-[#8B5CF6] transition-colors">
                         {profileData.email}
                       </span>
                     </div>
                   </a>
 
                   {/* Location */}
-                  <div className="flex items-center gap-3.5 p-3 rounded-xl bg-[#05070F]/60 border border-[#1E2A4A]">
+                  <div className="flex items-center gap-3.5 p-3 rounded-xl bg-[#0B1120] border border-[rgba(148,163,184,0.12)]">
                     <div className="p-2.5 rounded-lg bg-[#22D3EE]/10 text-[#22D3EE]">
                       <MapPin className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="text-[11px] font-mono uppercase tracking-wider text-[#8C97B5] block">
+                      <span className="text-[11px] font-mono uppercase tracking-wider text-[#64748B] block">
                         Location
                       </span>
-                      <span className="text-sm font-medium text-[#E8ECF8]">
+                      <span className="text-sm font-medium text-[#F8FAFC]">
                         {profileData.location}
                       </span>
                     </div>
@@ -178,8 +178,8 @@ export function ContactSection() {
                 </div>
 
                 {/* Social Profiles */}
-                <div className="pt-4 border-t border-[#1E2A4A]">
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#8C97B5] block mb-3">
+                <div className="pt-4 border-t border-[rgba(148,163,184,0.12)]">
+                  <span className="text-xs font-mono uppercase tracking-wider text-[#94A3B8] block mb-3">
                     Professional Profiles
                   </span>
                   <div className="flex items-center gap-3">
@@ -187,18 +187,18 @@ export function ContactSection() {
                       href={profileData.socials.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#101935] border border-[#1E2A4A] text-xs font-medium text-[#E8ECF8] hover:text-[#5B8CFF] hover:border-[#2F6BFF]/50 transition-colors"
+                      className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#0B1120] border border-[rgba(148,163,184,0.15)] text-xs font-medium text-[#F8FAFC] hover:text-[#8B5CF6] hover:border-[#8B5CF6]/50 transition-colors"
                     >
-                      <GithubIcon className="w-4 h-4" />
+                      <GithubIcon className="w-4 h-4 text-[#F8FAFC]" />
                       <span>GitHub</span>
                     </a>
                     <a
                       href={profileData.socials.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#101935] border border-[#1E2A4A] text-xs font-medium text-[#E8ECF8] hover:text-[#5B8CFF] hover:border-[#2F6BFF]/50 transition-colors"
+                      className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#0B1120] border border-[rgba(148,163,184,0.15)] text-xs font-medium text-[#F8FAFC] hover:text-[#22D3EE] hover:border-[#22D3EE]/50 transition-colors"
                     >
-                      <LinkedinIcon className="w-4 h-4" />
+                      <LinkedinIcon className="w-4 h-4 text-[#F8FAFC]" />
                       <span>LinkedIn</span>
                     </a>
                   </div>
@@ -211,10 +211,10 @@ export function ContactSection() {
           <div className="lg:col-span-3">
             <Reveal direction="right">
               <GlassCard className="p-6 md:p-8">
-                <h3 className="font-heading font-bold text-xl text-[#E8ECF8] mb-1">
+                <h3 className="font-heading font-bold text-xl text-[#F8FAFC] mb-1">
                   Send a Direct Message
                 </h3>
-                <p className="text-xs md:text-sm text-[#8C97B5] mb-6">
+                <p className="text-xs md:text-sm text-[#94A3B8] mb-6 font-sans">
                   Fill out the details below and I&apos;ll get back to you promptly.
                 </p>
 
@@ -227,7 +227,7 @@ export function ContactSection() {
                       <button
                         type="button"
                         onClick={() => setStatus("idle")}
-                        className="text-xs underline mt-2 text-[#E8ECF8] hover:text-white"
+                        className="text-xs underline mt-2 text-[#F8FAFC] hover:text-white"
                       >
                         Send another message
                       </button>
@@ -237,14 +237,14 @@ export function ContactSection() {
 
                 {/* Server Message / Fallback Notice */}
                 {serverMessage && status !== "success" && (
-                  <div className="mb-6 p-4 rounded-xl bg-[#2F6BFF]/10 border border-[#2F6BFF]/30 text-[#E8ECF8] flex items-start gap-3">
-                    <AlertCircle className="w-5 h-5 text-[#5B8CFF] shrink-0 mt-0.5" />
+                  <div className="mb-6 p-4 rounded-xl bg-[#8B5CF6]/10 border border-[#8B5CF6]/30 text-[#F8FAFC] flex items-start gap-3">
+                    <AlertCircle className="w-5 h-5 text-[#8B5CF6] shrink-0 mt-0.5" />
                     <div className="text-xs md:text-sm space-y-2">
                       <p>{serverMessage}</p>
                       {showFallbackMailto && (
                         <a
                           href={mailtoUrl}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#2F6BFF] text-white font-medium text-xs hover:bg-[#5B8CFF] transition-colors"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#8B5CF6] text-white font-medium text-xs hover:bg-[#7C3AED] transition-colors"
                         >
                           <span>Open in Mail Client</span>
                           <ExternalLink className="w-3.5 h-3.5" />
@@ -277,9 +277,9 @@ export function ContactSection() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-xs font-mono uppercase tracking-wider text-[#8C97B5] mb-1.5"
+                      className="block text-xs font-mono uppercase tracking-wider text-[#94A3B8] mb-1.5"
                     >
-                      Your Name <span className="text-[#5B8CFF]">*</span>
+                      Your Name <span className="text-[#8B5CF6]">*</span>
                     </label>
                     <input
                       type="text"
@@ -289,10 +289,10 @@ export function ContactSection() {
                       onChange={handleChange}
                       placeholder="e.g. Jane Doe"
                       disabled={status === "loading"}
-                      className={`w-full px-4 py-2.5 rounded-xl bg-[#05070F]/80 border text-[#E8ECF8] placeholder-[#8C97B5]/50 text-sm outline-none transition-colors focus:border-[#5B8CFF] focus:ring-1 focus:ring-[#5B8CFF] ${
+                      className={`w-full px-4 py-2.5 rounded-xl bg-[#0B1120] border text-[#F8FAFC] placeholder-[#94A3B8]/40 text-sm outline-none transition-colors focus:border-[#8B5CF6] focus:ring-1 focus:ring-[#8B5CF6] ${
                         fieldErrors.name
                           ? "border-red-500/80"
-                          : "border-[#1E2A4A]"
+                          : "border-[rgba(148,163,184,0.12)]"
                       }`}
                     />
                     {fieldErrors.name && (
@@ -306,9 +306,9 @@ export function ContactSection() {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-xs font-mono uppercase tracking-wider text-[#8C97B5] mb-1.5"
+                      className="block text-xs font-mono uppercase tracking-wider text-[#94A3B8] mb-1.5"
                     >
-                      Your Email <span className="text-[#5B8CFF]">*</span>
+                      Your Email <span className="text-[#8B5CF6]">*</span>
                     </label>
                     <input
                       type="email"
@@ -318,10 +318,10 @@ export function ContactSection() {
                       onChange={handleChange}
                       placeholder="e.g. jane@company.com"
                       disabled={status === "loading"}
-                      className={`w-full px-4 py-2.5 rounded-xl bg-[#05070F]/80 border text-[#E8ECF8] placeholder-[#8C97B5]/50 text-sm outline-none transition-colors focus:border-[#5B8CFF] focus:ring-1 focus:ring-[#5B8CFF] ${
+                      className={`w-full px-4 py-2.5 rounded-xl bg-[#0B1120] border text-[#F8FAFC] placeholder-[#94A3B8]/40 text-sm outline-none transition-colors focus:border-[#8B5CF6] focus:ring-1 focus:ring-[#8B5CF6] ${
                         fieldErrors.email
                           ? "border-red-500/80"
-                          : "border-[#1E2A4A]"
+                          : "border-[rgba(148,163,184,0.12)]"
                       }`}
                     />
                     {fieldErrors.email && (
@@ -335,9 +335,9 @@ export function ContactSection() {
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-xs font-mono uppercase tracking-wider text-[#8C97B5] mb-1.5"
+                      className="block text-xs font-mono uppercase tracking-wider text-[#94A3B8] mb-1.5"
                     >
-                      Your Message <span className="text-[#5B8CFF]">*</span>
+                      Your Message <span className="text-[#8B5CF6]">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -347,10 +347,10 @@ export function ContactSection() {
                       onChange={handleChange}
                       placeholder="Write your message or inquiry here..."
                       disabled={status === "loading"}
-                      className={`w-full px-4 py-2.5 rounded-xl bg-[#05070F]/80 border text-[#E8ECF8] placeholder-[#8C97B5]/50 text-sm outline-none transition-colors focus:border-[#5B8CFF] focus:ring-1 focus:ring-[#5B8CFF] resize-none ${
+                      className={`w-full px-4 py-2.5 rounded-xl bg-[#0B1120] border text-[#F8FAFC] placeholder-[#94A3B8]/40 text-sm outline-none transition-colors focus:border-[#8B5CF6] focus:ring-1 focus:ring-[#8B5CF6] resize-none ${
                         fieldErrors.message
                           ? "border-red-500/80"
-                          : "border-[#1E2A4A]"
+                          : "border-[rgba(148,163,184,0.12)]"
                       }`}
                     />
                     {fieldErrors.message && (
@@ -375,7 +375,7 @@ export function ContactSection() {
 
                     <a
                       href={mailtoUrl}
-                      className="text-xs font-mono text-[#8C97B5] hover:text-[#5B8CFF] transition-colors"
+                      className="text-xs font-mono text-[#94A3B8] hover:text-[#8B5CF6] transition-colors"
                     >
                       Prefer email client? Click here
                     </a>
