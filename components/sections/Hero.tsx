@@ -189,9 +189,9 @@ export function Hero({ hasResume = false }: HeroProps) {
               </div>
 
               {/* Main Cutout Portrait: Completely transparent background, natural editorial integration */}
-              <div className="relative z-10 w-full max-w-[500px] sm:max-w-[560px] xl:max-w-[620px] aspect-[637/576] flex items-end justify-center select-none">
+              <div className="relative z-10 w-full max-w-[500px] sm:max-w-[560px] xl:max-w-[620px] aspect-[635/570] flex items-end justify-center select-none">
                 <Image
-                  src="/images/jay-chavda-hero.png"
+                  src="/images/jay-chavda-portrait.png"
                   alt="Jay Chavda - AI/ML Engineer & Generative AI Developer"
                   fill
                   priority
@@ -200,7 +200,7 @@ export function Hero({ hasResume = false }: HeroProps) {
                 />
 
                 {/* Natural bottom fade into page background */}
-                <div className="absolute -bottom-1 inset-x-0 h-20 bg-gradient-to-t from-[#08090C] via-[#08090C]/80 to-transparent pointer-events-none" />
+                <div className="absolute -bottom-1 inset-x-0 h-14 bg-gradient-to-t from-[#08090C] via-[#08090C]/60 to-transparent pointer-events-none" />
               </div>
 
               {/* Floating Technical Badge 1: Top Right - FastAPI */}
