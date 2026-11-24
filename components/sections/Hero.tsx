@@ -191,7 +191,7 @@ export function Hero({ hasResume = false }: HeroProps) {
               {/* Main Cutout Portrait: Completely transparent background, natural editorial integration */}
               <div className="relative z-10 w-full max-w-[500px] sm:max-w-[560px] xl:max-w-[620px] aspect-[637/576] flex items-end justify-center select-none">
                 <Image
-                  src="/images/jay-chavda-hd.png"
+                  src="/images/jay-chavda-seamless.png"
                   alt="Jay Chavda - AI/ML Engineer & Generative AI Developer"
                   fill
                   priority
@@ -220,7 +220,7 @@ export function Hero({ hasResume = false }: HeroProps) {
               </div>
 
               {/* Floating Technical Badge 3: Bottom Left - Groq LLaMA 70B */}
-              <div className="absolute bottom-24 -left-1 sm:-left-4 lg:-left-4 z-20 animate-float-1 group">
+              <div className="absolute bottom-10 -left-2 sm:-left-5 lg:-left-6 z-20 animate-float-1 group">
                 <div className="relative px-3.5 py-1.5 rounded-xl bg-[#111319]/90 border border-white/[0.14] group-hover:border-[#FF9900]/60 backdrop-blur-md text-xs font-mono text-white flex items-center gap-2 shadow-xl shadow-black/70 transition-all">
                   <Sparkles className="w-3.5 h-3.5 text-[#FF9900]" />
                   <span className="font-semibold">LLaMA 3.3 70B</span>
