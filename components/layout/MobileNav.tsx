@@ -65,7 +65,7 @@ export function MobileNav({
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-[rgba(148,163,184,0.12)]">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#151C2C] border border-[rgba(148,163,184,0.18)] flex items-center justify-center font-heading font-extrabold text-[#8B5CF6] text-xs">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#FF9900] to-[#E68A00] flex items-center justify-center font-heading font-extrabold text-[#08090C] text-xs shadow-[0_0_12px_rgba(255,153,0,0.4)]">
                     JC
                   </div>
                   <span className="font-heading font-semibold text-[#F8FAFC]">
@@ -91,13 +91,13 @@ export function MobileNav({
                       onClick={onClose}
                       className={`px-4 py-3 rounded-xl text-base font-heading font-medium transition-colors flex items-center justify-between ${
                         isActive
-                          ? "bg-[#8B5CF6]/15 text-[#F8FAFC] border border-[#8B5CF6]/30 font-semibold"
-                          : "text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#151C2C]"
+                          ? "bg-[#FF9900]/15 text-[#F8FAFC] border border-[#FF9900]/30 font-semibold"
+                          : "text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#111319]"
                       }`}
                     >
                       <span>{item.label}</span>
                       {isActive && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#FF9900]" />
                       )}
                     </Link>
                   );
@@ -111,10 +111,10 @@ export function MobileNav({
                   href="/resume/Jay_Chavda_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#151C2C] text-[#F8FAFC] border border-[rgba(148,163,184,0.18)] hover:border-[#8B5CF6]/40 transition-colors text-sm font-heading font-semibold"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#111319] text-[#F8FAFC] border border-white/[0.14] hover:border-[#FF9900]/60 transition-colors text-sm font-heading font-semibold"
                 >
-                  <FileText className="w-4 h-4 text-[#8B5CF6]" />
-                  <span>View Resume</span>
+                  <FileText className="w-4 h-4 text-[#FF9900]" />
+                  <span>Download Resume</span>
                 </a>
               )}
               <Button

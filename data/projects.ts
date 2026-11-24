@@ -3,7 +3,7 @@ import { Project } from "@/types";
 export const projectsData: Project[] = [
   {
     slug: "b2c-ai-sales-agent",
-    name: "B2C AI Sales Agent",
+    name: "AI Sales & Marketing Agent",
     shortDescription:
       "Multilingual LLM sales assistant with catalog- and policy-based responses in Hindi, Hinglish, Gujarati, and English, featuring 7-factor lead scoring and automated follow-ups.",
     category: "Generative AI",
@@ -27,13 +27,12 @@ export const projectsData: Project[] = [
       "Automated follow-up workflows, customer retention triggers, and daily reporting",
     ],
     stack: [
-      "Python",
+      "React/Next.js",
       "FastAPI",
+      "Python",
+      "Supabase",
       "PostgreSQL",
-      "Next.js",
-      "Groq LLM API",
-      "Prompt Engineering",
-      "JWT",
+      "Groq LLM",
     ],
     screenshots: [],
     github: undefined,

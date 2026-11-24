@@ -1,189 +1,112 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Container } from "@/layout/Container";
-import { SectionHeading } from "@/ui/SectionHeading";
-import { GlassCard } from "@/ui/GlassCard";
-import { Badge } from "@/ui/Badge";
 import { Reveal } from "@/ui/Reveal";
-import { experienceData } from "@/data/experience";
-import { Briefcase, Calendar, CheckCircle2 } from "lucide-react";
+import { Briefcase, Code2 } from "lucide-react";
+
+interface TimelineItem {
+  id: string;
+  role: string;
+  company: string;
+  period: string;
+  description: string;
+  icon: React.ElementType;
+}
+
+const EXPERIENCES: TimelineItem[] = [
+  {
+    id: "saubhagyam",
+    role: "AI/ML Intern",
+    company: "Saubhagyam Web Pvt. Ltd.",
+    period: "June 2026 – Present",
+    description: "Working on AI/ML solutions, Generative AI and intelligent applications.",
+    icon: Briefcase,
+  },
+  {
+    id: "grownited",
+    role: "MERN Full Stack Developer",
+    company: "Grownited Private Limited",
+    period: "Jan 2026 – Apr 2026",
+    description: "Developed web applications using React, Node.js and MongoDB.",
+    icon: Code2,
+  },
+];
 
 export function Experience() {
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const lineRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    // Check reduced motion
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    if (prefersReducedMotion) {
-      if (lineRef.current) {
-        lineRef.current.style.height = "100%";
-      }
-      return;
-    }
-
-    let ctx: { revert: () => void } | null = null;
-    let observer: IntersectionObserver | null = null;
-
-    if (containerRef.current) {
-      observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            observer?.disconnect();
-            // Dynamically load GSAP and ScrollTrigger only when needed
-            Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(
-              ([{ default: gsap }, { ScrollTrigger }]) => {
-                gsap.registerPlugin(ScrollTrigger);
-
-                if (containerRef.current && lineRef.current) {
-                  ctx = gsap.context(() => {
-                    gsap.fromTo(
-                      lineRef.current,
-                      { scaleY: 0, transformOrigin: "top center" },
-                      {
-                        scaleY: 1,
-                        ease: "none",
-                        scrollTrigger: {
-                          trigger: containerRef.current,
-                          start: "top 70%",
-                          end: "bottom 80%",
-                          scrub: 0.5,
-                        },
-                      }
-                    );
-                  }, containerRef);
-                }
-              }
-            );
-          }
-        },
-        { rootMargin: "150px" }
-      );
-
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      if (observer) observer.disconnect();
-      if (ctx) ctx.revert();
-    };
-  }, []);
-
   return (
-    <section id="experience" className="py-20 md:py-28 relative scroll-mt-20">
+    <section id="experience" className="py-16 md:py-20 relative scroll-mt-20 border-t border-white/[0.06]">
       <Container>
-        <SectionHeading
-          eyebrow="Career Timeline"
-          title="Professional"
-          highlight="Experience"
-          description="Nearly 10 months of combined hands-on industry work spanning AI/ML engineering, LLM integration, and full-stack software development."
-        />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          
+          {/* Left Column: Heading & Subtitle */}
+          <div className="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-4">
+            <Reveal delay={0.1}>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight leading-tight">
+                Professional
+                <br />
+                Experience
+              </h2>
+            </Reveal>
 
-        <div ref={containerRef} className="relative max-w-4xl mx-auto mt-12">
-          {/* Background vertical track */}
-          <div
-            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-[rgba(148,163,184,0.12)] -translate-x-1/2"
-            aria-hidden="true"
-          />
-
-          {/* GSAP Animated active progress line */}
-          <div
-            ref={lineRef}
-            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#8B5CF6] via-[#A78BFA] to-[#22D3EE] -translate-x-1/2 shadow-[0_0_12px_rgba(139,92,246,0.5)]"
-            aria-hidden="true"
-          />
-
-          {/* Timeline Nodes */}
-          <div className="space-y-12">
-            {experienceData.map((exp, index) => {
-              const isEven = index % 2 === 0;
-
-              return (
-                <div
-                  key={exp.id}
-                  className={`relative flex flex-col md:flex-row items-start ${
-                    isEven ? "md:flex-row-reverse" : ""
-                  }`}
-                >
-                  {/* Center Node Marker */}
-                  <div
-                    className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#0B1120] border-2 border-[#8B5CF6] flex items-center justify-center z-20 shadow-[0_0_15px_rgba(139,92,246,0.4)] mt-1"
-                    aria-hidden="true"
-                  >
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#22D3EE]" />
-                  </div>
-
-                  {/* Card Container */}
-                  <div className="ml-12 md:ml-0 md:w-1/2 md:px-8 w-full">
-                    <Reveal
-                      direction={isEven ? "left" : "right"}
-                      delay={index * 0.1}
-                    >
-                      <GlassCard
-                        elevated={index === 0}
-                        className={`p-6 md:p-8 ${
-                          index === 0
-                            ? "border-[rgba(139,92,246,0.3)] bg-[#151C2C]"
-                            : ""
-                        }`}
-                        interactive
-                      >
-                        {/* Header */}
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                          <Badge
-                            variant={index === 0 ? "primary" : "default"}
-                            dot={index === 0}
-                            size="sm"
-                          >
-                            {exp.type}
-                          </Badge>
-                          <div className="flex items-center gap-1.5 text-xs font-mono text-[#94A3B8]">
-                            <Calendar className="w-3.5 h-3.5 text-[#22D3EE]" />
-                            <span>{exp.period}</span>
-                          </div>
-                        </div>
-
-                        <h3 className="font-heading font-bold text-lg md:text-xl text-[#F8FAFC] mt-1">
-                          {exp.role}
-                        </h3>
-
-                        <div className="flex items-center gap-2 text-sm text-[#8B5CF6] font-medium mb-4">
-                          <Briefcase className="w-4 h-4" />
-                          <span>{exp.company}</span>
-                        </div>
-
-                        {/* Bullet Highlights */}
-                        <ul className="space-y-2.5 text-sm text-[#94A3B8]">
-                          {exp.highlights.map((highlight, hIdx) => (
-                            <li key={hIdx} className="flex items-start gap-2.5">
-                              <CheckCircle2 className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />
-                              <span className="leading-relaxed font-sans">{highlight}</span>
-                            </li>
-                          ))}
-                        </ul>
-
-                        {/* Technology Chips in JetBrains Mono */}
-                        <div className="mt-6 pt-4 border-t border-[rgba(148,163,184,0.12)] flex flex-wrap gap-1.5">
-                          {exp.technologies.map((tech) => (
-                            <span
-                              key={tech}
-                              className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-[#0B1120] text-[#94A3B8] border border-[rgba(148,163,184,0.12)]"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </GlassCard>
-                    </Reveal>
-                  </div>
-                </div>
-              );
-            })}
+            <Reveal delay={0.18}>
+              <p className="mt-3 text-sm font-sans text-[#FF9900]">
+                My work journey
+              </p>
+            </Reveal>
           </div>
+
+          {/* Right Column: Connected Timeline (Mockup 1:1) */}
+          <div className="lg:col-span-8">
+            <div className="relative pl-6 sm:pl-8 space-y-8">
+              
+              {/* Vertical Amber Line */}
+              <div
+                className="absolute left-[7px] sm:left-[9px] top-3 bottom-3 w-[2px] bg-gradient-to-b from-[#FF9900] via-[#FF9900]/70 to-[#FF9900]/20"
+                aria-hidden="true"
+              />
+
+              {EXPERIENCES.map((exp, idx) => {
+                const Icon = exp.icon;
+                return (
+                  <Reveal key={exp.id} delay={0.15 + idx * 0.1} direction="up">
+                    <div className="relative flex items-start gap-4 sm:gap-5 group">
+                      
+                      {/* Orange Dot Marker on the line */}
+                      <div
+                        className="absolute -left-[27px] sm:-left-[31px] top-2.5 w-3 h-3 rounded-full bg-[#FF9900] ring-4 ring-[#08090C] shadow-[0_0_10px_#FF9900]"
+                        aria-hidden="true"
+                      />
+
+                      {/* Icon in Rounded Box */}
+                      <div className="w-11 h-11 rounded-xl bg-[#111319] border border-white/[0.1] text-[#FF9900] flex items-center justify-center shrink-0 group-hover:border-[#FF9900]/50 transition-colors shadow-sm">
+                        <Icon className="w-5 h-5" />
+                      </div>
+
+                      {/* Content Card */}
+                      <div className="flex-1 min-w-0 pt-0.5">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-1">
+                          <h3 className="font-heading font-bold text-base sm:text-lg text-white group-hover:text-[#FF9900] transition-colors truncate">
+                            {exp.role} <span className="text-[#94A3B8] font-normal">— {exp.company}</span>
+                          </h3>
+                          <span className="text-xs font-mono text-[#94A3B8] shrink-0">
+                            {exp.period}
+                          </span>
+                        </div>
+
+                        <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed font-sans">
+                          {exp.description}
+                        </p>
+                      </div>
+
+                    </div>
+                  </Reveal>
+                );
+              })}
+
+            </div>
+          </div>
+
         </div>
       </Container>
     </section>
