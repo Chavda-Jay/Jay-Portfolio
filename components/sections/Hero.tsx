@@ -189,18 +189,18 @@ export function Hero({ hasResume = false }: HeroProps) {
               </div>
 
               {/* Main Cutout Portrait: Completely transparent background, natural editorial integration */}
-              <div className="relative z-10 w-full max-w-[500px] sm:max-w-[560px] xl:max-w-[620px] aspect-[635/570] flex items-end justify-center select-none">
+              <div className="relative z-10 w-full max-w-[500px] sm:max-w-[560px] xl:max-w-[620px] aspect-[637/576] flex items-end justify-center select-none">
                 <Image
-                  src="/images/jay-chavda-portrait.png"
+                  src="/images/jay-chavda-hd.png"
                   alt="Jay Chavda - AI/ML Engineer & Generative AI Developer"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 620px"
-                  className="object-contain object-bottom filter contrast-[1.05] brightness-[1.02] drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)]"
+                  className="object-contain object-bottom filter contrast-[1.04] brightness-[1.02] drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)]"
                 />
 
-                {/* Natural bottom fade into page background */}
-                <div className="absolute -bottom-1 inset-x-0 h-14 bg-gradient-to-t from-[#08090C] via-[#08090C]/60 to-transparent pointer-events-none" />
+                {/* Natural bottom edge fade to merge table cleanly into background */}
+                <div className="absolute -bottom-0.5 inset-x-0 h-6 bg-gradient-to-t from-[#08090C] to-transparent pointer-events-none" />
               </div>
 
               {/* Floating Technical Badge 1: Top Right - FastAPI */}
