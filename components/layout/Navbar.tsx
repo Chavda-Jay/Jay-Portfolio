@@ -89,7 +89,7 @@ export function Navbar({ hasResume = false }: NavbarProps) {
           {/* Desktop Navigation Links */}
           <nav
             aria-label="Main Navigation"
-            className="hidden lg:flex items-center gap-1.5 bg-[#111319]/80 border border-white/[0.08] px-3 py-1.5 rounded-full shadow-inner backdrop-blur-md"
+            className="hidden lg:flex items-center gap-1 bg-[#111319]/90 border border-white/[0.12] px-2 py-1 rounded-full shadow-2xl backdrop-blur-xl"
           >
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.sectionId;
@@ -99,7 +99,7 @@ export function Navbar({ hasResume = false }: NavbarProps) {
                   href={item.href}
                   className={`text-[13px] font-heading font-medium tracking-wide px-3.5 py-1.5 rounded-full transition-all duration-200 outline-none select-none ${
                     isActive
-                      ? "bg-[#FF9900] text-[#08090C] font-bold shadow-md shadow-[#FF9900]/30"
+                      ? "bg-[#FF9900] text-[#08090C] font-bold shadow-[0_2px_10px_rgba(255,153,0,0.35)]"
                       : "text-[#94A3B8] hover:text-white hover:bg-white/[0.08] active:scale-95"
                   }`}
                 >
@@ -115,7 +115,7 @@ export function Navbar({ hasResume = false }: NavbarProps) {
               variant="outline"
               size="sm"
               href="/#contact"
-              className="border-[#FF9900]/40 bg-[#FF9900]/10 hover:bg-[#FF9900] text-[#FF9900] hover:text-[#08090C] hover:border-[#FF9900] text-xs font-heading font-bold tracking-wide rounded-full px-5 py-2 transition-all shadow-sm"
+              className="border-white/[0.18] hover:border-[#FF9900] bg-white/[0.04] hover:bg-[#FF9900]/10 text-white hover:text-[#FF9900] text-xs font-heading font-semibold tracking-wide rounded-full px-5 py-2 transition-all shadow-sm"
             >
               Let&apos;s Talk
             </Button>

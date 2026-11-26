@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Download, Sparkles, Database } from "lucide-react";
+import { ArrowRight, Sparkles, Database } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/ui/Icons";
 import { Mail } from "lucide-react";
 import { Container } from "@/layout/Container";
@@ -15,8 +15,6 @@ interface HeroProps {
 }
 
 export function Hero({ hasResume = false }: HeroProps) {
-  const [expandedSkills, setExpandedSkills] = useState(false);
-
   return (
     <section id="hero" className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden">
       {/* Background warm amber glow directly behind the portrait area */}
@@ -75,7 +73,7 @@ export function Hero({ hasResume = false }: HeroProps) {
               </p>
             </Reveal>
 
-            {/* Tech Pills Row (Matching Mockup) */}
+            {/* Tech Pills Row (Sleek & Professional) */}
             <Reveal delay={0.4}>
               <div className="mt-6 flex flex-wrap items-center gap-2">
                 <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm">
@@ -94,52 +92,20 @@ export function Hero({ hasResume = false }: HeroProps) {
                   <span className="w-2 h-2 rounded-full bg-[#009688]" />
                   FastAPI
                 </span>
+                <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-[#A855F7]" />
+                  LLMs &amp; RAG
+                </span>
 
-                {/* Additional Expanded Skills */}
-                {expandedSkills && (
-                  <>
-                    <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm animate-in fade-in zoom-in-95 duration-200">
-                      <span className="w-2 h-2 rounded-full bg-[#47A248]" />
-                      MongoDB
-                    </span>
-                    <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm animate-in fade-in zoom-in-95 duration-200">
-                      <span className="w-2 h-2 rounded-full bg-[#336791]" />
-                      PostgreSQL
-                    </span>
-                    <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm animate-in fade-in zoom-in-95 duration-200">
-                      <span className="w-2 h-2 rounded-full bg-[#A855F7]" />
-                      LLMs &amp; RAG
-                    </span>
-                    <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm animate-in fade-in zoom-in-95 duration-200">
-                      <span className="w-2 h-2 rounded-full bg-[#2496ED]" />
-                      Docker
-                    </span>
-                  </>
-                )}
-
-                {/* Interactive Clickable Expander Button */}
-                <button
-                  type="button"
-                  onClick={() => setExpandedSkills(!expandedSkills)}
-                  className={`px-3 py-1 rounded-full text-xs font-mono transition-all cursor-pointer flex items-center gap-1.5 shadow-sm active:scale-95 ${
-                    expandedSkills
-                      ? "bg-[#FF9900]/15 text-[#FF9900] border border-[#FF9900]/40 font-semibold"
-                      : "bg-[#111319] hover:bg-[#FF9900]/15 text-[#94A3B8] hover:text-[#FF9900] border border-white/[0.12] hover:border-[#FF9900]/50"
-                  }`}
-                  aria-expanded={expandedSkills}
-                  aria-label={expandedSkills ? "Collapse extra skills" : "Expand extra skills"}
+                {/* Direct Link to Technical Skills Section */}
+                <Link
+                  href="/#skills"
+                  className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] hover:bg-[#FF9900]/15 text-[#94A3B8] hover:text-[#FF9900] border border-white/[0.12] hover:border-[#FF9900]/50 transition-all flex items-center gap-1.5 shadow-sm active:scale-95 group"
+                  title="Explore all technical skills in detail"
                 >
-                  <span>{expandedSkills ? "- Show less" : "+ 4 more"}</span>
-                </button>
-
-                {expandedSkills && (
-                  <Link
-                    href="/#skills"
-                    className="text-xs font-sans text-[#94A3B8] hover:text-[#FF9900] transition-colors ml-1 underline underline-offset-4"
-                  >
-                    View all 30+ skills →
-                  </Link>
-                )}
+                  <span>+ 30 more</span>
+                  <ArrowRight className="w-3 h-3 text-[#FF9900] group-hover:translate-x-0.5 transition-transform" />
+                </Link>
               </div>
             </Reveal>
 
@@ -159,10 +125,11 @@ export function Hero({ hasResume = false }: HeroProps) {
                     href="/resume/Jay_Chavda_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#111319] hover:bg-[#161822] text-white border border-white/[0.15] hover:border-[#FF9900]/60 transition-colors text-sm font-heading font-medium shadow-md"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#111319] hover:bg-[#161822] text-white border border-white/[0.15] hover:border-[#FF9900]/60 transition-all text-sm font-heading font-medium shadow-md hover:scale-105 active:scale-[0.98] group"
+                    aria-label="View Jay Chavda Resume"
                   >
-                    <span>Download Resume</span>
-                    <Download className="w-3.5 h-3.5 text-[#FF9900]" />
+                    <span>Resume</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-[#FF9900] -rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
                 )}
               </div>
