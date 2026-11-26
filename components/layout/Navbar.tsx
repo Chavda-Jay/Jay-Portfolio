@@ -66,8 +66,8 @@ export function Navbar({ hasResume = false }: NavbarProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-[#08090C]/90 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.6)] py-3.5"
-            : "bg-transparent py-5"
+            ? "bg-[#08090C]/98 backdrop-blur-2xl border-b border-white/[0.1] shadow-[0_8px_32px_rgba(0,0,0,0.85)] py-3.5"
+            : "bg-[#08090C]/85 backdrop-blur-md py-4.5 border-b border-transparent"
         }`}
       >
         <Container className="flex items-center justify-between">
@@ -78,7 +78,7 @@ export function Navbar({ hasResume = false }: NavbarProps) {
             aria-label="Jay Chavda Home"
           >
             {/* Amber brand glyph matching reference */}
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#FF9900] to-[#E68A00] flex items-center justify-center font-heading font-extrabold text-[#08090C] text-sm shadow-[0_0_15px_rgba(255,153,0,0.4)]">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#FF9900] to-[#E68A00] flex items-center justify-center font-heading font-bold text-[#08090C] text-sm shadow-[0_0_15px_rgba(255,153,0,0.4)]">
               JC
             </div>
             <span className="font-heading font-bold text-base text-white tracking-tight uppercase group-hover:text-[#FF9900] transition-colors">
@@ -86,7 +86,7 @@ export function Navbar({ hasResume = false }: NavbarProps) {
             </span>
           </Link>
 
-          {/* Desktop Navigation Links (matching DEVFUSION style) */}
+          {/* Desktop Navigation Links */}
           <nav
             aria-label="Main Navigation"
             className="hidden lg:flex items-center gap-6"
@@ -97,15 +97,15 @@ export function Navbar({ hasResume = false }: NavbarProps) {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`text-xs font-mono uppercase tracking-wider transition-colors outline-none focus-visible:text-[#FF9900] relative py-1 ${
+                  className={`text-[13px] font-heading font-medium tracking-wide transition-all outline-none focus-visible:text-[#FF9900] relative py-1 ${
                     isActive
-                      ? "text-[#FF9900] font-semibold"
+                      ? "text-[#FF9900] font-bold"
                       : "text-[#94A3B8] hover:text-white"
                   }`}
                 >
                   {item.label}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#FF9900] rounded-full" />
+                    <span className="absolute bottom-0 left-0.5 right-0.5 h-[2px] bg-[#FF9900] shadow-[0_0_8px_#FF9900] rounded-full" />
                   )}
                 </Link>
               );
@@ -118,7 +118,7 @@ export function Navbar({ hasResume = false }: NavbarProps) {
               variant="outline"
               size="sm"
               href="/#contact"
-              className="border-white/[0.18] hover:border-[#FF9900] text-xs font-mono uppercase tracking-wider"
+              className="border-[#FF9900]/40 bg-[#FF9900]/10 hover:bg-[#FF9900] text-[#FF9900] hover:text-[#08090C] hover:border-[#FF9900] text-xs font-heading font-bold tracking-wide rounded-full px-5 py-2 transition-all shadow-sm"
             >
               Let&apos;s Talk
             </Button>
