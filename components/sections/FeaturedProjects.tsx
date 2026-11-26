@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Container } from "@/layout/Container";
 import { Reveal } from "@/ui/Reveal";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 interface FeaturedProjectItem {
   slug: string;
@@ -23,6 +23,8 @@ const FEATURED_PROJECTS: FeaturedProjectItem[] = [
     description: "An AI practice platform that conducts real-time mock interviews across 6 tech stacks and grades answers with personalized improvement feedback.",
     tags: ["React", "FastAPI", "MongoDB"],
     schematicType: "interview",
+    liveDemo: "https://interview-prep-bot-chi.vercel.app",
+    github: "https://github.com/Chavda-Jay/interview-prep-bot",
   },
   {
     slug: "b2c-ai-sales-agent",
@@ -30,6 +32,8 @@ const FEATURED_PROJECTS: FeaturedProjectItem[] = [
     description: "A 24/7 multilingual sales chatbot that talks with customers in Hindi, Gujarati & English, explains products, and automatically highlights ready buyers.",
     tags: ["React", "FastAPI", "Supabase"],
     schematicType: "sales",
+    liveDemo: "https://ai-sales-agent-self.vercel.app",
+    github: "https://github.com/Chavda-Jay/AI-Sales-Agent",
   },
   {
     slug: "carscout",
@@ -37,6 +41,8 @@ const FEATURED_PROJECTS: FeaturedProjectItem[] = [
     description: "A complete online car buying & selling marketplace with verified vehicle listings, secure Razorpay checkout, and buyer/seller dashboards.",
     tags: ["React", "Node.js", "MongoDB"],
     schematicType: "car",
+    liveDemo: "https://car-scout-ten.vercel.app",
+    github: "https://github.com/Chavda-Jay/CarScout",
   },
 ];
 
@@ -135,6 +141,28 @@ export function FeaturedProjects() {
                     <p className="mt-2.5 text-xs sm:text-sm text-[#94A3B8] leading-relaxed font-sans font-normal">
                       {project.description}
                     </p>
+
+                    {/* Actions: Live Demo + Case Study */}
+                    <div className="mt-4 flex items-center justify-between gap-3 pt-2">
+                      {project.liveDemo && (
+                        <a
+                          href={project.liveDemo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FF9900]/15 hover:bg-[#FF9900] text-[#FF9900] hover:text-[#08090C] border border-[#FF9900]/40 transition-all text-xs font-mono font-medium group/btn shadow-sm"
+                        >
+                          <span>Live Demo</span>
+                          <ExternalLink className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform" />
+                        </a>
+                      )}
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className="inline-flex items-center gap-1.5 text-xs font-mono text-[#94A3B8] hover:text-white transition-colors ml-auto group/cs"
+                      >
+                        <span>Case Study</span>
+                        <ArrowRight className="w-3.5 h-3.5 text-[#FF9900] group-hover/cs:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
 

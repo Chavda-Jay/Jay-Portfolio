@@ -33,8 +33,8 @@ export const projectsData: Project[] = [
       "NLP",
     ],
     screenshots: [],
-    github: undefined,
-    liveDemo: undefined,
+    github: "https://github.com/Chavda-Jay/interview-prep-bot",
+    liveDemo: "https://interview-prep-bot-chi.vercel.app",
     order: 1,
   },
   {
@@ -68,8 +68,8 @@ export const projectsData: Project[] = [
       "Groq LLM",
     ],
     screenshots: [],
-    github: undefined,
-    liveDemo: undefined,
+    github: "https://github.com/Chavda-Jay/AI-Sales-Agent",
+    liveDemo: "https://ai-sales-agent-self.vercel.app",
     order: 2,
   },
   {
@@ -103,8 +103,8 @@ export const projectsData: Project[] = [
       "Razorpay",
     ],
     screenshots: [],
-    github: undefined,
-    liveDemo: undefined,
+    github: "https://github.com/Chavda-Jay/CarScout",
+    liveDemo: "https://car-scout-ten.vercel.app",
     order: 3,
   },
 ];
