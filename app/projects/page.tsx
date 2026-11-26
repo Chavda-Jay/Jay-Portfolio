@@ -41,13 +41,13 @@ export default function ProjectsPage() {
 
           {/* Page Header */}
           <div className="max-w-3xl mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-[#151C2C] border border-[rgba(148,163,184,0.12)] text-xs font-mono text-[#8B5CF6] uppercase tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-[#111319] border border-white/[0.1] text-xs font-mono text-[#FF9900] uppercase tracking-wider">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF9900]" />
               Work Archive
             </div>
-            <h1 className="text-fluid-h1 font-heading font-extrabold text-[#F8FAFC] tracking-tight">
+            <h1 className="text-fluid-h1 font-heading font-bold text-[#F8FAFC] tracking-tight">
               All Projects &amp;{" "}
-              <span className="gradient-text">Case Studies</span>
+              <span className="text-[#FF9900]">Case Studies</span>
             </h1>
             <p className="mt-4 text-base md:text-lg text-[#94A3B8] leading-relaxed font-sans">
               Explore hands-on LLM workflows, multilingual conversational
@@ -60,10 +60,10 @@ export default function ProjectsPage() {
           <ProjectGrid projects={projects} />
 
           {/* Back Home Link */}
-          <div className="mt-16 pt-8 border-t border-[rgba(148,163,184,0.12)]">
+          <div className="mt-16 pt-8 border-t border-white/[0.08]">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#8B5CF6] hover:underline font-heading"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#FF9900] hover:underline font-heading"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to home</span>

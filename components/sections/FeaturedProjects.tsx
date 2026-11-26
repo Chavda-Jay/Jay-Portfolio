@@ -23,7 +23,7 @@ const FEATURED_PROJECTS: FeaturedProjectItem[] = [
     description: "An AI practice platform that conducts real-time mock interviews across 6 tech stacks and grades answers with personalized improvement feedback.",
     tags: ["React", "FastAPI", "MongoDB"],
     schematicType: "interview",
-    liveDemo: "https://interview-prep-bot-chi.vercel.app",
+    liveDemo: "https://interview-prep-bot-lilac.vercel.app",
     github: "https://github.com/Chavda-Jay/interview-prep-bot",
   },
   {

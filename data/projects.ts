@@ -34,7 +34,7 @@ export const projectsData: Project[] = [
     ],
     screenshots: [],
     github: "https://github.com/Chavda-Jay/interview-prep-bot",
-    liveDemo: "https://interview-prep-bot-chi.vercel.app",
+    liveDemo: "https://interview-prep-bot-lilac.vercel.app",
     order: 1,
   },
   {
