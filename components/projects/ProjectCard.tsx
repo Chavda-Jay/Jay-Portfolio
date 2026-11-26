@@ -309,7 +309,7 @@ function ProjectVisualSchematic({ project }: { project: Project }) {
         {/* Bottom tags */}
         <div className="flex items-center justify-between text-[10px] text-[#64748B] pt-2 border-t border-white/[0.08]">
           <span>FastAPI Streaming</span>
-          <span className="text-[#22D3EE]">ChromaDB Vector Store</span>
+          <span className="text-[#34D399]">Render Live</span>
         </div>
       </div>
     );

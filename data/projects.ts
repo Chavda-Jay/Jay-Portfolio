@@ -211,6 +211,7 @@ export const projectsData: Project[] = [
     ],
     screenshots: [],
     github: "https://github.com/Chavda-Jay",
+    liveDemo: "https://saubhagyam-chatbot.onrender.com",
     order: 6,
   },
 ];
