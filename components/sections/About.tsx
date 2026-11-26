@@ -7,10 +7,10 @@ import { Reveal } from "@/ui/Reveal";
 import { ArrowRight, Hexagon, Check } from "lucide-react";
 
 const FOCUS_ITEMS = [
-  "Machine Learning & Deep Learning",
-  "Generative AI & LLMs",
-  "AI-Powered Applications",
-  "Full-Stack Development",
+  "Machine Learning & Deep Learning Models",
+  "Generative AI, RAG & LLM Workflows",
+  "High-Throughput Async Backend Engineering",
+  "Modern Full-Stack Web Development",
 ];
 
 export function About() {
@@ -19,34 +19,58 @@ export function About() {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
           
-          {/* Left Column: Who I Am (Mockup 1:1) */}
+          {/* Left Column: Professional Narrative */}
           <div className="md:col-span-7 flex flex-col items-start pr-0 md:pr-8">
             <Reveal delay={0.1}>
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#FF9900] mb-3">
                 <span className="w-2 h-2 rounded-full bg-[#FF9900]" />
-                <span>ABOUT ME</span>
+                <span>ENGINEERING PHILOSOPHY</span>
               </div>
             </Reveal>
 
             <Reveal delay={0.18}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white tracking-tight">
-                Who I Am
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white tracking-tight leading-tight">
+                Architecting Real-World AI &amp;{" "}
+                <span className="text-[#FF9900]">Scalable Systems</span>
               </h2>
             </Reveal>
 
             <Reveal delay={0.25}>
-              <p className="mt-5 text-sm sm:text-base text-[#94A3B8] leading-relaxed font-sans font-normal max-w-xl">
-                I&apos;m Jay Chavda, an AI/ML Engineer and Generative AI Developer, focused on building intelligent solutions that solve real-world problems with the power of Machine Learning and AI.
-              </p>
+              <div className="mt-5 space-y-3.5 text-sm sm:text-base text-[#CBD5E1] leading-relaxed font-sans font-normal max-w-xl">
+                <p>
+                  I am an <strong className="text-white font-semibold">AI/ML Engineer and Generative AI Developer</strong> with a Master of Computer Applications (MCA) and a relentless commitment to taking machine learning from prototype notebooks to high-performance, production-grade software.
+                </p>
+                <p className="text-[#94A3B8]">
+                  From architecting multilingual conversational agents and vector-indexed RAG pipelines to engineering low-latency FastAPI microservices, I bridge the gap between cutting-edge AI models and reliable, business-ready applications.
+                </p>
+              </div>
             </Reveal>
 
-            <Reveal delay={0.32}>
-              <div className="mt-7">
+            {/* Quick Stat Highlights */}
+            <Reveal delay={0.3}>
+              <div className="mt-6 flex flex-wrap items-center gap-2.5">
+                <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#CBD5E1] border border-white/[0.12] flex items-center gap-1.5 shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#34D399]" />
+                  MCA Graduate • 8.30 CGPA
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#CBD5E1] border border-white/[0.12] flex items-center gap-1.5 shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF9900]" />
+                  Generative AI &amp; RAG
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#CBD5E1] border border-white/[0.12] flex items-center gap-1.5 shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8]" />
+                  Full-Stack Architecture
+                </span>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.36}>
+              <div className="mt-8">
                 <Link
                   href="/#experience"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/20 hover:border-[#FF9900] text-white hover:text-[#FF9900] text-sm font-heading font-medium transition-all group"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/20 hover:border-[#FF9900] bg-white/[0.04] hover:bg-[#FF9900]/10 text-white hover:text-[#FF9900] text-sm font-heading font-medium transition-all group shadow-sm"
                 >
-                  <span>Learn More</span>
+                  <span>Explore Engineering Journey</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>

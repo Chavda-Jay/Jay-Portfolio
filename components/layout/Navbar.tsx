@@ -89,7 +89,7 @@ export function Navbar({ hasResume = false }: NavbarProps) {
           {/* Desktop Navigation Links */}
           <nav
             aria-label="Main Navigation"
-            className="hidden lg:flex items-center gap-6"
+            className="hidden lg:flex items-center gap-1.5 bg-[#111319]/80 border border-white/[0.08] px-3 py-1.5 rounded-full shadow-inner backdrop-blur-md"
           >
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.sectionId;
@@ -97,16 +97,13 @@ export function Navbar({ hasResume = false }: NavbarProps) {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`text-[13px] font-heading font-medium tracking-wide transition-all outline-none focus-visible:text-[#FF9900] relative py-1 ${
+                  className={`text-[13px] font-heading font-medium tracking-wide px-3.5 py-1.5 rounded-full transition-all duration-200 outline-none select-none ${
                     isActive
-                      ? "text-[#FF9900] font-bold"
-                      : "text-[#94A3B8] hover:text-white"
+                      ? "bg-[#FF9900] text-[#08090C] font-bold shadow-md shadow-[#FF9900]/30"
+                      : "text-[#94A3B8] hover:text-white hover:bg-white/[0.08] active:scale-95"
                   }`}
                 >
                   {item.label}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0.5 right-0.5 h-[2px] bg-[#FF9900] shadow-[0_0_8px_#FF9900] rounded-full" />
-                  )}
                 </Link>
               );
             })}

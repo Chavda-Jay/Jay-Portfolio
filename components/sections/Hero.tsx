@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Download, Sparkles, Database } from "lucide-react";
@@ -15,6 +15,8 @@ interface HeroProps {
 }
 
 export function Hero({ hasResume = false }: HeroProps) {
+  const [expandedSkills, setExpandedSkills] = useState(false);
+
   return (
     <section id="hero" className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden">
       {/* Background warm amber glow directly behind the portrait area */}
@@ -92,9 +94,52 @@ export function Hero({ hasResume = false }: HeroProps) {
                   <span className="w-2 h-2 rounded-full bg-[#009688]" />
                   FastAPI
                 </span>
-                <span className="px-2.5 py-1 rounded-full text-xs font-mono bg-[#111319]/80 text-[#94A3B8] border border-white/[0.08]">
-                  + 3 more
-                </span>
+
+                {/* Additional Expanded Skills */}
+                {expandedSkills && (
+                  <>
+                    <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm animate-in fade-in zoom-in-95 duration-200">
+                      <span className="w-2 h-2 rounded-full bg-[#47A248]" />
+                      MongoDB
+                    </span>
+                    <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm animate-in fade-in zoom-in-95 duration-200">
+                      <span className="w-2 h-2 rounded-full bg-[#336791]" />
+                      PostgreSQL
+                    </span>
+                    <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm animate-in fade-in zoom-in-95 duration-200">
+                      <span className="w-2 h-2 rounded-full bg-[#A855F7]" />
+                      LLMs &amp; RAG
+                    </span>
+                    <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm animate-in fade-in zoom-in-95 duration-200">
+                      <span className="w-2 h-2 rounded-full bg-[#2496ED]" />
+                      Docker
+                    </span>
+                  </>
+                )}
+
+                {/* Interactive Clickable Expander Button */}
+                <button
+                  type="button"
+                  onClick={() => setExpandedSkills(!expandedSkills)}
+                  className={`px-3 py-1 rounded-full text-xs font-mono transition-all cursor-pointer flex items-center gap-1.5 shadow-sm active:scale-95 ${
+                    expandedSkills
+                      ? "bg-[#FF9900]/15 text-[#FF9900] border border-[#FF9900]/40 font-semibold"
+                      : "bg-[#111319] hover:bg-[#FF9900]/15 text-[#94A3B8] hover:text-[#FF9900] border border-white/[0.12] hover:border-[#FF9900]/50"
+                  }`}
+                  aria-expanded={expandedSkills}
+                  aria-label={expandedSkills ? "Collapse extra skills" : "Expand extra skills"}
+                >
+                  <span>{expandedSkills ? "- Show less" : "+ 4 more"}</span>
+                </button>
+
+                {expandedSkills && (
+                  <Link
+                    href="/#skills"
+                    className="text-xs font-sans text-[#94A3B8] hover:text-[#FF9900] transition-colors ml-1 underline underline-offset-4"
+                  >
+                    View all 30+ skills →
+                  </Link>
+                )}
               </div>
             </Reveal>
 
