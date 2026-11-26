@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import { profileData } from "@/data/profile";
 import { JayAIChatbot } from "@/ui/JayAIChatbot";
+import { ScrollProgress } from "@/ui/ScrollProgress";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -127,6 +128,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-[#08090C] text-[#FFFFFF] font-sans antialiased selection:bg-[#FF9900]/30 selection:text-white">
+        <ScrollProgress />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-[#FF9900] text-[#08090C] font-bold rounded-md outline-none ring-2 ring-[#FF9900]"
