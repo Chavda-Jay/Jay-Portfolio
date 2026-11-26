@@ -2,8 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUp, Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/ui/Icons";
+import { ArrowUp } from "lucide-react";
+import { GithubIcon, LinkedinIcon, GmailIcon } from "@/ui/Icons";
 import { Container } from "./Container";
 import { profileData } from "@/data/profile";
 
@@ -46,25 +46,25 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub Profile"
-                className="p-2.5 rounded-xl bg-[#151C2C] border border-[rgba(148,163,184,0.15)] text-[#94A3B8] hover:text-[#F8FAFC] hover:border-[#8B5CF6]/50 transition-colors"
+                className="p-2.5 rounded-xl bg-[#111319] border border-white/[0.1] text-[#94A3B8] hover:text-white hover:border-white transition-colors"
               >
-                <GithubIcon className="w-4 h-4 text-[#F8FAFC]" />
+                <GithubIcon className="w-4 h-4" />
               </a>
               <a
                 href={profileData.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn Profile"
-                className="p-2.5 rounded-xl bg-[#151C2C] border border-[rgba(148,163,184,0.15)] text-[#94A3B8] hover:text-[#22D3EE] hover:border-[#22D3EE]/50 transition-colors"
+                className="p-2.5 rounded-xl bg-[#111319] border border-white/[0.1] text-[#94A3B8] hover:text-[#0A66C2] hover:border-[#0A66C2] transition-colors"
               >
-                <LinkedinIcon className="w-4 h-4 text-[#F8FAFC]" />
+                <LinkedinIcon className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${profileData.email}`}
                 aria-label="Send Email"
-                className="p-2.5 rounded-xl bg-[#151C2C] border border-[rgba(148,163,184,0.15)] text-[#94A3B8] hover:text-[#34D399] hover:border-[#34D399]/50 transition-colors"
+                className="p-2.5 rounded-xl bg-[#111319] border border-white/[0.1] text-[#94A3B8] hover:text-[#EA4335] hover:border-[#EA4335] transition-colors"
               >
-                <Mail className="w-4 h-4 text-[#F8FAFC]" />
+                <GmailIcon className="w-4 h-4" />
               </a>
             </div>
           </div>

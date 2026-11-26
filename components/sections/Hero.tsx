@@ -4,8 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Database } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/ui/Icons";
-import { Mail } from "lucide-react";
+import { GithubIcon, LinkedinIcon, GmailIcon } from "@/ui/Icons";
 import { Container } from "@/layout/Container";
 import { Reveal } from "@/ui/Reveal";
 import { profileData } from "@/data/profile";
@@ -135,38 +134,38 @@ export function Hero({ hasResume = false }: HeroProps) {
               </div>
             </Reveal>
 
-            {/* Social Icons Row (Matching Mockup) */}
+            {/* Social Icons Row (Authentic Brand Logos with Direct Account Redirection) */}
             <Reveal delay={0.52}>
               <div className="mt-7 flex items-center gap-3">
                 <a
                   href={profileData.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="LinkedIn Profile"
-                  title="Jay Chavda on LinkedIn"
-                  className="w-9 h-9 rounded-xl bg-[#111319] border border-white/[0.1] flex items-center justify-center text-[#94A3B8] hover:text-[#FF9900] hover:border-[#FF9900]/50 transition-all hover:-translate-y-0.5"
+                  aria-label="Jay Chavda LinkedIn Profile"
+                  title="Connect with Jay Chavda on LinkedIn"
+                  className="w-10 h-10 rounded-xl bg-[#111319] hover:bg-[#0A66C2]/15 border border-white/[0.12] hover:border-[#0A66C2] text-[#94A3B8] hover:text-[#0A66C2] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-md group"
                 >
-                  <LinkedinIcon className="w-4 h-4" />
+                  <LinkedinIcon className="w-5 h-5" />
                 </a>
 
                 <a
                   href={profileData.socials.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="GitHub Profile"
-                  title="Jay Chavda on GitHub"
-                  className="w-9 h-9 rounded-xl bg-[#111319] border border-white/[0.1] flex items-center justify-center text-[#94A3B8] hover:text-[#FF9900] hover:border-[#FF9900]/50 transition-all hover:-translate-y-0.5"
+                  aria-label="Jay Chavda GitHub Profile"
+                  title="View Jay Chavda on GitHub"
+                  className="w-10 h-10 rounded-xl bg-[#111319] hover:bg-white/10 border border-white/[0.12] hover:border-white text-[#94A3B8] hover:text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-md group"
                 >
-                  <GithubIcon className="w-4 h-4" />
+                  <GithubIcon className="w-5 h-5" />
                 </a>
 
                 <a
                   href={`mailto:${profileData.email}`}
-                  aria-label="Email Jay Chavda"
-                  title="Send Email"
-                  className="w-9 h-9 rounded-xl bg-[#111319] border border-white/[0.1] flex items-center justify-center text-[#94A3B8] hover:text-[#FF9900] hover:border-[#FF9900]/50 transition-all hover:-translate-y-0.5"
+                  aria-label="Email Jay Chavda directly"
+                  title={`Email Jay Chavda: ${profileData.email}`}
+                  className="w-10 h-10 rounded-xl bg-[#111319] hover:bg-[#EA4335]/15 border border-white/[0.12] hover:border-[#EA4335] text-[#94A3B8] hover:text-[#EA4335] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-md group"
                 >
-                  <Mail className="w-4 h-4" />
+                  <GmailIcon className="w-5 h-5" />
                 </a>
               </div>
             </Reveal>
