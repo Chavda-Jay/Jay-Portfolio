@@ -180,20 +180,155 @@ function ProjectVisualSchematic({ project }: { project: Project }) {
     );
   }
 
+  if (project.slug === "jamin24-ai-video-editor") {
+    return (
+      <div className="w-full h-full p-4 flex flex-col justify-between font-mono text-[11px] select-none">
+        {/* Top telemetry bar */}
+        <div className="flex items-center justify-between text-[#94A3B8] border-b border-white/10 pb-2">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-[#FF9900] animate-pulse" />
+            <span className="text-[#F8FAFC] font-semibold">Video Rendering Engine</span>
+          </div>
+          <span className="text-[10px] text-[#22D3EE] bg-[#22D3EE]/10 px-2 py-0.5 rounded border border-[#22D3EE]/25">
+            FFmpeg + OpenCV
+          </span>
+        </div>
+
+        {/* Video Editor Flow */}
+        <div className="my-auto space-y-2 py-1">
+          <div className="grid grid-cols-3 gap-1.5 text-center text-[10px]">
+            <div className="px-1.5 py-1 rounded bg-[#08090C] border border-white/10 text-[#94A3B8] truncate">
+              Timeline UI
+            </div>
+            <div className="px-1.5 py-1 rounded bg-[#08090C] border border-white/10 text-[#FF9900] truncate">
+              Gujarati Text
+            </div>
+            <div className="px-1.5 py-1 rounded bg-[#08090C] border border-white/10 text-[#22D3EE] truncate">
+              MinIO Storage
+            </div>
+          </div>
+
+          <div className="p-2 rounded-lg bg-[#08090C] border border-white/10 flex items-center justify-between text-[10px]">
+            <span className="text-[#94A3B8]">Headless Chrome Rendering</span>
+            <span className="text-[#34D399] flex items-center gap-1 font-semibold">
+              <CheckCircle2 className="w-3 h-3" /> Live Reel
+            </span>
+          </div>
+        </div>
+
+        {/* Bottom tags */}
+        <div className="flex items-center justify-between text-[10px] text-[#64748B] pt-2 border-t border-white/[0.08]">
+          <span>FastAPI + Python</span>
+          <span className="text-[#FF9900]">reel.jamin24.com</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (project.slug === "smartcivic") {
+    return (
+      <div className="w-full h-full p-4 flex flex-col justify-between font-mono text-[11px] select-none">
+        {/* Top telemetry bar */}
+        <div className="flex items-center justify-between text-[#94A3B8] border-b border-white/10 pb-2">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-[#34D399] animate-pulse" />
+            <span className="text-[#F8FAFC] font-semibold">SmartCivic Portal</span>
+          </div>
+          <span className="text-[10px] text-[#34D399] bg-[#34D399]/10 px-2 py-0.5 rounded border border-[#34D399]/25">
+            Django + React
+          </span>
+        </div>
+
+        {/* Civic Complaint Pipeline */}
+        <div className="my-auto space-y-2 py-1">
+          <div className="flex items-center justify-between gap-1 text-[10px]">
+            <span className="px-2 py-1 rounded bg-[#08090C] border border-white/10 text-[#94A3B8]">
+              Photo Upload
+            </span>
+            <span className="text-[#FF9900] font-sans font-bold">→</span>
+            <span className="px-2 py-1 rounded bg-[#08090C] border border-white/10 text-[#22D3EE]">
+              Geo Location
+            </span>
+            <span className="text-[#FF9900] font-sans font-bold">→</span>
+            <span className="px-2 py-1 rounded bg-[#08090C] border border-white/10 text-[#34D399]">
+              Live Status
+            </span>
+          </div>
+
+          <div className="p-2 rounded-lg bg-[#08090C] border border-white/10 flex items-center justify-between text-[10px]">
+            <span className="text-[#94A3B8]">Municipal Grievance Resolution</span>
+            <span className="text-[#34D399] font-semibold">MCA Project</span>
+          </div>
+        </div>
+
+        {/* Bottom tags */}
+        <div className="flex items-center justify-between text-[10px] text-[#64748B] pt-2 border-t border-white/[0.08]">
+          <span>PostgreSQL DB</span>
+          <span className="text-[#34D399]">Verified Workflow</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (project.slug === "ai-chatbot-application") {
+    return (
+      <div className="w-full h-full p-4 flex flex-col justify-between font-mono text-[11px] select-none">
+        {/* Top telemetry bar */}
+        <div className="flex items-center justify-between text-[#94A3B8] border-b border-white/10 pb-2">
+          <div className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-[#22D3EE] animate-pulse" />
+            <span className="text-[#F8FAFC] font-semibold">RAG Conversational Bot</span>
+          </div>
+          <span className="text-[10px] text-[#FF9900] bg-[#FF9900]/10 px-2 py-0.5 rounded border border-[#FF9900]/25">
+            ChromaDB
+          </span>
+        </div>
+
+        {/* RAG Pipeline Flow */}
+        <div className="my-auto space-y-2 py-1">
+          <div className="flex items-center justify-between gap-1 text-[10px]">
+            <span className="px-2 py-1 rounded bg-[#08090C] border border-white/10 text-[#94A3B8]">
+              Docs Ingestion
+            </span>
+            <span className="text-[#22D3EE] font-sans font-bold">→</span>
+            <span className="px-2 py-1 rounded bg-[#08090C] border border-white/10 text-[#22D3EE]">
+              Vector Search
+            </span>
+            <span className="text-[#FF9900] font-sans font-bold">→</span>
+            <span className="px-2 py-1 rounded bg-[#08090C] border border-white/10 text-[#34D399]">
+              Stream Answer
+            </span>
+          </div>
+
+          <div className="p-2 rounded-lg bg-[#08090C] border border-white/10 flex items-center justify-between text-[10px]">
+            <span className="text-[#94A3B8]">Multi-Turn Memory Management</span>
+            <span className="text-[#22D3EE] font-semibold">OpenAI API</span>
+          </div>
+        </div>
+
+        {/* Bottom tags */}
+        <div className="flex items-center justify-between text-[10px] text-[#64748B] pt-2 border-t border-white/[0.08]">
+          <span>FastAPI Streaming</span>
+          <span className="text-[#22D3EE]">ChromaDB Vector Store</span>
+        </div>
+      </div>
+    );
+  }
+
   // Fallback schematic for other projects
   const CategoryIcon = CATEGORY_ICONS[project.category] || Code2;
   return (
     <div className="w-full h-full p-4 flex flex-col justify-between font-mono text-[11px] select-none">
-      <div className="flex items-center justify-between text-[#94A3B8] border-b border-[rgba(148,163,184,0.12)] pb-2">
+      <div className="flex items-center justify-between text-[#94A3B8] border-b border-white/10 pb-2">
         <div className="flex items-center gap-1.5">
-          <Terminal className="w-3.5 h-3.5 text-[#8B5CF6]" />
+          <Terminal className="w-3.5 h-3.5 text-[#FF9900]" />
           <span className="text-[#F8FAFC] font-semibold">{project.name}</span>
         </div>
         <span className="text-[10px] text-[#94A3B8]">{project.category}</span>
       </div>
 
       <div className="my-auto flex flex-col items-center justify-center py-2 text-center">
-        <div className="w-10 h-10 rounded-xl bg-[#0B1120] border border-[rgba(148,163,184,0.12)] flex items-center justify-center text-[#8B5CF6] mb-2 group-hover:scale-105 transition-transform">
+        <div className="w-10 h-10 rounded-xl bg-[#08090C] border border-white/10 flex items-center justify-center text-[#FF9900] mb-2 group-hover:scale-105 transition-transform">
           <CategoryIcon className="w-5 h-5" />
         </div>
         <span className="text-xs text-[#94A3B8] font-sans">
@@ -201,9 +336,9 @@ function ProjectVisualSchematic({ project }: { project: Project }) {
         </span>
       </div>
 
-      <div className="flex items-center justify-between text-[10px] text-[#64748B] pt-2 border-t border-[rgba(148,163,184,0.08)]">
+      <div className="flex items-center justify-between text-[10px] text-[#64748B] pt-2 border-t border-white/[0.08]">
         <span>Status</span>
-        <span className="text-[#8B5CF6]">{project.status}</span>
+        <span className="text-[#FF9900]">{project.status}</span>
       </div>
     </div>
   );

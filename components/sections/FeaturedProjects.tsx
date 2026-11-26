@@ -183,6 +183,19 @@ export function FeaturedProjects() {
             </Reveal>
           ))}
         </div>
+
+        {/* Explore All Projects Archive Button */}
+        <div className="mt-12 text-center">
+          <Reveal delay={0.35} direction="up">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#111319] hover:bg-[#161822] text-[#E2E8F0] hover:text-[#FF9900] border border-white/[0.12] hover:border-[#FF9900]/50 transition-all text-xs sm:text-sm font-mono shadow-lg hover:shadow-[#FF9900]/10 group"
+            >
+              <span>Explore All Projects Archive (6 Projects)</span>
+              <ArrowRight className="w-4 h-4 text-[#FF9900] group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </Reveal>
+        </div>
       </Container>
     </section>
   );

@@ -107,6 +107,112 @@ export const projectsData: Project[] = [
     liveDemo: "https://car-scout-ten.vercel.app",
     order: 3,
   },
+  {
+    slug: "jamin24-ai-video-editor",
+    name: "Jamin24 AI Video Editor",
+    shortDescription:
+      "An AI-powered video generation and editing platform with a drag-and-drop timeline, FFmpeg/OpenCV processing engines, and Gujarati typography.",
+    category: "Generative AI",
+    status: "Completed",
+    featured: false,
+    problem:
+      "Content creators and regional publishers needed an automated, fast workflow to generate reels and edit videos with regional Gujarati text rendering and cloud streaming.",
+    solution:
+      "Built a full-stack automated video rendering platform with a web-based timeline editor, backend FFmpeg/OpenCV processing pipelines, and MinIO object storage for seamless asset delivery.",
+    contribution:
+      "Architected the drag-and-drop timeline editor in React.js and TypeScript; built high-throughput backend rendering workflows using FastAPI, FFmpeg, and OpenCV; implemented Gujarati Unicode rendering via Headless Chrome; integrated MinIO for video storage and streaming.",
+    features: [
+      "Interactive drag-and-drop video timeline and multi-track scene editor",
+      "High-performance video processing and rendering using FFmpeg and OpenCV",
+      "Accurate Gujarati regional typography rendering powered by Headless Chrome",
+      "Scalable S3-compatible cloud object storage and streaming powered by MinIO",
+      "Asynchronous rendering task queues with FastAPI for fast non-blocking reel creation",
+      "Responsive, modern user interface built with React.js, TypeScript, and Tailwind CSS",
+    ],
+    stack: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "FastAPI",
+      "Python",
+      "FFmpeg",
+      "OpenCV",
+      "MinIO",
+    ],
+    screenshots: [],
+    github: "https://github.com/Chavda-Jay",
+    liveDemo: "https://reel.jamin24.com/",
+    order: 4,
+  },
+  {
+    slug: "smartcivic",
+    name: "SmartCivic",
+    shortDescription:
+      "A civic issue reporting platform empowering citizens to submit local municipal grievances with photo proofs, location data, and live status updates.",
+    category: "Full-Stack",
+    status: "Completed",
+    featured: false,
+    problem:
+      "Municipal authorities and citizens lack a transparent, centralized web portal to lodge local civic issues, attach photo evidence, track resolution progress, and prevent duplicate complaints.",
+    solution:
+      "Engineered SmartCivic, a responsive web application where citizens submit civic complaints with photo verification and location data, backed by a Django REST backend and PostgreSQL.",
+    contribution:
+      "Designed and built the responsive React.js and Tailwind CSS frontend; implemented image upload and client-side validation; integrated location input mapping; developed Django REST APIs and relational database schemas in PostgreSQL.",
+    features: [
+      "Clean, intuitive citizen complaint submission portal for local civic issues",
+      "Photo evidence upload with real-time preview and client-side optimization",
+      "Location tagging for accurate municipal dispatch and routing",
+      "Live issue tracking dashboard with dynamic status updates",
+      "Robust relational data model powered by Django ORM and PostgreSQL",
+      "Secure REST API endpoints ensuring data validation and citizen privacy",
+    ],
+    stack: [
+      "React.js",
+      "Tailwind CSS",
+      "Django",
+      "Python",
+      "PostgreSQL",
+      "REST APIs",
+    ],
+    screenshots: [],
+    github: "https://github.com/Chavda-Jay",
+    order: 5,
+  },
+  {
+    slug: "ai-chatbot-application",
+    name: "Context-Aware RAG AI Chatbot",
+    shortDescription:
+      "An intelligent conversational assistant featuring Retrieval-Augmented Generation (RAG), vector embeddings in ChromaDB, and real-time streaming answers.",
+    category: "Generative AI",
+    status: "Completed",
+    featured: false,
+    problem:
+      "Standard conversational chatbots suffer from hallucination and lack context about private domain knowledge, documentation, or past multi-turn user conversations.",
+    solution:
+      "Constructed a Retrieval-Augmented Generation (RAG) pipeline that embeds knowledge documents into ChromaDB vector store, retrieves relevant context chunks, and streams answers with low latency.",
+    contribution:
+      "Built the full-stack architecture using React.js and FastAPI; implemented document chunking and vector search with ChromaDB; integrated OpenAI API with streaming tokens; engineered conversation memory and session state management.",
+    features: [
+      "Context-aware RAG pipeline ensuring accurate, grounded factual answers",
+      "Fast vector similarity search using ChromaDB vector database",
+      "Low-latency real-time response streaming with FastAPI and streaming APIs",
+      "Multi-turn conversation memory management for cohesive dialogue",
+      "Responsive modern chat UI with markdown code syntax highlighting",
+      "Modular Python backend ready for custom enterprise document ingestion",
+    ],
+    stack: [
+      "React.js",
+      "FastAPI",
+      "Python",
+      "OpenAI API",
+      "ChromaDB",
+      "RAG",
+      "Vector DB",
+    ],
+    screenshots: [],
+    github: "https://github.com/Chavda-Jay",
+    order: 6,
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
