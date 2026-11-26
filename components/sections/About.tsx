@@ -38,10 +38,10 @@ export function About() {
             <Reveal delay={0.25}>
               <div className="mt-5 space-y-3.5 text-sm sm:text-base text-[#CBD5E1] leading-relaxed font-sans font-normal max-w-xl">
                 <p>
-                  I am an <strong className="text-white font-semibold">AI/ML Engineer and Generative AI Developer</strong> with a Master of Computer Applications (MCA) and a relentless commitment to taking machine learning from prototype notebooks to high-performance, production-grade software.
+                  Specializing as an <strong className="text-white font-semibold">AI/ML Engineer and Generative AI Developer</strong> with a Master of Computer Applications (MCA), driven by a relentless focus on taking machine learning from experimental notebooks to resilient, production-grade software.
                 </p>
                 <p className="text-[#94A3B8]">
-                  From architecting multilingual conversational agents and vector-indexed RAG pipelines to engineering low-latency FastAPI microservices, I bridge the gap between cutting-edge AI models and reliable, business-ready applications.
+                  From architecting multilingual conversational agents and vector-indexed RAG pipelines to engineering high-throughput FastAPI microservices, delivering scalable solutions that bridge cutting-edge AI intelligence with reliable, enterprise-ready systems.
                 </p>
               </div>
             </Reveal>
