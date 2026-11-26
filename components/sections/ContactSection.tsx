@@ -7,6 +7,9 @@ import { profileData } from "@/data/profile";
 import { Mail, Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { GithubIcon, LinkedinIcon, GmailIcon } from "@/ui/Icons";
 
+const WEB3FORMS_ACCESS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "c020ce63-04f0-40ff-8b36-becdd35dcf21";
+
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
@@ -57,15 +60,33 @@ export function ContactSection() {
       return;
     }
 
+    // Bot honeypot check (anti-spam)
+    if (formData._honey && formData._honey.length > 0) {
+      setStatus("success");
+      setServerMessage("Your message has been sent successfully to Jay Chavda!");
+      setFormData({ name: "", email: "", message: "", _honey: "" });
+      return;
+    }
+
     setFieldErrors({});
     setStatus("loading");
     setServerMessage(null);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+          subject: `Portfolio Message from ${formData.name.trim()}`,
+          from_name: "Jay Chavda Portfolio",
+        }),
       });
 
       const data = await response.json();
@@ -73,11 +94,11 @@ export function ContactSection() {
       if (!response.ok || !data.success) {
         setStatus("error");
         setServerMessage(
-          data.message || data.error || "Failed to send message. Please try emailing directly."
+          data.message || "Failed to send message. Please email directly via chavdajay510@gmail.com"
         );
       } else {
         setStatus("success");
-        setServerMessage(data.message || "Your message has been sent successfully!");
+        setServerMessage("Your message has been sent successfully to Jay Chavda!");
         setFormData({ name: "", email: "", message: "", _honey: "" });
       }
     } catch {
@@ -91,7 +112,7 @@ export function ContactSection() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           
-          {/* Left Column: Heading, Direct Email, Socials (Mockup 1:1) */}
+          {/* Left Column: Heading, Direct Email, Socials */}
           <div className="lg:col-span-5 flex flex-col items-start pr-0 lg:pr-6">
             <Reveal delay={0.1}>
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#FF9900] mb-3">
@@ -160,7 +181,7 @@ export function ContactSection() {
             </Reveal>
           </div>
 
-          {/* Right Column: Clean Dark Form (Mockup 1:1) */}
+          {/* Right Column: Clean Dark Form */}
           <div className="lg:col-span-7 w-full">
             <Reveal delay={0.2} direction="up">
               <div className="p-6 sm:p-8 rounded-2xl bg-[#111319] border border-white/[0.08] shadow-xl">
