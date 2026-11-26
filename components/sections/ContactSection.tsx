@@ -70,12 +70,14 @@ export function ContactSection() {
 
       const data = await response.json();
 
-      if (!response.ok) {
+      if (!response.ok || !data.success) {
         setStatus("error");
-        setServerMessage(data.error || "Failed to send message. Please try again.");
+        setServerMessage(
+          data.message || data.error || "Failed to send message. Please try emailing directly."
+        );
       } else {
         setStatus("success");
-        setServerMessage("Your message has been sent successfully!");
+        setServerMessage(data.message || "Your message has been sent successfully!");
         setFormData({ name: "", email: "", message: "", _honey: "" });
       }
     } catch {

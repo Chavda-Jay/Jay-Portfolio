@@ -53,9 +53,9 @@ export async function POST(req: NextRequest) {
           success: false,
           fallback: true,
           message:
-            "The direct contact service API is pending configuration. Please use the mailto button below to send your message directly to chavdajay510@gmail.com.",
+            "Direct contact service is currently pending API configuration. Please email Jay directly at chavdajay510@gmail.com.",
         },
-        { status: 200 }
+        { status: 503 }
       );
     }
 
