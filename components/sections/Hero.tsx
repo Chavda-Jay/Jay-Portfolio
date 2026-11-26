@@ -173,19 +173,19 @@ export function Hero({ hasResume = false }: HeroProps) {
 
           {/* Right Column: Hero Portrait Composition (Mockup 1:1) */}
           <div className="lg:col-span-5 xl:col-span-6 relative flex items-center justify-center lg:justify-end mt-12 lg:mt-0">
-            <Reveal delay={0.25} className="relative w-full max-w-[540px] xl:max-w-[620px] flex items-center justify-center">
+            <Reveal delay={0.25} className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[460px] xl:max-w-[490px] flex items-center justify-center">
               
               {/* Secondary AI Backdrop Visuals (Subtle wireframe + elliptical rings from mockup) */}
               <div className="absolute inset-0 -m-6 sm:-m-10 flex items-center justify-center pointer-events-none">
                 
                 {/* Slanted Glass Backdrop Panel from Mockup */}
-                <div className="absolute w-[280px] h-[360px] sm:w-[320px] sm:h-[420px] rounded-3xl border border-white/[0.08] bg-white/[0.015] -rotate-6 transform -translate-x-4 -translate-y-4 pointer-events-none" />
+                <div className="absolute w-[260px] h-[340px] sm:w-[320px] sm:h-[420px] rounded-3xl border border-white/[0.08] bg-white/[0.015] -rotate-6 transform -translate-x-4 -translate-y-4 pointer-events-none" />
 
                 {/* Concentric Ambient Amber Orbit Ring */}
-                <div className="absolute w-[440px] h-[440px] sm:w-[520px] sm:h-[520px] rounded-full border border-[#FF9900]/25 border-dashed animate-orbit-spin" />
+                <div className="absolute w-[420px] h-[420px] sm:w-[500px] sm:h-[500px] rounded-full border border-[#FF9900]/25 border-dashed animate-orbit-spin" />
                 
                 {/* Inner Counter-Rotating Node Ring */}
-                <div className="absolute w-[360px] h-[360px] sm:w-[430px] sm:h-[430px] rounded-full border border-[#FF9900]/20 animate-orbit-reverse">
+                <div className="absolute w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] rounded-full border border-[#FF9900]/20 animate-orbit-reverse">
                   <span className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#FF9900] shadow-[0_0_8px_#FF9900]" />
                   <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#FF9900] shadow-[0_0_8px_#FF9900]" />
                   <span className="absolute top-1/2 -left-1 -translate-y-1/2 w-2 h-2 rounded-full bg-[#FF9900] shadow-[0_0_8px_#FF9900]" />
@@ -193,29 +193,52 @@ export function Hero({ hasResume = false }: HeroProps) {
                 </div>
 
                 {/* Radar Sweep Arc */}
-                <div className="absolute w-[300px] h-[300px] sm:w-[360px] sm:h-[360px] rounded-full [background:conic-gradient(from_0deg,transparent_0_310deg,rgba(255,153,0,0.3)_360deg)] animate-radar-sweep opacity-55" />
+                <div className="absolute w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] rounded-full [background:conic-gradient(from_0deg,transparent_0_310deg,rgba(255,153,0,0.3)_360deg)] animate-radar-sweep opacity-55" />
 
                 {/* Warm Amber Halo Bloom */}
-                <div className="absolute w-[290px] h-[290px] sm:w-[360px] sm:h-[360px] rounded-full bg-gradient-radial from-[#FF9900]/25 via-[#8B5CF6]/10 to-transparent blur-3xl animate-pulse-glow" />
+                <div className="absolute w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] rounded-full bg-gradient-radial from-[#FF9900]/25 via-[#8B5CF6]/10 to-transparent blur-3xl animate-pulse-glow" />
               </div>
 
-              {/* Main Cutout Portrait: Completely transparent background, natural editorial integration */}
-              <div className="relative z-10 w-full max-w-[500px] sm:max-w-[560px] xl:max-w-[620px] aspect-[637/576] flex items-end justify-center select-none">
+              {/* Main Cutout Portrait: High-density Next/Image with feathering, CSS mask-image and gradient overlays */}
+              <div 
+                className="relative z-10 w-full aspect-[600/710] flex items-end justify-center select-none overflow-hidden"
+                style={{
+                  WebkitMaskImage: "radial-gradient(ellipse 92% 90% at 56% 48%, black 50%, rgba(0,0,0,0.85) 75%, transparent 100%)",
+                  maskImage: "radial-gradient(ellipse 92% 90% at 56% 48%, black 50%, rgba(0,0,0,0.85) 75%, transparent 100%)",
+                }}
+              >
                 <Image
-                  src="/images/jay-chavda-seamless.png"
+                  src="/images/jay-chavda-hero-perfect.png"
                   alt="Jay Chavda - AI/ML Engineer & Generative AI Developer"
-                  fill
+                  width={600}
+                  height={710}
+                  quality={95}
                   priority
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 620px"
-                  className="object-contain object-bottom filter contrast-[1.04] brightness-[1.02] drop-shadow-[0_25px_50px_rgba(0,0,0,0.95)]"
+                  sizes="(max-width: 640px) 340px, (max-width: 1024px) 420px, 490px"
+                  className="w-full h-full object-contain object-bottom filter contrast-[1.03] brightness-[1.01] drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
                 />
 
-                {/* Natural bottom edge fade to merge table cleanly into background */}
-                <div className="absolute -bottom-0.5 inset-x-0 h-6 bg-gradient-to-t from-[#08090C] to-transparent pointer-events-none" />
+                {/* Left edge seamless gradient overlay */}
+                <div 
+                  className="absolute inset-y-0 left-0 w-20 sm:w-28 bg-gradient-to-r from-[#08090C] via-[#08090C]/80 to-transparent pointer-events-none" 
+                  aria-hidden="true"
+                />
+
+                {/* Bottom edge seamless gradient overlay */}
+                <div 
+                  className="absolute bottom-0 inset-x-0 h-16 sm:h-20 bg-gradient-to-t from-[#08090C] via-[#08090C]/85 to-transparent pointer-events-none" 
+                  aria-hidden="true"
+                />
+
+                {/* Top subtle fade */}
+                <div 
+                  className="absolute top-0 inset-x-0 h-8 bg-gradient-to-b from-[#08090C]/40 to-transparent pointer-events-none" 
+                  aria-hidden="true"
+                />
               </div>
 
               {/* Floating Technical Badge 1: Top Right - FastAPI */}
-              <div className="absolute top-4 -right-1 sm:-right-4 lg:-right-6 z-20 animate-float-1 group">
+              <div className="absolute top-3 -right-1 sm:-right-3 lg:-right-5 z-20 animate-float-1 group">
                 <div className="relative px-3.5 py-1.5 rounded-xl bg-[#111319]/90 border border-white/[0.14] group-hover:border-[#009688]/60 backdrop-blur-md text-xs font-mono text-white flex items-center gap-2 shadow-xl shadow-black/70 transition-all">
                   <span className="w-2 h-2 rounded-full bg-[#009688] shadow-[0_0_6px_#009688]" />
                   <span className="font-semibold">FastAPI</span>
@@ -223,7 +246,7 @@ export function Hero({ hasResume = false }: HeroProps) {
               </div>
 
               {/* Floating Technical Badge 2: Top Left - Python */}
-              <div className="absolute top-16 -left-1 sm:-left-5 lg:-left-6 z-20 animate-float-2 group">
+              <div className="absolute top-12 -left-1 sm:-left-4 lg:-left-5 z-20 animate-float-2 group">
                 <div className="relative px-3.5 py-1.5 rounded-xl bg-[#111319]/90 border border-white/[0.14] group-hover:border-[#3776AB]/60 backdrop-blur-md text-xs font-mono text-white flex items-center gap-2 shadow-xl shadow-black/70 transition-all">
                   <span className="w-2 h-2 rounded-full bg-[#3776AB] shadow-[0_0_6px_#3776AB]" />
                   <span className="font-semibold">Python</span>
@@ -231,7 +254,7 @@ export function Hero({ hasResume = false }: HeroProps) {
               </div>
 
               {/* Floating Technical Badge 3: Bottom Left - Groq LLaMA 70B */}
-              <div className="absolute bottom-10 -left-2 sm:-left-5 lg:-left-6 z-20 animate-float-1 group">
+              <div className="absolute bottom-8 -left-1 sm:-left-4 lg:-left-5 z-20 animate-float-1 group">
                 <div className="relative px-3.5 py-1.5 rounded-xl bg-[#111319]/90 border border-white/[0.14] group-hover:border-[#FF9900]/60 backdrop-blur-md text-xs font-mono text-white flex items-center gap-2 shadow-xl shadow-black/70 transition-all">
                   <Sparkles className="w-3.5 h-3.5 text-[#FF9900]" />
                   <span className="font-semibold">LLaMA 3.3 70B</span>
@@ -239,7 +262,7 @@ export function Hero({ hasResume = false }: HeroProps) {
               </div>
 
               {/* Floating Technical Badge 4: Bottom Right - PostgreSQL */}
-              <div className="absolute bottom-16 -right-1 sm:-right-4 lg:-right-4 z-20 animate-float-2 group">
+              <div className="absolute bottom-10 -right-1 sm:-right-3 lg:-right-4 z-20 animate-float-2 group">
                 <div className="relative px-3.5 py-1.5 rounded-xl bg-[#111319]/90 border border-white/[0.14] group-hover:border-[#336791]/60 backdrop-blur-md text-xs font-mono text-white flex items-center gap-2 shadow-xl shadow-black/70 transition-all">
                   <Database className="w-3.5 h-3.5 text-[#336791]" />
                   <span className="font-semibold">PostgreSQL</span>
