@@ -74,7 +74,7 @@ export function Skills() {
           {/* Left Column: Heading & Subtitle */}
           <div className="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-4">
             <Reveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white tracking-tight leading-tight">
                 Technical
                 <br />
                 Skills

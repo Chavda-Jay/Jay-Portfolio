@@ -9,10 +9,22 @@ const EDUCATION_ITEMS = [
   {
     degree: "MCA (2024 – 2026)",
     institution: "Sardar Vallabhbhai Global University, Ahmedabad",
+    score: "Pursuing",
   },
   {
     degree: "BCA (2021 – 2024)",
     institution: "Shri Chimanbhai Patel Institute, Ahmedabad",
+    score: "72.83%",
+  },
+  {
+    degree: "12th - HSC (2021)",
+    institution: "Shree Madhyamik Shala, Viramgam, Ahmedabad",
+    score: "70.86%",
+  },
+  {
+    degree: "10th - SSC (2019)",
+    institution: "Anand Primary School, Viramgam, Ahmedabad",
+    score: "74.67%",
   },
 ];
 
@@ -36,7 +48,7 @@ export function Education() {
           {/* Left Column: Heading */}
           <div className="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-4">
             <Reveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white tracking-tight leading-tight">
                 Education &amp;
                 <br />
                 Certifications
@@ -58,13 +70,20 @@ export function Education() {
                 </div>
               </Reveal>
 
-              <div className="space-y-5">
+              <div className="space-y-4">
                 {EDUCATION_ITEMS.map((item, idx) => (
-                  <Reveal key={item.degree} delay={0.2 + idx * 0.08} direction="up">
-                    <div className="border-l-2 border-[#FF9900]/40 pl-4 py-0.5">
-                      <h4 className="font-heading font-bold text-sm sm:text-base text-white">
-                        {item.degree}
-                      </h4>
+                  <Reveal key={item.degree} delay={0.2 + idx * 0.07} direction="up">
+                    <div className="border-l-2 border-[#FF9900]/40 pl-4 py-1 group hover:border-[#FF9900] transition-colors">
+                      <div className="flex items-center justify-between gap-2">
+                        <h4 className="font-heading font-bold text-sm sm:text-base text-white group-hover:text-[#FF9900] transition-colors">
+                          {item.degree}
+                        </h4>
+                        {item.score && (
+                          <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-[#111319] text-[#FF9900] border border-[#FF9900]/30 shadow-sm shrink-0">
+                            {item.score}
+                          </span>
+                        )}
+                      </div>
                       <p className="text-xs sm:text-sm text-[#94A3B8] font-sans mt-0.5">
                         {item.institution}
                       </p>

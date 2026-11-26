@@ -42,7 +42,7 @@ export function Hero({ hasResume = false }: HeroProps) {
 
             {/* Main Headline (Exact Mockup Match) */}
             <Reveal delay={0.15}>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-extrabold text-white tracking-tight leading-[1.12]">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white tracking-tight leading-[1.12]">
                 Building <span className="text-[#FF9900]">AI</span> That
                 <br />
                 Works in the <span className="text-[#FF9900]">Real World</span>.

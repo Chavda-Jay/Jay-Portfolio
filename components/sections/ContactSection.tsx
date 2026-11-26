@@ -99,7 +99,7 @@ export function ContactSection() {
             </Reveal>
 
             <Reveal delay={0.18}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white tracking-tight leading-tight">
                 Have an Idea?
                 <br />
                 Let&apos;s <span className="text-[#FF9900]">Build</span> Something <span className="text-[#FF9900]">Intelligent</span>.

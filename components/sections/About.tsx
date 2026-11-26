@@ -29,7 +29,7 @@ export function About() {
             </Reveal>
 
             <Reveal delay={0.18}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white tracking-tight">
                 Who I Am
               </h2>
             </Reveal>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Container } from "./Container";
 import { Button } from "@/ui/Button";
 import { MobileNav } from "./MobileNav";
-import { Menu, ExternalLink } from "lucide-react";
+import { Menu } from "lucide-react";
 
 interface NavbarProps {
   hasResume?: boolean;
@@ -112,19 +112,8 @@ export function Navbar({ hasResume = false }: NavbarProps) {
             })}
           </nav>
 
-          {/* Action CTA: Resume & Let's Talk */}
+          {/* Action CTA: Let's Talk */}
           <div className="hidden sm:flex items-center gap-3">
-            {hasResume && (
-              <a
-                href="/resume/Jay_Chavda_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#111319] hover:bg-[#161822] text-white border border-white/[0.14] hover:border-[#FF9900]/60 transition-colors text-xs font-mono uppercase tracking-wider"
-              >
-                <span>Resume</span>
-                <ExternalLink className="w-3 h-3 text-[#94A3B8]" />
-              </a>
-            )}
             <Button
               variant="outline"
               size="sm"

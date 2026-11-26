@@ -20,21 +20,21 @@ const FEATURED_PROJECTS: FeaturedProjectItem[] = [
   {
     slug: "ai-interview-prep-bot",
     title: "AI Interview Prep Bot",
-    description: "AI-powered interview preparation platform with intelligent evaluation.",
+    description: "An AI practice platform that conducts real-time mock interviews across 6 tech stacks and grades answers with personalized improvement feedback.",
     tags: ["React", "FastAPI", "MongoDB"],
     schematicType: "interview",
   },
   {
     slug: "b2c-ai-sales-agent",
     title: "AI Sales & Marketing Agent",
-    description: "Autonomous B2C AI Sales Agent for business growth.",
+    description: "A 24/7 multilingual sales chatbot that talks with customers in Hindi, Gujarati & English, explains products, and automatically highlights ready buyers.",
     tags: ["React", "FastAPI", "Supabase"],
     schematicType: "sales",
   },
   {
     slug: "carscout",
     title: "CarScout",
-    description: "MERN-based automotive marketplace.",
+    description: "A complete online car buying & selling marketplace with verified vehicle listings, secure Razorpay checkout, and buyer/seller dashboards.",
     tags: ["React", "Node.js", "MongoDB"],
     schematicType: "car",
   },
@@ -47,7 +47,7 @@ export function FeaturedProjects() {
         {/* Section Header */}
         <div className="mb-10 text-left">
           <Reveal delay={0.1}>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-extrabold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white tracking-tight">
               Featured Projects
             </h2>
           </Reveal>

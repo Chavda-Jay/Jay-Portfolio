@@ -2,37 +2,35 @@ import { Project } from "@/types";
 
 export const projectsData: Project[] = [
   {
-    slug: "b2c-ai-sales-agent",
-    name: "AI Sales & Marketing Agent",
+    slug: "ai-interview-prep-bot",
+    name: "AI Interview Prep Bot",
     shortDescription:
-      "Multilingual LLM sales assistant with catalog- and policy-based responses in Hindi, Hinglish, Gujarati, and English, featuring 7-factor lead scoring and automated follow-ups.",
+      "An intelligent mock interview platform that generates real-time technical questions across 6 tech stacks and automatically grades answers with personalized improvement feedback.",
     category: "Generative AI",
     status: "Completed",
     featured: true,
-    // NEEDS JAY'S REVIEW: Derived strictly from project profile data
     problem:
-      "Businesses require continuous, accurate sales assistance across multiple regional languages that strictly follows catalog specifications and company policies, while systematically identifying and prioritizing high-intent customer leads.",
-    // NEEDS JAY'S REVIEW: Derived strictly from project profile data
+      "Job seekers and software developers preparing for technical interviews often lack access to real-time mock interviews with objective, instant evaluation and actionable feedback.",
     solution:
-      "Developed an asynchronous, multilingual LLM-powered sales assistant supporting Hindi, Hinglish, Gujarati, and English. Integrated a 7-factor lead-scoring engine (0–100) for segmentation and automated follow-up workflows.",
-    // NEEDS JAY'S REVIEW: Derived strictly from project profile data
+      "Created an AI-powered interview practice platform powered by Groq LLaMA 3.3 70B. It dynamically generates relevant multiple-choice and conceptual questions, analyzes user answers using Natural Language Processing (NLP), and gives clear, constructive score reports.",
     contribution:
-      "Engineered the asynchronous FastAPI backend with PostgreSQL database and JWT authentication; created prompt engineering pipelines for catalog- and policy-aligned responses; implemented the seven-factor lead scoring algorithm, customer retention automations, and daily report generation.",
+      "Built the full-stack web application using React.js and FastAPI; integrated Groq LLaMA 3.3 70B for fast AI question generation; designed NLP algorithms to grade descriptive answers; implemented secure JWT login and automated email reports via SMTP.",
     features: [
-      "Multilingual conversation support across Hindi, Hinglish, Gujarati, and English",
-      "Catalog- and policy-constrained response generation via prompt engineering",
-      "Seven-factor lead-scoring system (scores 0–100) for intelligent lead prioritization",
-      "Asynchronous backend architecture using FastAPI and PostgreSQL",
-      "Secure JWT-based authentication and session handling",
-      "Automated follow-up workflows, customer retention triggers, and daily reporting",
+      "Dynamic interview practice across 6 popular technology stacks",
+      "Instant question generation (MCQ and descriptive) using Groq LLaMA 3.3 70B",
+      "Smart NLP evaluation engine providing scores and constructive suggestions",
+      "Secure user authentication with JWT tokens",
+      "Automated interview scorecards and reports sent via email",
+      "Organized MongoDB database tracking user progress over time",
     ],
     stack: [
-      "React/Next.js",
+      "React.js",
       "FastAPI",
-      "Python",
-      "Supabase",
-      "PostgreSQL",
+      "MongoDB",
       "Groq LLM",
+      "Python",
+      "JWT",
+      "NLP",
     ],
     screenshots: [],
     github: undefined,
@@ -40,38 +38,34 @@ export const projectsData: Project[] = [
     order: 1,
   },
   {
-    slug: "ai-interview-prep-bot",
-    name: "AI Interview Prep Bot",
+    slug: "b2c-ai-sales-agent",
+    name: "AI Sales & Marketing Agent",
     shortDescription:
-      "Full-stack interview preparation platform across 6 technology stacks powered by Groq LLaMA 3.3 70B for dynamic question generation and NLP-based answer evaluation.",
+      "A 24/7 multilingual sales chatbot that converses with customers in Hindi, Gujarati, Hinglish, and English, answers product queries, and automatically scores high-intent buyers.",
     category: "Generative AI",
     status: "Completed",
     featured: true,
-    // NEEDS JAY'S REVIEW: Derived strictly from project profile data
     problem:
-      "Aspirants preparing for software engineering roles across diverse technology stacks lack accessible, real-time mock interviews with objective evaluation and granular feedback on technical concepts.",
-    // NEEDS JAY'S REVIEW: Derived strictly from project profile data
+      "Modern businesses lose valuable leads when customer support isn't available 24/7 or when international tools can't understand regional Indian languages like Gujarati, Hindi, and Hinglish.",
     solution:
-      "Built an AI-driven interview preparation platform supporting six distinct technology stacks, utilizing Groq LLaMA 3.3 70B to generate tailored MCQ and descriptive questions with NLP-based response grading and personalized improvement insights.",
-    // NEEDS JAY'S REVIEW: Derived strictly from project profile data
+      "Engineered an asynchronous, multilingual AI sales assistant that strictly follows company policies and product catalogs. It engages customers in their preferred regional language and uses an intelligent 7-factor scoring system to highlight top buying leads.",
     contribution:
-      "Architected the full-stack system with React.js and FastAPI; configured MongoDB Atlas for persistence and SMTP for notifications; built prompt workflows with Groq LLaMA 3.3 70B for structured test generation; implemented NLP evaluation algorithms for descriptive assessment.",
+      "Developed the asynchronous FastAPI backend with PostgreSQL database; designed prompt engineering guardrails so the AI always provides accurate catalog details; created the 7-factor customer lead scoring model and automated follow-up workflows.",
     features: [
-      "Comprehensive interview modules across six major technology stacks",
-      "Dynamic MCQ and in-depth descriptive question generation via Groq LLaMA 3.3 70B",
-      "NLP-based answer evaluation engine providing personalized feedback",
-      "FastAPI backend with secure JWT authentication",
-      "Automated email notifications and reporting via SMTP",
-      "MongoDB Atlas database schema design for assessment tracking",
+      "Natural conversations in 4 languages: Hindi, Gujarati, Hinglish, and English",
+      "Accurate answers grounded strictly in official product catalogs and pricing",
+      "Smart 7-factor lead scoring (0–100) helping sales teams prioritize ready buyers",
+      "High-speed asynchronous backend using FastAPI and PostgreSQL",
+      "Secure session handling with JWT authentication",
+      "Automated follow-up triggers and daily sales summary reports",
     ],
     stack: [
-      "React.js",
+      "React/Next.js",
       "FastAPI",
-      "MongoDB Atlas",
-      "Groq LLM (LLaMA 3.3 70B)",
-      "JWT",
-      "SMTP",
-      "NLP",
+      "Python",
+      "PostgreSQL",
+      "Supabase",
+      "Groq LLM",
     ],
     screenshots: [],
     github: undefined,
@@ -82,26 +76,23 @@ export const projectsData: Project[] = [
     slug: "carscout",
     name: "CarScout",
     shortDescription:
-      "Comprehensive MERN-stack automotive marketplace platform featuring dedicated buyer, seller, and admin modules with role-based JWT auth and Razorpay payments.",
+      "A complete online automotive marketplace where buyers and sellers can browse verified car listings, negotiate, and complete payments securely with role-based dashboards.",
     category: "Full-Stack",
     status: "Completed",
     featured: true,
-    // NEEDS JAY'S REVIEW: Derived strictly from project profile data
     problem:
-      "Vehicle buyers and sellers need a reliable, transparent marketplace platform with dedicated interfaces for vehicle discovery, listing management, payment processing, and administrative moderation.",
-    // NEEDS JAY'S REVIEW: Derived strictly from project profile data
+      "Buying or selling pre-owned vehicles online is often risky and chaotic without verified vehicle information, transparent pricing, secure digital payments, and proper admin moderation.",
     solution:
-      "Constructed a multi-role web platform featuring specialized modules for buyers, sellers, and administrators, backed by robust REST APIs, MongoDB data structures, and verified online transaction workflows.",
-    // NEEDS JAY'S REVIEW: Derived strictly from project profile data
+      "Developed CarScout, a full-stack automotive platform with dedicated web portals for car buyers, sellers, and platform administrators. Built with verified car specifications, search filters, and integrated digital checkout.",
     contribution:
-      "Built modular, responsive React.js interfaces styled with Tailwind CSS; engineered RESTful backend services with Node.js and Express.js; designed MongoDB collections; implemented role-based access control with JWT; integrated Razorpay payment gateway; resolved critical bugs across frontend and backend.",
+      "Built the clean, mobile-responsive user interface with React.js and Tailwind CSS; developed secure RESTful backend APIs with Node.js and Express; modeled the MongoDB vehicle and user schemas; integrated Razorpay for smooth online payments and JWT for role-based security.",
     features: [
-      "Dedicated interfaces and workflows for buyers, sellers, and administrators",
-      "Secure role-based access control and session management using JWT",
-      "Complete payment checkout integration via Razorpay",
-      "Modular, responsive UI architecture built with React.js and Tailwind CSS",
-      "RESTful API endpoints for catalog operations, listing updates, and user management",
-      "MongoDB database modeling for vehicle inventories and transaction records",
+      "Dedicated, user-friendly portals for car buyers, private sellers, and platform admins",
+      "Search, filter, and compare vehicles by brand, year, price range, and specs",
+      "Secure online payment gateway integration powered by Razorpay",
+      "Role-based login and account security using JWT authentication",
+      "Fast REST API architecture with real-time inventory updates",
+      "Clean, modern responsive design that works seamlessly on desktop and mobile",
     ],
     stack: [
       "React.js",
@@ -109,44 +100,12 @@ export const projectsData: Project[] = [
       "Express.js",
       "MongoDB",
       "Tailwind CSS",
-      "JWT",
       "Razorpay",
     ],
     screenshots: [],
     github: undefined,
     liveDemo: undefined,
     order: 3,
-  },
-  // --- Demonstration Placeholders (Trivially removable; marked In Progress) ---
-  {
-    slug: "ml-customer-churn-prediction",
-    name: "Predictive Churn Model",
-    shortDescription:
-      "Details coming soon — Machine learning classification pipeline for customer retention analysis.",
-    category: "Machine Learning",
-    status: "In Progress",
-    featured: false,
-    problem: "Details coming soon.",
-    solution: "Details coming soon.",
-    features: ["Supervised classification pipeline", "Feature engineering & evaluation"],
-    stack: ["Python", "Scikit-Learn", "Pandas", "NumPy"],
-    screenshots: [],
-    order: 4,
-  },
-  {
-    slug: "automated-lead-orchestrator",
-    name: "Automated Lead Orchestrator",
-    shortDescription:
-      "Details coming soon — Event-driven lead dispatch and notification automation workflow.",
-    category: "Automation",
-    status: "In Progress",
-    featured: false,
-    problem: "Details coming soon.",
-    solution: "Details coming soon.",
-    features: ["Automated webhook triggers", "Task queue management"],
-    stack: ["Python", "FastAPI", "PostgreSQL"],
-    screenshots: [],
-    order: 5,
   },
 ];
 
