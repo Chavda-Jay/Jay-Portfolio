@@ -9,12 +9,12 @@ const EDUCATION_ITEMS = [
   {
     degree: "MCA (2024 – 2026)",
     institution: "Sardar Vallabhbhai Global University, Ahmedabad",
-    score: "Pursuing",
+    score: "8.30 CGPA",
   },
   {
     degree: "BCA (2021 – 2024)",
     institution: "Shri Chimanbhai Patel Institute, Ahmedabad",
-    score: "72.83%",
+    score: "68.30%",
   },
   {
     degree: "12th - HSC (2021)",
@@ -29,11 +29,12 @@ const EDUCATION_ITEMS = [
 ];
 
 const CERTIFICATION_ITEMS = [
+  "Prompt Engineering for ChatGPT – Vanderbilt University",
   "Generative AI Fundamentals – Databricks Academy",
+  "Machine Learning with Python – IBM Cognitive Class",
   "Claude Platform 101 – Anthropic",
   "MERN Stack Development – Udemy",
-  "Python for Data Science – Infosys SpringBoard",
-  "Python for Data Analysis – Coursera",
+  "Python for Data Science – Infosys Springboard",
 ];
 
 export function Education() {
@@ -54,9 +55,14 @@ export function Education() {
                 Certifications
               </h2>
             </Reveal>
+            <Reveal delay={0.2}>
+              <p className="mt-4 text-base sm:text-lg text-[#CBD5E1] leading-relaxed font-sans">
+                Academic foundation and specialized AI credentials backing every line of production code.
+              </p>
+            </Reveal>
           </div>
 
-          {/* Right Column: 2 Sub-Columns (Mockup 1:1) */}
+          {/* Right Column: 2 Sub-Columns */}
           <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             
             {/* Sub-Column 1: Education */}
@@ -64,7 +70,7 @@ export function Education() {
               <Reveal delay={0.15}>
                 <div className="flex items-center gap-2.5 text-[#FF9900]">
                   <GraduationCap className="w-5 h-5 text-[#FF9900]" />
-                  <h3 className="font-heading font-bold text-lg text-white">
+                  <h3 className="font-heading font-bold text-xl sm:text-2xl text-white">
                     Education
                   </h3>
                 </div>
@@ -73,18 +79,18 @@ export function Education() {
               <div className="space-y-4">
                 {EDUCATION_ITEMS.map((item, idx) => (
                   <Reveal key={item.degree} delay={0.2 + idx * 0.07} direction="up">
-                    <div className="border-l-2 border-[#FF9900]/40 pl-4 py-1 group hover:border-[#FF9900] transition-colors">
+                    <div className="border-l-2 border-[#FF9900]/40 pl-4 py-1.5 group hover:border-[#FF9900] transition-colors">
                       <div className="flex items-center justify-between gap-2">
-                        <h4 className="font-heading font-bold text-sm sm:text-base text-white group-hover:text-[#FF9900] transition-colors">
+                        <h4 className="font-heading font-bold text-base sm:text-lg text-white group-hover:text-[#FF9900] transition-colors">
                           {item.degree}
                         </h4>
                         {item.score && (
-                          <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-[#111319] text-[#FF9900] border border-[#FF9900]/30 shadow-sm shrink-0">
+                          <span className="text-xs sm:text-sm font-mono px-2.5 py-0.5 rounded-full bg-[#111319] text-[#FF9900] border border-[#FF9900]/30 shadow-sm shrink-0 font-medium">
                             {item.score}
                           </span>
                         )}
                       </div>
-                      <p className="text-xs sm:text-sm text-[#94A3B8] font-sans mt-0.5">
+                      <p className="text-sm sm:text-base text-[#CBD5E1] font-sans mt-1">
                         {item.institution}
                       </p>
                     </div>
@@ -98,20 +104,20 @@ export function Education() {
               <Reveal delay={0.2}>
                 <div className="flex items-center gap-2.5 text-[#FF9900]">
                   <ShieldCheck className="w-5 h-5 text-[#FF9900]" />
-                  <h3 className="font-heading font-bold text-lg text-white">
+                  <h3 className="font-heading font-bold text-xl sm:text-2xl text-white">
                     Certifications
                   </h3>
                 </div>
               </Reveal>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4">
                 {CERTIFICATION_ITEMS.map((cert, idx) => (
                   <Reveal key={cert} delay={0.25 + idx * 0.06} direction="up">
-                    <div className="flex items-start gap-2.5 group">
-                      <div className="w-4 h-4 rounded bg-[#FF9900]/20 text-[#FF9900] flex items-center justify-center shrink-0 mt-0.5 shadow-[0_0_6px_rgba(255,153,0,0.3)]">
-                        <Check className="w-3 h-3 stroke-[2.5]" />
+                    <div className="flex items-start gap-3 group">
+                      <div className="w-4.5 h-4.5 rounded bg-[#FF9900]/20 text-[#FF9900] flex items-center justify-center shrink-0 mt-0.5 shadow-[0_0_6px_rgba(255,153,0,0.3)]">
+                        <Check className="w-3.5 h-3.5 stroke-[2.5]" />
                       </div>
-                      <span className="text-xs sm:text-sm font-sans text-[#E2E8F0] group-hover:text-[#FF9900] transition-colors leading-relaxed">
+                      <span className="text-sm sm:text-base font-sans text-[#F1F5F9] group-hover:text-[#FF9900] transition-colors leading-relaxed">
                         {cert}
                       </span>
                     </div>

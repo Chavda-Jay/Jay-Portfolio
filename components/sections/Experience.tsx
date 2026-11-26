@@ -42,7 +42,7 @@ export function Experience() {
             </Reveal>
 
             <Reveal delay={0.25}>
-              <p className="mt-4 text-sm sm:text-base text-[#CBD5E1] leading-relaxed font-sans font-normal">
+              <p className="mt-4 text-base sm:text-lg text-[#E2E8F0] leading-relaxed font-sans font-normal">
                 Hands-on engineering experience spanning Generative AI applications, LLM lead-scoring agents, and scalable full-stack web platforms.
               </p>
             </Reveal>
@@ -115,21 +115,21 @@ export function Experience() {
                             {/* Role & Company */}
                             <div className="min-w-0">
                               <div className="flex flex-wrap items-center gap-2 mb-1">
-                                <h3 className="font-heading font-bold text-base sm:text-lg text-white group-hover:text-[#FF9900] transition-colors truncate">
+                                <h3 className="font-heading font-bold text-lg sm:text-xl text-white group-hover:text-[#FF9900] transition-colors truncate">
                                   {exp.role}
                                 </h3>
                                 {isCurrent ? (
-                                  <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-[#10B981]/15 text-[#34D399] border border-[#10B981]/30 flex items-center gap-1">
+                                  <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-[#10B981]/15 text-[#34D399] border border-[#10B981]/30 flex items-center gap-1.5">
                                     <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
                                     Present Role
                                   </span>
                                 ) : (
-                                  <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-medium bg-white/[0.06] text-[#CBD5E1] border border-white/[0.1]">
+                                  <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-white/[0.08] text-[#E2E8F0] border border-white/[0.14]">
                                     Completed
                                   </span>
                                 )}
                               </div>
-                              <p className="text-xs sm:text-sm text-[#FF9900] font-medium font-sans">
+                              <p className="text-sm sm:text-base text-[#FF9900] font-semibold font-sans">
                                 {exp.company}
                               </p>
                             </div>
@@ -137,7 +137,7 @@ export function Experience() {
 
                           {/* Period & Chevron Toggle */}
                           <div className="flex flex-col items-end shrink-0 gap-1.5">
-                            <span className="text-xs font-mono text-[#94A3B8]">
+                            <span className="text-xs sm:text-sm font-mono text-[#CBD5E1] font-medium">
                               {exp.period}
                             </span>
                             <div
@@ -152,11 +152,11 @@ export function Experience() {
 
                         {/* Collapsed Preview Hint */}
                         {!isExpanded && (
-                          <div className="mt-3.5 pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs text-[#94A3B8]">
+                          <div className="mt-3.5 pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs sm:text-sm text-[#CBD5E1]">
                             <span className="truncate pr-2">
                               {exp.highlights[0]}
                             </span>
-                            <span className="text-[#FF9900] font-mono text-[11px] shrink-0 font-medium">
+                            <span className="text-[#FF9900] font-mono text-xs shrink-0 font-medium">
                               Click to view details ↓
                             </span>
                           </div>
@@ -167,13 +167,13 @@ export function Experience() {
                           <div className="mt-5 pt-4 border-t border-white/[0.1] space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
                             {/* Contributions & Impact */}
                             <div>
-                              <h4 className="text-xs font-mono uppercase tracking-wider text-[#FF9900] mb-2.5 font-semibold">
+                              <h4 className="text-xs sm:text-sm font-mono uppercase tracking-wider text-[#FF9900] mb-3 font-bold">
                                 Key Contributions &amp; Impact
                               </h4>
-                              <ul className="space-y-2">
+                              <ul className="space-y-2.5">
                                 {exp.highlights.map((highlight, hIdx) => (
-                                  <li key={hIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#CBD5E1] leading-relaxed">
-                                    <CheckCircle2 className="w-4 h-4 text-[#34D399] shrink-0 mt-0.5" />
+                                  <li key={hIdx} className="flex items-start gap-2.5 text-sm sm:text-base text-[#E2E8F0] leading-relaxed">
+                                    <CheckCircle2 className="w-4 h-4 text-[#34D399] shrink-0 mt-1" />
                                     <span>{highlight}</span>
                                   </li>
                                 ))}

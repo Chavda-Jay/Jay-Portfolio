@@ -50,16 +50,16 @@ export function Hero({ hasResume = false }: HeroProps) {
 
             {/* Name */}
             <Reveal delay={0.22}>
-              <h2 className="mt-5 text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">
+              <h2 className="mt-5 text-3xl sm:text-4xl font-heading font-bold text-white tracking-tight">
                 Jay Chavda
               </h2>
             </Reveal>
 
             {/* Subtitle / Role with Orange Vertical Bar */}
             <Reveal delay={0.28}>
-              <div className="mt-1.5 flex items-center gap-2 text-sm sm:text-base font-sans">
-                <span className="text-[#FF9900] font-black text-lg">|</span>
-                <span className="text-[#CBD5E1] font-medium tracking-wide">
+              <div className="mt-2 flex items-center gap-2.5 text-base sm:text-lg font-sans">
+                <span className="text-[#FF9900] font-black text-xl">|</span>
+                <span className="text-[#E2E8F0] font-semibold tracking-wide">
                   AI/ML Engineer | Generative AI Developer
                 </span>
               </div>
@@ -67,31 +67,31 @@ export function Hero({ hasResume = false }: HeroProps) {
 
             {/* Description Paragraph */}
             <Reveal delay={0.34}>
-              <p className="mt-4 text-sm sm:text-base text-[#94A3B8] max-w-lg leading-relaxed font-sans font-normal">
+              <p className="mt-4 text-base sm:text-lg text-[#CBD5E1] max-w-xl leading-relaxed font-sans font-normal">
                 Passionate developer with expertise in Machine Learning, Generative AI and modern web technologies.
               </p>
             </Reveal>
 
             {/* Tech Pills Row (Sleek & Professional) */}
             <Reveal delay={0.4}>
-              <div className="mt-6 flex flex-wrap items-center gap-2">
-                <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm">
+              <div className="mt-6 flex flex-wrap items-center gap-2.5">
+                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-[#3776AB]" />
                   Python
                 </span>
-                <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm">
+                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-[#FF9900]" />
                   TensorFlow
                 </span>
-                <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm">
+                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-[#06B6D4]" />
                   React
                 </span>
-                <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm">
+                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-[#009688]" />
                   FastAPI
                 </span>
-                <span className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.12] flex items-center gap-1.5 shadow-sm">
+                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-[#A855F7]" />
                   LLMs &amp; RAG
                 </span>
@@ -99,11 +99,11 @@ export function Hero({ hasResume = false }: HeroProps) {
                 {/* Direct Link to Technical Skills Section */}
                 <Link
                   href="/#skills"
-                  className="px-3 py-1 rounded-full text-xs font-mono bg-[#111319] hover:bg-[#FF9900]/15 text-[#94A3B8] hover:text-[#FF9900] border border-white/[0.12] hover:border-[#FF9900]/50 transition-all flex items-center gap-1.5 shadow-sm active:scale-95 group"
+                  className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] hover:bg-[#FF9900]/15 text-[#94A3B8] hover:text-[#FF9900] border border-white/[0.14] hover:border-[#FF9900]/50 transition-all flex items-center gap-1.5 shadow-sm active:scale-95 group font-medium"
                   title="Explore all technical skills in detail"
                 >
                   <span>+ 30 more</span>
-                  <ArrowRight className="w-3 h-3 text-[#FF9900] group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 text-[#FF9900] group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </div>
             </Reveal>
@@ -113,7 +113,7 @@ export function Hero({ hasResume = false }: HeroProps) {
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link
                   href="/#projects"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full gradient-amber-btn text-sm font-heading font-bold text-[#08090C] transition-all hover:scale-105 active:scale-[0.98] shadow-lg shadow-[#FF9900]/25"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full gradient-amber-btn text-base font-heading font-bold text-[#08090C] transition-all hover:scale-105 active:scale-[0.98] shadow-lg shadow-[#FF9900]/25 cursor-pointer"
                 >
                   <span>Explore My Work</span>
                   <ArrowRight className="w-4 h-4" />
@@ -124,11 +124,11 @@ export function Hero({ hasResume = false }: HeroProps) {
                     href="/resume/Jay_Chavda_Resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#111319] hover:bg-[#161822] text-white border border-white/[0.15] hover:border-[#FF9900]/60 transition-all text-sm font-heading font-medium shadow-md hover:scale-105 active:scale-[0.98] group"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#111319] hover:bg-[#161822] text-white border border-white/[0.18] hover:border-[#FF9900]/60 transition-all text-base font-heading font-semibold shadow-md hover:scale-105 active:scale-[0.98] group cursor-pointer"
                     aria-label="View Jay Chavda Resume"
                   >
                     <span>Resume</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#FF9900] -rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-[#FF9900] -rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
                 )}
               </div>
@@ -136,7 +136,7 @@ export function Hero({ hasResume = false }: HeroProps) {
 
             {/* Social Icons Row (Authentic Brand Logos with Direct Account Redirection) */}
             <Reveal delay={0.52}>
-              <div className="mt-7 flex items-center gap-3">
+              <div className="mt-8 flex items-center gap-3.5">
                 <a
                   href={profileData.socials.linkedin}
                   target="_blank"

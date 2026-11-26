@@ -58,7 +58,7 @@ export function FeaturedProjects() {
             </h2>
           </Reveal>
           <Reveal delay={0.18}>
-            <p className="mt-2 text-sm font-sans text-[#94A3B8]">
+            <p className="mt-2 text-base font-sans text-[#CBD5E1]">
               Some of my best work
             </p>
           </Reveal>
@@ -132,13 +132,13 @@ export function FeaturedProjects() {
                       href={`/projects/${project.slug}`}
                       className="group/link flex items-center justify-between gap-2"
                     >
-                      <h3 className="font-heading font-bold text-xl text-white group-hover/link:text-[#FF9900] transition-colors">
+                      <h3 className="font-heading font-bold text-xl sm:text-2xl text-white group-hover/link:text-[#FF9900] transition-colors">
                         {project.title}
                       </h3>
-                      <ArrowRight className="w-4 h-4 text-[#94A3B8] group-hover/link:text-[#FF9900] group-hover/link:translate-x-1 transition-all shrink-0" />
+                      <ArrowRight className="w-4.5 h-4.5 text-[#CBD5E1] group-hover/link:text-[#FF9900] group-hover/link:translate-x-1 transition-all shrink-0" />
                     </Link>
 
-                    <p className="mt-3 text-sm text-[#CBD5E1] leading-relaxed font-sans font-normal">
+                    <p className="mt-3.5 text-sm sm:text-base text-[#CBD5E1] leading-relaxed font-sans font-normal">
                       {project.description}
                     </p>
 
@@ -149,7 +149,7 @@ export function FeaturedProjects() {
                           href={project.liveDemo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl gradient-amber-btn text-xs font-heading font-bold text-[#08090C] shadow-md shadow-[#FF9900]/20 hover:scale-[1.02] active:scale-[0.98] transition-all"
+                          className="inline-flex items-center justify-center gap-1.5 px-4.5 py-2.5 rounded-xl gradient-amber-btn text-xs sm:text-sm font-heading font-bold text-[#08090C] shadow-md shadow-[#FF9900]/20 hover:scale-[1.03] active:scale-[0.98] transition-all cursor-pointer"
                         >
                           <span>Live Demo</span>
                           <ExternalLink className="w-3.5 h-3.5" />
@@ -157,7 +157,7 @@ export function FeaturedProjects() {
                       )}
                       <Link
                         href={`/projects/${project.slug}`}
-                        className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.12] hover:border-[#FF9900]/50 text-xs font-heading font-semibold transition-all group/cs shadow-sm ml-auto"
+                        className="inline-flex items-center justify-center gap-1.5 px-4.5 py-2.5 rounded-xl bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.14] hover:border-[#FF9900]/60 text-xs sm:text-sm font-heading font-semibold transition-all group/cs shadow-sm ml-auto cursor-pointer"
                       >
                         <span>Case Study</span>
                         <ArrowRight className="w-3.5 h-3.5 text-[#FF9900] group-hover/cs:translate-x-1 transition-transform" />
@@ -171,7 +171,7 @@ export function FeaturedProjects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-[#08090C] text-[#CBD5E1] border border-white/[0.12]"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-[#08090C] text-[#E2E8F0] border border-white/[0.14]"
                     >
                       <span className="text-[#22D3EE]">✦</span>
                       <span>{tag}</span>
@@ -189,7 +189,7 @@ export function FeaturedProjects() {
           <Reveal delay={0.35} direction="up">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#111319] hover:bg-[#161822] text-[#E2E8F0] hover:text-[#FF9900] border border-white/[0.12] hover:border-[#FF9900]/50 transition-all text-xs sm:text-sm font-mono shadow-lg hover:shadow-[#FF9900]/10 group"
+              className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-[#111319] hover:bg-[#161822] text-[#F1F5F9] hover:text-[#FF9900] border border-white/[0.14] hover:border-[#FF9900]/60 transition-all text-sm sm:text-base font-mono font-medium shadow-xl hover:shadow-[#FF9900]/15 group cursor-pointer"
             >
               <span>Explore All Projects Archive (6 Projects)</span>
               <ArrowRight className="w-4 h-4 text-[#FF9900] group-hover:translate-x-1 transition-transform" />

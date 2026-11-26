@@ -91,7 +91,7 @@ export function Skills() {
             </Reveal>
 
             <Reveal delay={0.25}>
-              <p className="mt-4 text-sm sm:text-base text-[#CBD5E1] leading-relaxed font-sans font-normal">
+              <p className="mt-4 text-base sm:text-lg text-[#E2E8F0] leading-relaxed font-sans font-normal">
                 A verified toolkit engineered across academic rigor (MCA, 8.30 CGPA) and real-world AI, backend, and full-stack software deployments.
               </p>
             </Reveal>
@@ -133,17 +133,17 @@ export function Skills() {
                             >
                               <Icon className="w-4 h-4" />
                             </div>
-                            <h3 className="font-heading font-bold text-sm text-[#F8FAFC] group-hover:text-[#FF9900] transition-colors truncate">
+                            <h3 className="font-heading font-bold text-base sm:text-lg text-[#F8FAFC] group-hover:text-[#FF9900] transition-colors truncate">
                               {group.title}
                             </h3>
                           </div>
-                          <span className="text-[10px] font-mono text-[#94A3B8] shrink-0">
-                            {group.skills.length}
+                          <span className="text-xs font-mono text-[#94A3B8] shrink-0 font-medium">
+                            {group.skills.length} skills
                           </span>
                         </div>
 
-                        {/* Interactive Skills Chips (Zero Truncation) */}
-                        <div className="flex flex-wrap gap-1.5 mt-3.5">
+                        {/* Interactive Skills Chips (Zero Truncation & Bold High Contrast) */}
+                        <div className="flex flex-wrap gap-2 mt-4">
                           {group.skills.map((skill) => {
                             const isSelected = activeSkill === skill;
                             return (
@@ -151,10 +151,10 @@ export function Skills() {
                                 key={skill}
                                 type="button"
                                 onClick={() => setActiveSkill(isSelected ? null : skill)}
-                                className={`px-2.5 py-1 rounded-md text-[11px] font-mono transition-all select-none cursor-pointer text-left active:scale-95 ${
+                                className={`px-3 py-1.5 rounded-lg text-xs sm:text-[13px] font-mono font-medium transition-all select-none cursor-pointer text-left active:scale-95 ${
                                   isSelected
                                     ? "bg-[#FF9900] text-[#08090C] font-bold shadow-md shadow-[#FF9900]/30 border border-[#FF9900]"
-                                    : "bg-[#08090C] text-[#CBD5E1] border border-white/[0.08] hover:border-[#FF9900]/50 hover:text-white hover:bg-[#FF9900]/10"
+                                    : "bg-[#08090C] text-[#E2E8F0] border border-white/[0.12] hover:border-[#FF9900]/60 hover:text-white hover:bg-[#FF9900]/15"
                                 }`}
                                 title={`Click to highlight ${skill}`}
                               >

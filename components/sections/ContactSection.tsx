@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Container } from "@/layout/Container";
 import { Reveal } from "@/ui/Reveal";
 import { profileData } from "@/data/profile";
-import { Mail, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { Mail, Send, CheckCircle2, AlertCircle, Copy, Check } from "lucide-react";
 import { GithubIcon, LinkedinIcon, GmailIcon } from "@/ui/Icons";
 
 const WEB3FORMS_ACCESS_KEY =
@@ -21,6 +21,13 @@ export function ContactSection() {
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [serverMessage, setServerMessage] = useState<string | null>(null);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(profileData.email);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2000);
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -129,31 +136,50 @@ export function ContactSection() {
               </h2>
             </Reveal>
 
-            {/* Direct Email Link */}
+            {/* Direct Email Link + One-Click Copy */}
             <Reveal delay={0.25}>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
                   href={`mailto:${profileData.email}`}
-                  className="inline-flex items-center gap-2.5 text-sm sm:text-base font-mono text-[#CBD5E1] hover:text-[#FF9900] transition-colors group"
+                  className="inline-flex items-center gap-2.5 text-base sm:text-lg font-mono font-medium text-white hover:text-[#FF9900] transition-colors group"
                 >
-                  <Mail className="w-4 h-4 text-[#FF9900]" />
+                  <Mail className="w-5 h-5 text-[#FF9900]" />
                   <span className="underline-offset-4 group-hover:underline">
                     {profileData.email}
                   </span>
                 </a>
+
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  title="Copy email address"
+                  className="px-3 py-1.5 rounded-lg bg-[#111319] hover:bg-[#FF9900]/15 border border-white/[0.14] hover:border-[#FF9900] text-xs font-mono text-[#CBD5E1] hover:text-[#FF9900] transition-all flex items-center gap-1.5 cursor-pointer shadow-sm active:scale-95"
+                >
+                  {copiedEmail ? (
+                    <>
+                      <Check className="w-3.5 h-3.5 text-[#10B981]" />
+                      <span className="text-[#10B981] font-semibold">Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-3.5 h-3.5 text-[#FF9900]" />
+                      <span>Copy</span>
+                    </>
+                  )}
+                </button>
               </div>
             </Reveal>
 
             {/* Social Icons Row */}
             <Reveal delay={0.32}>
-              <div className="mt-8 flex items-center gap-3">
+              <div className="mt-8 flex items-center gap-3.5">
                 <a
                   href={profileData.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn Profile"
                   title="Connect with Jay Chavda on LinkedIn"
-                  className="w-10 h-10 rounded-xl bg-[#111319] hover:bg-[#0A66C2]/15 border border-white/[0.12] hover:border-[#0A66C2] text-[#CBD5E1] hover:text-[#0A66C2] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-md group"
+                  className="w-11 h-11 rounded-xl bg-[#111319] hover:bg-[#0A66C2]/15 border border-white/[0.14] hover:border-[#0A66C2] text-[#E2E8F0] hover:text-[#0A66C2] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-md group cursor-pointer"
                 >
                   <LinkedinIcon className="w-5 h-5" />
                 </a>
@@ -164,7 +190,7 @@ export function ContactSection() {
                   rel="noopener noreferrer"
                   aria-label="GitHub Profile"
                   title="View Jay Chavda on GitHub"
-                  className="w-10 h-10 rounded-xl bg-[#111319] hover:bg-white/10 border border-white/[0.12] hover:border-white text-[#CBD5E1] hover:text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-md group"
+                  className="w-11 h-11 rounded-xl bg-[#111319] hover:bg-white/10 border border-white/[0.14] hover:border-white text-[#E2E8F0] hover:text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-md group cursor-pointer"
                 >
                   <GithubIcon className="w-5 h-5" />
                 </a>
@@ -173,7 +199,7 @@ export function ContactSection() {
                   href={`mailto:${profileData.email}`}
                   aria-label="Send Direct Email"
                   title={`Email Jay Chavda: ${profileData.email}`}
-                  className="w-10 h-10 rounded-xl bg-[#111319] hover:bg-[#EA4335]/15 border border-white/[0.12] hover:border-[#EA4335] text-[#CBD5E1] hover:text-[#EA4335] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-md group"
+                  className="w-11 h-11 rounded-xl bg-[#111319] hover:bg-[#EA4335]/15 border border-white/[0.14] hover:border-[#EA4335] text-[#E2E8F0] hover:text-[#EA4335] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-md group cursor-pointer"
                 >
                   <GmailIcon className="w-5 h-5" />
                 </a>
@@ -181,12 +207,12 @@ export function ContactSection() {
             </Reveal>
           </div>
 
-          {/* Right Column: Clean Dark Form */}
+          {/* Right Column: Clean Dark Form with Bigger Readable Inputs */}
           <div className="lg:col-span-7 w-full">
             <Reveal delay={0.2} direction="up">
-              <div className="p-6 sm:p-8 rounded-2xl bg-[#111319] border border-white/[0.08] shadow-xl">
+              <div className="p-6 sm:p-8 rounded-2xl bg-[#111319] border border-white/[0.12] shadow-2xl">
                 
-                <form onSubmit={handleSubmit} className="space-y-4" noValidate>
+                <form onSubmit={handleSubmit} className="space-y-4.5" noValidate>
                   {/* Honeypot field for anti-spam */}
                   <input
                     type="text"
@@ -208,10 +234,10 @@ export function ContactSection() {
                         onChange={handleChange}
                         placeholder="Your Name *"
                         disabled={status === "loading"}
-                        className={`w-full px-4 py-3 rounded-xl bg-[#08090C] border text-sm text-white placeholder-[#64748B] focus:outline-none transition-colors ${
+                        className={`w-full px-4.5 py-3.5 rounded-xl bg-[#08090C] border text-sm sm:text-base text-white placeholder-[#94A3B8] focus:outline-none transition-colors ${
                           fieldErrors.name
                             ? "border-[#EF4444] focus:border-[#EF4444]"
-                            : "border-white/[0.1] focus:border-[#FF9900]"
+                            : "border-white/[0.14] focus:border-[#FF9900]"
                         }`}
                       />
                       {fieldErrors.name && (
@@ -227,10 +253,10 @@ export function ContactSection() {
                         onChange={handleChange}
                         placeholder="Your Email *"
                         disabled={status === "loading"}
-                        className={`w-full px-4 py-3 rounded-xl bg-[#08090C] border text-sm text-white placeholder-[#64748B] focus:outline-none transition-colors ${
+                        className={`w-full px-4.5 py-3.5 rounded-xl bg-[#08090C] border text-sm sm:text-base text-white placeholder-[#94A3B8] focus:outline-none transition-colors ${
                           fieldErrors.email
                             ? "border-[#EF4444] focus:border-[#EF4444]"
-                            : "border-white/[0.1] focus:border-[#FF9900]"
+                            : "border-white/[0.14] focus:border-[#FF9900]"
                         }`}
                       />
                       {fieldErrors.email && (
@@ -248,10 +274,10 @@ export function ContactSection() {
                       onChange={handleChange}
                       placeholder="Your Message *"
                       disabled={status === "loading"}
-                      className={`w-full px-4 py-3 rounded-xl bg-[#08090C] border text-sm text-white placeholder-[#64748B] focus:outline-none transition-colors resize-none ${
+                      className={`w-full px-4.5 py-3.5 rounded-xl bg-[#08090C] border text-sm sm:text-base text-white placeholder-[#94A3B8] focus:outline-none transition-colors resize-none ${
                         fieldErrors.message
                           ? "border-[#EF4444] focus:border-[#EF4444]"
-                          : "border-white/[0.1] focus:border-[#FF9900]"
+                          : "border-white/[0.14] focus:border-[#FF9900]"
                       }`}
                     />
                     {fieldErrors.message && (
@@ -262,16 +288,16 @@ export function ContactSection() {
                   {/* Status Alerts */}
                   {serverMessage && (
                     <div
-                      className={`p-3.5 rounded-xl text-xs flex items-center gap-2 ${
+                      className={`p-4 rounded-xl text-xs sm:text-sm flex items-center gap-2.5 ${
                         status === "success"
-                          ? "bg-[#10B981]/10 text-[#34D399] border border-[#10B981]/25"
-                          : "bg-[#EF4444]/10 text-[#F87171] border border-[#EF4444]/25"
+                          ? "bg-[#10B981]/15 text-[#34D399] border border-[#10B981]/30 font-medium"
+                          : "bg-[#EF4444]/15 text-[#F87171] border border-[#EF4444]/30"
                       }`}
                     >
                       {status === "success" ? (
-                        <CheckCircle2 className="w-4 h-4 shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 shrink-0" />
                       ) : (
-                        <AlertCircle className="w-4 h-4 shrink-0" />
+                        <AlertCircle className="w-5 h-5 shrink-0" />
                       )}
                       <span>{serverMessage}</span>
                     </div>
@@ -281,10 +307,10 @@ export function ContactSection() {
                   <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="w-full py-3.5 px-6 rounded-full gradient-amber-btn text-sm font-heading font-bold text-[#08090C] flex items-center justify-center gap-2 transition-transform active:scale-[0.98] shadow-lg shadow-[#FF9900]/20 disabled:opacity-60 cursor-pointer"
+                    className="w-full py-4 px-8 rounded-full gradient-amber-btn text-base font-heading font-bold text-[#08090C] flex items-center justify-center gap-2.5 transition-transform active:scale-[0.98] shadow-lg shadow-[#FF9900]/25 disabled:opacity-60 cursor-pointer"
                   >
-                    <span>{status === "loading" ? "Sending..." : "Send Message"}</span>
-                    <Send className="w-4 h-4" />
+                    <span>{status === "loading" ? "Sending Message..." : "Send Message"}</span>
+                    <Send className="w-4.5 h-4.5" />
                   </button>
                 </form>
 
