@@ -233,6 +233,19 @@ body {
   animation: floatBadge2 4.5s ease-in-out infinite;
 }
 
+@keyframes floatLevitate {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.animate-float-levitate {
+  animation: floatLevitate 3.2s ease-in-out infinite;
+}
+
 /* Custom Sleek Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

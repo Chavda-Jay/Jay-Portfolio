@@ -2,11 +2,9 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import {
-  Sparkles,
   X,
   Send,
   RotateCcw,
-  Bot,
   User,
   ArrowUpRight,
   ChevronDown,
@@ -22,6 +20,155 @@ let idCounter = 100;
 function generateMessageId(prefix: string) {
   idCounter += 1;
   return `${prefix}-${idCounter}`;
+}
+
+/**
+ * Custom 3D Spherical AI Robot Avatar SVG
+ * Tailored directly to the user's reference robot with signature amber & obsidian theme.
+ */
+export function RobotAvatar({
+  className = "w-10 h-10",
+  idSuffix = "main",
+}: {
+  className?: string;
+  idSuffix?: string;
+}) {
+  const glowId = `amber-glow-${idSuffix}`;
+  const shadowId = `soft-shadow-${idSuffix}`;
+  const headGradId = `head-grad-${idSuffix}`;
+  const visorGradId = `visor-grad-${idSuffix}`;
+  const visorGlossId = `visor-gloss-${idSuffix}`;
+  const earGradId = `ear-grad-${idSuffix}`;
+  const baseGradId = `base-grad-${idSuffix}`;
+
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <defs>
+        {/* Glow Filters */}
+        <filter id={glowId} x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="2.5" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+        <filter id={shadowId} x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="3" stdDeviation="3" floodColor="#000000" floodOpacity="0.6" />
+        </filter>
+
+        {/* Outer Head Gradient: Premium Metallic Pearl with depth */}
+        <linearGradient id={headGradId} x1="25" y1="12" x2="75" y2="80" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#FFFFFF" />
+          <stop offset="35%" stopColor="#E2E8F0" />
+          <stop offset="70%" stopColor="#64748B" />
+          <stop offset="100%" stopColor="#1E293B" />
+        </linearGradient>
+
+        {/* Visor Screen Gradient: Deep Obsidian with subtle reflection */}
+        <linearGradient id={visorGradId} x1="50" y1="28" x2="50" y2="68" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#0F131D" />
+          <stop offset="50%" stopColor="#08090C" />
+          <stop offset="100%" stopColor="#141824" />
+        </linearGradient>
+
+        {/* Visor Gloss Reflection Curve */}
+        <linearGradient id={visorGlossId} x1="30" y1="32" x2="70" y2="48" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
+        </linearGradient>
+
+        {/* Ear Pod Gradient */}
+        <linearGradient id={earGradId} x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#CBD5E1" />
+          <stop offset="100%" stopColor="#1E293B" />
+        </linearGradient>
+
+        {/* Hover Pedestal Base Gradient */}
+        <linearGradient id={baseGradId} x1="50" y1="80" x2="50" y2="94" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#1E293B" />
+          <stop offset="50%" stopColor="#0F172A" />
+          <stop offset="100%" stopColor="#08090C" />
+        </linearGradient>
+      </defs>
+
+      {/* Floating Hover Base / Pedestal */}
+      <ellipse cx="50" cy="87" rx="33" ry="6.5" fill={`url(#${baseGradId})`} filter={`url(#${shadowId})`} />
+      <ellipse
+        cx="50"
+        cy="86"
+        rx="31"
+        ry="5"
+        stroke="#FF9900"
+        strokeWidth="1.5"
+        strokeOpacity="0.85"
+        filter={`url(#${glowId})`}
+      />
+      <ellipse cx="50" cy="84" rx="25" ry="3.5" fill="#08090C" />
+
+      {/* Ambient Floor Glow under Base */}
+      <ellipse cx="50" cy="91" rx="28" ry="3.5" fill="#FF9900" fillOpacity="0.3" filter={`url(#${glowId})`} />
+
+      {/* Left Ear Sensor Pod */}
+      <circle cx="16" cy="48" r="7" fill={`url(#${earGradId})`} filter={`url(#${shadowId})`} />
+      <circle
+        cx="16"
+        cy="48"
+        r="5"
+        stroke="#FF9900"
+        strokeWidth="1.2"
+        strokeOpacity="0.9"
+        fill="#08090C"
+        filter={`url(#${glowId})`}
+      />
+      <circle cx="16" cy="48" r="2" fill="#FF9900" />
+
+      {/* Right Ear Sensor Pod */}
+      <circle cx="84" cy="48" r="7" fill={`url(#${earGradId})`} filter={`url(#${shadowId})`} />
+      <circle
+        cx="84"
+        cy="48"
+        r="5"
+        stroke="#FF9900"
+        strokeWidth="1.2"
+        strokeOpacity="0.9"
+        fill="#08090C"
+        filter={`url(#${glowId})`}
+      />
+      <circle cx="84" cy="48" r="2" fill="#FF9900" />
+
+      {/* Main Spherical Robot Head (3D Sphere) */}
+      <circle cx="50" cy="46" r="32" fill={`url(#${headGradId})`} filter={`url(#${shadowId})`} />
+      {/* Top Head Highlight for 3D curved sphere realism */}
+      <ellipse cx="45" cy="23" rx="15" ry="6.5" fill="#FFFFFF" fillOpacity="0.45" />
+
+      {/* Dark Visor Screen */}
+      <ellipse cx="50" cy="48" rx="24" ry="18" fill={`url(#${visorGradId})`} stroke="#1E293B" strokeWidth="1.2" />
+      {/* Visor Gloss Reflection */}
+      <path d="M 29 42 C 37 32, 63 32, 71 42 C 63 37, 37 37, 29 42 Z" fill={`url(#${visorGlossId})`} />
+
+      {/* Glowing Amber Eyes (Theme #FF9900 with Glow) */}
+      {/* Left Eye */}
+      <ellipse cx="40" cy="47" rx="4" ry="6" fill="#FF9900" filter={`url(#${glowId})`} />
+      <ellipse cx="39" cy="45" rx="1.4" ry="2" fill="#FFF4D4" />
+
+      {/* Right Eye */}
+      <ellipse cx="60" cy="47" rx="4" ry="6" fill="#FF9900" filter={`url(#${glowId})`} />
+      <ellipse cx="59" cy="45" rx="1.4" ry="2" fill="#FFF4D4" />
+
+      {/* Cute Friendly Robotic Smile */}
+      <path
+        d="M 44 58 Q 50 62 56 58"
+        stroke="#FF9900"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        fill="none"
+        filter={`url(#${glowId})`}
+      />
+    </svg>
+  );
 }
 
 export function JayAIChatbot() {
@@ -90,23 +237,22 @@ export function JayAIChatbot() {
   };
 
   const formatMessageText = (content: string) => {
-    // Split into paragraphs
     const paragraphs = content.split("\n\n");
     return paragraphs.map((para, pIdx) => {
-      // Split into lines for bullet lists
       const lines = para.split("\n");
       return (
         <div key={pIdx} className={pIdx > 0 ? "mt-2" : ""}>
           {lines.map((line, lIdx) => {
             const isBullet = line.trim().startsWith("•") || line.trim().startsWith("-");
-            // Bold parser **text**
             const parts = line.split(/(\*\*.*?\*\*)/g);
             return (
               <p
                 key={lIdx}
-                className={`${isBullet ? "pl-3 text-[13px] leading-relaxed relative my-1 text-[#CBD5E1]" : "text-[13px] leading-relaxed"} ${
-                  lIdx > 0 && !isBullet ? "mt-1" : ""
-                }`}
+                className={`${
+                  isBullet
+                    ? "pl-3 text-[13px] leading-relaxed relative my-1 text-[#CBD5E1]"
+                    : "text-[13px] leading-relaxed"
+                } ${lIdx > 0 && !isBullet ? "mt-1" : ""}`}
               >
                 {parts.map((part, partIdx) => {
                   if (part.startsWith("**") && part.endsWith("**")) {
@@ -135,59 +281,62 @@ export function JayAIChatbot() {
 
   return (
     <>
-      {/* Floating Trigger Button */}
+      {/* Compact Floating 3D Robot Avatar Trigger (Matches Image 2) */}
       <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50">
         {!isOpen && (
-          <button
-            onClick={() => {
-              setIsOpen(true);
-              setHasUnread(false);
-            }}
-            aria-label="Chat with Jay's AI Assistant"
-            className="group relative flex items-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-full bg-[#111319]/95 hover:bg-[#181B24] border border-[#FF9900]/40 hover:border-[#FF9900] shadow-[0_8px_30px_rgba(255,153,0,0.25)] hover:shadow-[0_10px_35px_rgba(255,153,0,0.4)] backdrop-blur-xl transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
-          >
-            {/* Pulsing Radar Ring */}
-            <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF9900] opacity-75" />
-              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#FF9900]" />
-            </span>
-
-            {/* Glowing Icon */}
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#FF9900] to-[#FFB84D] flex items-center justify-center text-[#08090C] font-bold shadow-md shadow-[#FF9900]/30 group-hover:rotate-12 transition-transform">
-              <Sparkles className="w-4 h-4" />
+          <div className="relative group">
+            {/* Hover Tooltip / Speech Bubble */}
+            <div className="absolute right-0 bottom-full mb-3 hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#111319]/95 border border-[#FF9900]/40 text-xs font-mono text-white shadow-xl shadow-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none translate-y-1 group-hover:translate-y-0 whitespace-nowrap">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
+              <span>Ask Jay&apos;s AI</span>
+              <span className="text-[#FF9900] text-[10px]">✨</span>
             </div>
 
-            <div className="flex flex-col text-left">
-              <span className="text-xs font-mono font-semibold tracking-wider uppercase text-[#FF9900] flex items-center gap-1">
-                Ask Jay&apos;s AI
-              </span>
-              <span className="text-[11px] text-[#94A3B8] font-sans">
-                Interactive Assistant
-              </span>
-            </div>
+            {/* Circular Floating Robot Button */}
+            <button
+              onClick={() => {
+                setIsOpen(true);
+                setHasUnread(false);
+              }}
+              aria-label="Open Jay's AI Assistant"
+              className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#0D0F16]/90 hover:bg-[#141722] border border-[#FF9900]/40 hover:border-[#FF9900] shadow-[0_4px_25px_rgba(255,153,0,0.35),0_0_15px_rgba(0,0,0,0.8)] hover:shadow-[0_6px_35px_rgba(255,153,0,0.55)] backdrop-blur-xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer animate-float-levitate"
+            >
+              {/* Pulsing Radar Aura Ring */}
+              <span className="absolute -inset-1 rounded-full bg-[#FF9900]/15 animate-ping opacity-60" />
 
-            {hasUnread && (
-              <span className="ml-1 px-1.5 py-0.5 text-[10px] font-mono font-bold rounded-full bg-[#FF9900]/20 text-[#FF9900] border border-[#FF9900]/30 animate-pulse">
-                New
+              {/* 3D Robot Avatar Icon */}
+              <RobotAvatar className="w-11 h-11 sm:w-13 sm:h-13 transition-transform group-hover:scale-105" idSuffix="btn" />
+
+              {/* Online Green Pulsing Indicator */}
+              <span className="absolute top-0 right-0 flex h-3.5 w-3.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10B981] opacity-75" />
+                <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#10B981] border-2 border-[#0D0F16]" />
               </span>
-            )}
-          </button>
+
+              {/* Unread "AI" Micro Badge */}
+              {hasUnread && (
+                <span className="absolute -bottom-1 -left-1 px-1.5 py-0.2 rounded-full text-[9px] font-mono font-bold bg-[#FF9900] text-[#08090C] border border-[#08090C] shadow-md shadow-[#FF9900]/50 animate-bounce">
+                  AI
+                </span>
+              )}
+            </button>
+          </div>
         )}
       </div>
 
-      {/* Floating Chat Modal / Drawer */}
+      {/* Floating Chat Window */}
       {isOpen && (
         <div
           role="dialog"
           aria-label="Jay Chavda AI Assistant Chat"
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-32px)] sm:w-[420px] h-[580px] max-h-[85vh] flex flex-col bg-[#0D0F16]/98 backdrop-blur-2xl border border-white/[0.14] rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(255,153,0,0.15)] overflow-hidden transition-all animate-in fade-in zoom-in-95 duration-200"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-32px)] sm:w-[420px] h-[580px] max-h-[85vh] flex flex-col bg-[#0D0F16]/98 backdrop-blur-2xl border border-white/[0.14] rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.85),0_0_40px_rgba(255,153,0,0.2)] overflow-hidden transition-all animate-in fade-in zoom-in-95 duration-200"
         >
-          {/* Header */}
-          <div className="px-4 py-3.5 sm:px-5 sm:py-4 bg-[#141721]/90 border-b border-white/[0.08] flex items-center justify-between">
+          {/* Header with 3D Robot Avatar */}
+          <div className="px-4 py-3.5 sm:px-5 sm:py-3.5 bg-[#141721]/95 border-b border-white/[0.08] flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#FF9900] to-[#FFAA33] flex items-center justify-center text-[#08090C] font-bold shadow-md shadow-[#FF9900]/30">
-                  <Bot className="w-5 h-5 text-[#08090C]" />
+                <div className="w-10 h-10 rounded-full bg-[#08090C] border border-[#FF9900]/40 flex items-center justify-center shadow-md shadow-[#FF9900]/25 overflow-hidden">
+                  <RobotAvatar className="w-9 h-9" idSuffix="header" />
                 </div>
                 <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#10B981] border-2 border-[#0D0F16]" />
               </div>
@@ -235,8 +384,8 @@ export function JayAIChatbot() {
                 }`}
               >
                 {msg.sender === "ai" && (
-                  <div className="w-7 h-7 rounded-full bg-[#FF9900]/20 border border-[#FF9900]/40 flex items-center justify-center shrink-0 mt-0.5 text-[#FF9900]">
-                    <Sparkles className="w-3.5 h-3.5" />
+                  <div className="w-7 h-7 rounded-full bg-[#08090C] border border-[#FF9900]/40 flex items-center justify-center shrink-0 mt-0.5 overflow-hidden shadow-sm shadow-[#FF9900]/30">
+                    <RobotAvatar className="w-6 h-6" idSuffix={`msg-${msg.id}`} />
                   </div>
                 )}
 
@@ -296,8 +445,8 @@ export function JayAIChatbot() {
             {/* Typing Indicator */}
             {isTyping && (
               <div className="flex gap-2.5 justify-start">
-                <div className="w-7 h-7 rounded-full bg-[#FF9900]/20 border border-[#FF9900]/40 flex items-center justify-center shrink-0 text-[#FF9900]">
-                  <Sparkles className="w-3.5 h-3.5 animate-spin" />
+                <div className="w-7 h-7 rounded-full bg-[#08090C] border border-[#FF9900]/40 flex items-center justify-center shrink-0 overflow-hidden">
+                  <RobotAvatar className="w-6 h-6 animate-pulse" idSuffix="typing" />
                 </div>
                 <div className="bg-[#161922] border border-white/[0.08] rounded-2xl rounded-tl-none p-3.5 flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#FF9900] animate-bounce" />
