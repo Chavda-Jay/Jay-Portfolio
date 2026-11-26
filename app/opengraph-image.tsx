@@ -17,72 +17,122 @@ export default function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundColor: "#05070F",
+          backgroundColor: "#08090C",
           padding: "60px 80px",
           fontFamily: "sans-serif",
           position: "relative",
+          overflow: "hidden",
         }}
       >
-        {/* Glow ambient background effects */}
+        {/* Glow ambient background effects in signature Amber */}
         <div
           style={{
             position: "absolute",
             top: "-100px",
-            left: "400px",
-            width: "500px",
-            height: "500px",
+            left: "350px",
+            width: "550px",
+            height: "550px",
             borderRadius: "50%",
-            background: "rgba(47, 107, 255, 0.25)",
-            filter: "blur(120px)",
+            background: "rgba(255, 153, 0, 0.18)",
+            filter: "blur(130px)",
           }}
         />
         <div
           style={{
             position: "absolute",
-            bottom: "-100px",
-            right: "100px",
-            width: "450px",
-            height: "450px",
+            bottom: "-120px",
+            right: "80px",
+            width: "480px",
+            height: "480px",
             borderRadius: "50%",
-            background: "rgba(139, 92, 246, 0.2)",
-            filter: "blur(120px)",
+            background: "rgba(255, 153, 0, 0.12)",
+            filter: "blur(140px)",
           }}
         />
 
-        {/* Top Header */}
+        {/* Top Header: Logo + Brand Name */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "16px",
+            justifyContent: "space-between",
+            width: "100%",
           }}
         >
           <div
             style={{
-              width: "52px",
-              height: "52px",
-              borderRadius: "14px",
-              background: "linear-gradient(135deg, #2F6BFF 0%, #8B5CF6 100%)",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center",
-              color: "white",
-              fontSize: "26px",
-              fontWeight: 800,
+              gap: "16px",
             }}
           >
-            JC
+            <div
+              style={{
+                width: "54px",
+                height: "54px",
+                borderRadius: "14px",
+                background: "linear-gradient(135deg, #FF9900 0%, #E68A00 100%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#08090C",
+                fontSize: "26px",
+                fontWeight: 800,
+                boxShadow: "0 4px 20px rgba(255, 153, 0, 0.35)",
+              }}
+            >
+              JC
+            </div>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <span
+                style={{
+                  color: "#FFFFFF",
+                  fontSize: "24px",
+                  fontWeight: 800,
+                  letterSpacing: "-0.5px",
+                }}
+              >
+                JAY CHAVDA
+              </span>
+              <span
+                style={{
+                  color: "#FF9900",
+                  fontSize: "13px",
+                  fontWeight: 600,
+                  fontFamily: "monospace",
+                  letterSpacing: "1.5px",
+                }}
+              >
+                AI/ML &amp; GENERATIVE AI ENGINEER
+              </span>
+            </div>
           </div>
-          <span
+
+          <div
             style={{
-              color: "#8C97B5",
-              fontSize: "22px",
-              fontWeight: 500,
-              letterSpacing: "1px",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "8px 18px",
+              borderRadius: "999px",
+              backgroundColor: "rgba(16, 185, 129, 0.1)",
+              border: "1px solid rgba(16, 185, 129, 0.25)",
+              color: "#34D399",
+              fontSize: "14px",
+              fontFamily: "monospace",
+              fontWeight: 600,
             }}
           >
-            JAY CHAVDA · PORTFOLIO
-          </span>
+            <div
+              style={{
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                backgroundColor: "#10B981",
+              }}
+            />
+            Available for Opportunities
+          </div>
         </div>
 
         {/* Middle Main Content */}
@@ -90,92 +140,90 @@ export default function Image() {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "18px",
+            gap: "20px",
           }}
         >
           <h1
             style={{
               fontSize: "64px",
               fontWeight: 800,
-              color: "#E8ECF8",
+              color: "#FFFFFF",
               lineHeight: 1.1,
-              letterSpacing: "-1.5px",
+              letterSpacing: "-1.8px",
               margin: 0,
             }}
           >
-            AI/ML Engineer &amp; <br />
+            Building AI That Works in the <br />
             <span
               style={{
-                background: "linear-gradient(135deg, #5B8CFF 0%, #8B5CF6 100%)",
-                backgroundClip: "text",
-                color: "#5B8CFF",
+                color: "#FF9900",
               }}
             >
-              Generative AI Developer
+              Real World.
             </span>
           </h1>
 
           <p
             style={{
-              fontSize: "26px",
-              color: "#8C97B5",
-              maxWidth: "900px",
+              fontSize: "24px",
+              color: "#94A3B8",
               lineHeight: 1.4,
               margin: 0,
+              maxWidth: "880px",
             }}
           >
-            Building production LLM applications, FastAPI architectures, and
-            intelligent full-stack systems.
+            Specializing in Generative AI, RAG Systems, FastAPI Microservices, and
+            Production LLM Applications.
           </p>
         </div>
 
-        {/* Footer Badges */}
+        {/* Bottom Feature Badges & Domain */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "16px",
+            justifyContent: "space-between",
+            paddingTop: "24px",
+            borderTop: "1px solid rgba(255, 255, 255, 0.08)",
           }}
         >
           <div
             style={{
-              backgroundColor: "rgba(16, 25, 53, 0.8)",
-              border: "1px solid rgba(47, 107, 255, 0.4)",
-              borderRadius: "100px",
-              padding: "10px 22px",
-              color: "#5B8CFF",
-              fontSize: "18px",
-              fontWeight: 600,
+              display: "flex",
+              gap: "12px",
             }}
           >
-            FastAPI &amp; Python
+            {["RAG & LLMs", "FastAPI & Python", "ChromaDB", "React.js", "Docker"].map(
+              (pill, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    backgroundColor: "rgba(255, 255, 255, 0.06)",
+                    border: "1px solid rgba(255, 255, 255, 0.12)",
+                    borderRadius: "8px",
+                    padding: "8px 16px",
+                    color: "#E2E8F0",
+                    fontSize: "14px",
+                    fontFamily: "monospace",
+                    fontWeight: 600,
+                  }}
+                >
+                  {pill}
+                </div>
+              )
+            )}
           </div>
-          <div
+
+          <span
             style={{
-              backgroundColor: "rgba(16, 25, 53, 0.8)",
-              border: "1px solid rgba(139, 92, 246, 0.4)",
-              borderRadius: "100px",
-              padding: "10px 22px",
-              color: "#A78BFA",
-              fontSize: "18px",
+              color: "#FF9900",
+              fontSize: "16px",
+              fontFamily: "monospace",
               fontWeight: 600,
             }}
           >
-            LLMs &amp; Prompt Engineering
-          </div>
-          <div
-            style={{
-              backgroundColor: "rgba(16, 25, 53, 0.8)",
-              border: "1px solid rgba(34, 211, 238, 0.4)",
-              borderRadius: "100px",
-              padding: "10px 22px",
-              color: "#22D3EE",
-              fontSize: "18px",
-              fontWeight: 600,
-            }}
-          >
-            React &amp; Full-Stack
-          </div>
+            chavdajay510@gmail.com
+          </span>
         </div>
       </div>
     ),

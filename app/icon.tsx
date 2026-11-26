@@ -11,18 +11,19 @@ export default function Icon() {
     (
       <div
         style={{
-          fontSize: 18,
-          background: "linear-gradient(135deg, #2F6BFF 0%, #8B5CF6 100%)",
+          fontSize: 16,
+          background: "linear-gradient(135deg, #FF9900 0%, #E68A00 100%)",
           width: "100%",
           height: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          color: "white",
+          color: "#08090C",
           borderRadius: 8,
-          fontWeight: 700,
+          fontWeight: 800,
           fontFamily: "sans-serif",
           letterSpacing: "-0.5px",
+          boxShadow: "0 2px 8px rgba(255, 153, 0, 0.4)",
         }}
       >
         JC
