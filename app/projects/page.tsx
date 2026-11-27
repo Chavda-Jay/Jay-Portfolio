@@ -20,8 +20,10 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   const projects = getAllProjects();
 
-  const resumePath = path.join(process.cwd(), "public", "resume", "Jay_Chavda_Resume.pdf");
-  const hasResume = fs.existsSync(resumePath);
+  const resumeDir = path.join(process.cwd(), "public", "resume");
+  const hasResume =
+    fs.existsSync(path.join(resumeDir, "Jay_Chavda_Resume.pdf")) ||
+    fs.existsSync(path.join(resumeDir, "Jay_Chavda.pdf"));
 
   return (
     <>

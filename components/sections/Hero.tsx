@@ -16,7 +16,7 @@ interface HeroProps {
   hasResume?: boolean;
 }
 
-export function Hero({ hasResume = false }: HeroProps) {
+export function Hero({ hasResume = true }: HeroProps) {
   return (
     <section id="hero" className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden">
       {/* Background warm amber glow directly behind the portrait area */}
