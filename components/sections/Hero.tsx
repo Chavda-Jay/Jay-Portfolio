@@ -9,6 +9,7 @@ import { Container } from "@/layout/Container";
 import { Reveal } from "@/ui/Reveal";
 import { AnimatedHeroHeadline } from "@/ui/AnimatedHeroHeadline";
 import { RoleTypewriter } from "@/ui/RoleTypewriter";
+import { MagneticWrapper } from "@/ui/MagneticWrapper";
 import { profileData } from "@/data/profile";
 
 interface HeroProps {
@@ -68,23 +69,23 @@ export function Hero({ hasResume = false }: HeroProps) {
             {/* Tech Pills Row (Sleek & Professional) */}
             <Reveal delay={0.4}>
               <div className="mt-6 flex flex-wrap items-center gap-2.5">
-                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm">
+                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm shimmer-pill">
                   <span className="w-2 h-2 rounded-full bg-[#3776AB]" />
                   Python
                 </span>
-                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm">
+                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm shimmer-pill">
                   <span className="w-2 h-2 rounded-full bg-[#FF9900]" />
                   TensorFlow
                 </span>
-                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm">
+                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm shimmer-pill">
                   <span className="w-2 h-2 rounded-full bg-[#06B6D4]" />
                   React
                 </span>
-                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm">
+                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm shimmer-pill">
                   <span className="w-2 h-2 rounded-full bg-[#009688]" />
                   FastAPI
                 </span>
-                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm">
+                <span className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] text-[#E2E8F0] border border-white/[0.14] flex items-center gap-1.5 shadow-sm shimmer-pill">
                   <span className="w-2 h-2 rounded-full bg-[#A855F7]" />
                   LLMs &amp; RAG
                 </span>
@@ -92,7 +93,7 @@ export function Hero({ hasResume = false }: HeroProps) {
                 {/* Direct Link to Technical Skills Section */}
                 <Link
                   href="/#skills"
-                  className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] hover:bg-[#FF9900]/15 text-[#94A3B8] hover:text-[#FF9900] border border-white/[0.14] hover:border-[#FF9900]/50 transition-all flex items-center gap-1.5 shadow-sm active:scale-95 group font-medium"
+                  className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono bg-[#111319] hover:bg-[#FF9900]/15 text-[#94A3B8] hover:text-[#FF9900] border border-white/[0.14] hover:border-[#FF9900]/50 transition-all flex items-center gap-1.5 shadow-sm active:scale-95 group font-medium shimmer-pill"
                   title="Explore all technical skills in detail"
                 >
                   <span>+ 30 more</span>
@@ -104,25 +105,29 @@ export function Hero({ hasResume = false }: HeroProps) {
             {/* Action Buttons (Mockup 1:1) */}
             <Reveal delay={0.46}>
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <Link
-                  href="/#projects"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full gradient-amber-btn text-base font-heading font-bold text-[#08090C] transition-all hover:scale-105 active:scale-[0.98] shadow-lg shadow-[#FF9900]/25 cursor-pointer"
-                >
-                  <span>Explore My Work</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                <MagneticWrapper>
+                  <Link
+                    href="/#projects"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full gradient-amber-btn text-base font-heading font-bold text-[#08090C] transition-all hover:scale-105 active:scale-[0.98] shadow-lg shadow-[#FF9900]/25 cursor-pointer shimmer-pill"
+                  >
+                    <span>Explore My Work</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </MagneticWrapper>
 
                 {hasResume && (
-                  <a
-                    href="/resume/Jay_Chavda_Resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#111319] hover:bg-[#161822] text-white border border-white/[0.18] hover:border-[#FF9900]/60 transition-all text-base font-heading font-semibold shadow-md hover:scale-105 active:scale-[0.98] group cursor-pointer"
-                    aria-label="View Jay Chavda Resume"
-                  >
-                    <span>Resume</span>
-                    <ArrowRight className="w-4 h-4 text-[#FF9900] -rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                  </a>
+                  <MagneticWrapper>
+                    <a
+                      href="/resume/Jay_Chavda_Resume.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#111319] hover:bg-[#161822] text-white border border-white/[0.18] hover:border-[#FF9900]/60 transition-all text-base font-heading font-semibold shadow-md hover:scale-105 active:scale-[0.98] group cursor-pointer shimmer-pill"
+                      aria-label="View Jay Chavda Resume"
+                    >
+                      <span>Resume</span>
+                      <ArrowRight className="w-4 h-4 text-[#FF9900] -rotate-45 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </a>
+                  </MagneticWrapper>
                 )}
               </div>
             </Reveal>

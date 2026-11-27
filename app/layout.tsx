@@ -4,6 +4,7 @@ import { profileData } from "@/data/profile";
 import { JayAIChatbot } from "@/ui/JayAIChatbot";
 import { ScrollProgress } from "@/ui/ScrollProgress";
 import { AIPreloader } from "@/ui/AIPreloader";
+import { AmbientCursorGlow } from "@/ui/AmbientCursorGlow";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -130,6 +131,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-[#08090C] text-[#FFFFFF] font-sans antialiased selection:bg-[#FF9900]/30 selection:text-white">
         <AIPreloader />
+        <AmbientCursorGlow />
         <ScrollProgress />
         <a
           href="#main-content"

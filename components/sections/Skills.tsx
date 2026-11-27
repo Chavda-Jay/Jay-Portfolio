@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Container } from "@/layout/Container";
 import { Reveal } from "@/ui/Reveal";
+import { TiltGlassCard } from "@/ui/TiltGlassCard";
 import { Brain, Sparkles, Zap, Layout, Database, Wrench, CheckCircle2 } from "lucide-react";
 
 interface SkillGroup {
@@ -117,7 +118,7 @@ export function Skills() {
                 const Icon = group.icon;
                 return (
                   <Reveal key={group.title} delay={0.1 + idx * 0.06} direction="up">
-                    <div className="p-5 rounded-2xl bg-[#111319] border border-white/[0.12] hover:border-[#FF9900]/50 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_32px_rgba(255,153,0,0.12)] h-full">
+                    <TiltGlassCard className="p-5 h-full" maxTilt={5}>
                       
                       {/* Top Header */}
                       <div>
@@ -151,7 +152,7 @@ export function Skills() {
                                 key={skill}
                                 type="button"
                                 onClick={() => setActiveSkill(isSelected ? null : skill)}
-                                className={`px-3 py-1.5 rounded-lg text-xs sm:text-[13px] font-mono font-medium transition-all select-none cursor-pointer text-left active:scale-95 ${
+                                className={`px-3 py-1.5 rounded-lg text-xs sm:text-[13px] font-mono font-medium transition-all select-none cursor-pointer text-left active:scale-95 shimmer-pill ${
                                   isSelected
                                     ? "bg-[#FF9900] text-[#08090C] font-bold shadow-md shadow-[#FF9900]/30 border border-[#FF9900]"
                                     : "bg-[#08090C] text-[#E2E8F0] border border-white/[0.12] hover:border-[#FF9900]/60 hover:text-white hover:bg-[#FF9900]/15"
@@ -165,7 +166,7 @@ export function Skills() {
                         </div>
                       </div>
 
-                    </div>
+                    </TiltGlassCard>
                   </Reveal>
                 );
               })}

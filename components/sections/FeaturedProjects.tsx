@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Container } from "@/layout/Container";
 import { Reveal } from "@/ui/Reveal";
+import { TiltGlassCard } from "@/ui/TiltGlassCard";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 interface FeaturedProjectItem {
@@ -68,7 +69,7 @@ export function FeaturedProjects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {FEATURED_PROJECTS.map((project, idx) => (
             <Reveal key={project.slug} delay={0.1 + idx * 0.08} direction="up">
-              <div className="h-full rounded-2xl bg-[#111319] border border-white/[0.12] hover:border-[#FF9900]/60 transition-all duration-300 overflow-hidden flex flex-col justify-between group hover:-translate-y-1 shadow-[0_12px_32px_rgba(0,0,0,0.45)] hover:shadow-[0_16px_40px_rgba(255,153,0,0.15)]">
+              <TiltGlassCard className="h-full">
                 
                 <div>
                   {/* Visual Banner Preview */}
@@ -171,7 +172,7 @@ export function FeaturedProjects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-[#08090C] text-[#E2E8F0] border border-white/[0.14]"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-[#08090C] text-[#E2E8F0] border border-white/[0.14] shimmer-pill"
                     >
                       <span className="text-[#22D3EE]">✦</span>
                       <span>{tag}</span>
@@ -179,7 +180,7 @@ export function FeaturedProjects() {
                   ))}
                 </div>
 
-              </div>
+              </TiltGlassCard>
             </Reveal>
           ))}
         </div>

@@ -66,10 +66,16 @@ export function Navbar({ hasResume = false }: NavbarProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-[#08090C]/98 backdrop-blur-2xl border-b border-white/[0.1] shadow-[0_8px_32px_rgba(0,0,0,0.85)] py-3.5"
-            : "bg-[#08090C]/85 backdrop-blur-md py-4.5 border-b border-transparent"
+            ? "bg-[#08090C]/80 backdrop-blur-2xl border-b border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.65)] py-3.5"
+            : "bg-[#08090C]/60 backdrop-blur-md py-4.5 border-b border-transparent"
         }`}
       >
+        {scrolled && (
+          <div 
+            className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-[#FF9900]/40 to-transparent pointer-events-none" 
+            aria-hidden="true"
+          />
+        )}
         <Container className="flex items-center justify-between">
           {/* Logo / Brandmark */}
           <Link
