@@ -7,6 +7,8 @@ import { ArrowRight, Sparkles, Database } from "lucide-react";
 import { GithubIcon, LinkedinIcon, GmailIcon } from "@/ui/Icons";
 import { Container } from "@/layout/Container";
 import { Reveal } from "@/ui/Reveal";
+import { AnimatedHeroHeadline } from "@/ui/AnimatedHeroHeadline";
+import { RoleTypewriter } from "@/ui/RoleTypewriter";
 import { profileData } from "@/data/profile";
 
 interface HeroProps {
@@ -39,14 +41,10 @@ export function Hero({ hasResume = false }: HeroProps) {
               </div>
             </Reveal>
 
-            {/* Main Headline (Exact Mockup Match) */}
-            <Reveal delay={0.15}>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-white tracking-tight leading-[1.12]">
-                Building <span className="text-[#FF9900]">AI</span> That
-                <br />
-                Works in the <span className="text-[#FF9900]">Real World</span>.
-              </h1>
-            </Reveal>
+            {/* Main Headline with Cinematic Word-by-Word Reveal */}
+            <div className="w-full">
+              <AnimatedHeroHeadline />
+            </div>
 
             {/* Name */}
             <Reveal delay={0.22}>
@@ -55,14 +53,9 @@ export function Hero({ hasResume = false }: HeroProps) {
               </h2>
             </Reveal>
 
-            {/* Subtitle / Role with Orange Vertical Bar */}
+            {/* Subtitle / Role with Dynamic Human-Rhythm Typewriter */}
             <Reveal delay={0.28}>
-              <div className="mt-2 flex items-center gap-2.5 text-base sm:text-lg font-sans">
-                <span className="text-[#FF9900] font-black text-xl">|</span>
-                <span className="text-[#E2E8F0] font-semibold tracking-wide">
-                  AI/ML Engineer | Generative AI Developer
-                </span>
-              </div>
+              <RoleTypewriter />
             </Reveal>
 
             {/* Description Paragraph */}
