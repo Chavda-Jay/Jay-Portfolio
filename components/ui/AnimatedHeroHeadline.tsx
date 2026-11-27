@@ -100,20 +100,6 @@ export function AnimatedHeroHeadline() {
             </motion.span>
           );
         })}
-
-        {/* Ambient Blinking Tech Cursor */}
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={mounted ? { opacity: [0, 1, 0] } : {}}
-          transition={{
-            duration: 0.9,
-            repeat: Infinity,
-            delay: 0.12 + wordIndexCounter * 0.1,
-            ease: "easeInOut",
-          }}
-          className="inline-block w-1.5 sm:w-2 h-7 sm:h-9 md:h-11 bg-[#FF9900] shadow-[0_0_12px_#FF9900] align-middle rounded-full translate-y-1"
-          aria-hidden="true"
-        />
       </span>
     </h1>
   );

@@ -6,7 +6,6 @@ const roles = [
   "AI/ML Engineer | Generative AI Developer",
   "LLM & Multi-Agent Systems Architect",
   "Production RAG & Vector Pipeline Engineer",
-  "Scalable FastAPI Microservices Specialist",
 ];
 
 export function RoleTypewriter() {
